@@ -1,6 +1,6 @@
 
 const initialState = {
-    quiz: {
+    results: {
         category: "",
         type: "",
         difficulty: "",
@@ -16,8 +16,8 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "QUESTIONS":
             return {
-                ...state, quiz: {
-                    ...state.quiz,
+                ...state, results: {
+                    ...state.results,
                     ...action.payload
                 }
             }
