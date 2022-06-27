@@ -9,13 +9,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SearchForm } from "../../components";
 import { GetQuestions } from "../../actions";
 
-const testInitState = {
-    category: 9,
+const initialState = {
+    category: 20,
     level: 'easy',
     typeOfQ: 'multiple',
     questions: []
 }
-
 
 describe('Home Component', () => {
     beforeAll(()=>{
@@ -37,7 +36,7 @@ describe('Home Component', () => {
 
         console.log("store",store.getState())
         it('Returns initial state',()=>{
-            expect(store.getState()).toEqual(testInitState)
+            expect(store.getState()).toEqual(initialState)
         })
     
         it('Returns for case SETCAT',()=>{
