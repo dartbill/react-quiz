@@ -4,9 +4,17 @@ import axios from 'axios';
 
 export const GetQuestions = cat => {
 
+<<<<<<< HEAD
+=======
+    const catergory = cat.cat
+    const lev = cat.level
+    const type = cat.typeOfQ
+    console.log(catergory, lev, type)
+
+>>>>>>> staging
     return async (dispatch) => {
         try {
-            const { data } = await axios.get('https://opentdb.com/api.php?&amount=10&category=17&difficulty=hard&type=multiple')
+            const { data } = await axios.get(`https://opentdb.com/api.php?&amount=10&category=${catergory}&difficulty=${lev}&type=${type}`)
             let newArray = data.results.map((url) => (url))
             dispatch({
                 type: 'TEST',
