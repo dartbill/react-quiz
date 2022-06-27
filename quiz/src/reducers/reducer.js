@@ -1,26 +1,35 @@
 
 const initialState = {
-    quiz: {
-        category: "",
-        type: "",
-        difficulty: "",
-        question: "",
-        correct_answer: "",
-        incorrect_answers: []
-    }
+    category: 9,
+    level: 'easy',
+    typeOfQ: 'multiple',
+    questions: []
+
 }
 
 
 const reducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case "QUESTIONS":
+
+        case "SETCAT":
             return {
-                ...state, quiz: {
-                    ...state.quiz,
-                    ...action.payload
-                }
+                ...state, category: action.payload
             }
+        case "SETLEVEL":
+            return {
+                ...state, level: action.payload
+            }
+        case "SETTYPE":
+            return {
+                ...state, typeOfQ: action.payload
+            }
+        case "TEST":
+            return {
+                ...state,
+                questions: action.payload
+            }
+
         default:
             return initialState
     }
