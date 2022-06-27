@@ -5,6 +5,8 @@ import axios from 'axios';
 export const GetQuestions = cat => {
 
     console.log(cat.cat)
+    console.log(cat.level)
+    console.log(cat.typeOfQ)
 
     return async (dispatch) => {
         try {

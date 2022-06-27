@@ -1,8 +1,8 @@
 
 const initialState = {
     category: 9,
-    level: '',
-    typeOfQ: "",
+    level: 'easy',
+    typeOfQ: 'multiple',
     questions: []
 
 }

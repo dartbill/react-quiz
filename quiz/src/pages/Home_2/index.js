@@ -10,12 +10,12 @@ const Home = () => {
     const dispatch = useDispatch();
     const data = useSelector(state => state.questions)
 
-    let category = 30
-    let level = 'easy'
-    let typeOfQ = 'multiple'
+    const category = useSelector(state => state.category)
+    let level = useSelector(state => state.level)
+    let typeOfQ = useSelector(state => state.typeOfQ)
 
     useEffect(() => {
-        dispatch(GetQuestions({ cat: category, level: level, type: typeOfQ }))
+        dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
     }, [])
 
     console.log(data)
