@@ -5,7 +5,6 @@ import Quiz from './components/Quiz';
 import React, { useState, useEffect } from "react";
 import { Home } from './pages'
 
-import './App.css';
 import socketIOClient from "socket.io-client";
 const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
 
