@@ -1,26 +1,28 @@
 
 const initialState = {
+    category: 9,
+    level: '',
+    typeOfQ: "",
     questions: []
-    // results: {
-    //     category: "",
-    //     type: "",
-    //     difficulty: "",
-    //     question: "",
-    //     correct_answer: "",
-    //     incorrect_answers: []
-    // },
+
 }
 
 
 const reducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case "QUESTIONS":
+
+        case "SETCAT":
             return {
-                ...state, results: {
-                    ...state.results,
-                    ...action.payload
-                }
+                ...state, category: action.payload
+            }
+        case "SETLEVEL":
+            return {
+                ...state, level: action.payload
+            }
+        case "SETTYPE":
+            return {
+                ...state, typeOfQ: action.payload
             }
         case "TEST":
             return {

@@ -11,9 +11,11 @@ const Home = () => {
     const data = useSelector(state => state.questions)
 
     let category = 30
+    let level = 'easy'
+    let typeOfQ = 'multiple'
 
     useEffect(() => {
-        dispatch(GetQuestions({ cat: category, level: "easy", type: "multiple" }))
+        dispatch(GetQuestions({ cat: category, level: level, type: typeOfQ }))
     }, [])
 
     console.log(data)
