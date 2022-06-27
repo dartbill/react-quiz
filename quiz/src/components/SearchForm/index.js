@@ -18,27 +18,13 @@ const SearchForm = () => {
 <div className="dropdown">
   <button className="dropbtn-diff">Difficult</button>
   <div className="dropdown-content-diff">
-    <a className="drop-items-diff drop-items drop-items-easy" href="#">easy </a>
-    <a className="drop-items-diff drop-items drop-items-easy" href="#">medium</a>
+    <a className="drop-items-diff drop-items drop-items-easy" href="#">Piss easy </a>
+    <a className="drop-items-diff drop-items drop-items-medium" href="#">medium</a>
+    <a className="drop-items-diff drop-items drop-items-hard" href="#">Hard af</a>
   </div>
 
 </div>
-
-
-
-{/* THIS DOESNT WORK??? */}
-{/* 
-<form action="/action_page.php">
-  <input list="browsers">
-  <datalist id="browsers">
-    <option value="Internet Explorer">
-    <option value="Firefox">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
-  </datalist>
-</form> */}
-
+</>
     )
 }
 export default SearchForm
