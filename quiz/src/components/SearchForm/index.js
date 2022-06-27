@@ -1,40 +1,110 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import './index.css'
-
-
+import axios from "axios";
 
 const SearchForm = () => {
-    // GetQuestions({ cat: 20, level: "easy", type: "multiple" })
-        const dispatch = useDispatch()
-        const handleBtnClick = () => {
-            dispatch ({ type: "DESPOSIT", payload: 100})
-        }
+    const dispatch = useDispatch()
+    
+    let [diffSelected, setDiffSelected] = useState('');
+    let [catSelected, setCatSelected] = useState ('');
+    let [typeSelected, setTypeSelected] = useState ('');
+    let [urlDiff, SetUrlDiff] = useState ('');
+    let [urlCat, SetUrlCat] = useState (''); 
+    let [urlType, SetUrlType] = useState (''); 
+    let [customURL, setCustomUrl] = useState ('')
+    
+    const handleClickDiff = event => {
+        event.preventDefault();       
+        setDiffSelected(event.currentTarget.id)
+    }
+    useEffect(() => {
+        SetUrlDiff('&difficulty=' + diffSelected.toLowerCase());
+      }, [diffSelected]);
+    
+
+    const handleClickCat = event => {
+        event.preventDefault();       
+        setCatSelected(event.currentTarget.innerHTML)
+        SetUrlCat('&category='+ event.currentTarget.id)
+    }
+
+    const handleClickType = event => {
+        event.preventDefault();       
+        setTypeSelected(event.currentTarget.innerHTML)
+        SetUrlType('&type='+ event.currentTarget.id)
+    }
+
+    const handleClickmakeURL= event => {
+        event.preventDefault();       
+        setCustomUrl('https://opentdb.com/api.php?&amount=10'+ urlDiff + urlCat + urlType)
+    }
+
+
+/////////////////////
+//API
+// ////////////////////
+const [repos, setRepos] = useState([{ }]);
+
+    async function fetchData() {
+        try {
+            
+        const quizAPI = await axios.get(customURL);
+        console.log('TOM',quizAPI.data);
+        setRepos(quizAPI.data);
+
+
+    } catch (err) {
+        console.warn(err.message);
+        alert("No API fetched");
+    }
+}
+
+
       return (
         <>
+        <p className="customURL">API URL:{customURL}</p>
+        <h13 >Difficulty: {diffSelected}</h13>
+        <h13 >Category: {catSelected}</h13>
+        <h13 >Type: {typeSelected}</h13>
 
-{/* Ending up with loads of classNames */}
-<div className="dropdown">
-  <button className="dropbtn-diff">Difficult</button>
-  <div className="dropdown-content-diff">
-    <a className="drop-items-diff drop-items" id="easy" href="#">Piss easy </a>
-    <a className="drop-items-diff drop-items" id="medium" href="#">medium</a>
-    <a className="drop-items-diff drop-items" id="hard" href="#">Hard af</a>
-  </div>
-</div>
+        <div className="SetupForm" >
 
-<div className="dropdown">
-  <button className="dropbtn-cat">Category</button>
-  <div className="dropdown-content-cat">
-    <a className="drop-items-cat drop-items" id="9" href="#">General knowledge</a>
-    <a className="drop-items-cat drop-items" id="11" href="#">Films</a>
-    <a className="drop-items-cat drop-items" id="15" href="#">Games</a>
-    <a className="drop-items-cat drop-items" id="27" href="#">Animals</a>
-    <a className="drop-items-cat drop-items" id="18" href="#">Computer Shit</a>
-  </div>
-</div>
+        <div className="dropdown">
+            <button className="dropbtn-diff">Difficult</button>
+            <div className="dropdown-content-diff">
+                <a className="drop-items-diff drop-items" id="Easy" onClick={handleClickDiff} href="#">Piss easy </a>
+                <a className="drop-items-diff drop-items" id="Medium" onClick={handleClickDiff}  href="#">medium</a>
+                <a className="drop-items-diff drop-items" id="Hard" onClick={handleClickDiff}  href="#">Hard af</a>
+            </div>
+        </div>
+{/* i can change the id to lower case ^ and then i can  remove the tolowercase()*/}
 
+        <div className="dropdown">
+            <button className="dropbtn-cat">Category</button>
+            <div className="dropdown-content-cat">
+                <a className="drop-items-cat drop-items" id="9" onClick={handleClickCat} href="#">General knowledge</a>
+                <a className="drop-items-cat drop-items" id="11" onClick={handleClickCat} href="#">Films</a>
+                <a className="drop-items-cat drop-items" id="15" onClick={handleClickCat} href="#">Games</a>
+                <a className="drop-items-cat drop-items" id="27" onClick={handleClickCat} href="#">Animals</a>
+                <a className="drop-items-cat drop-items" id="18" onClick={handleClickCat} href="#">Computer Shit</a>
+            </div>
+        </div>
+
+        <div className="dropdown">
+            <button className="dropbtn-type">Category</button>
+            <div className="dropdown-content-cat">
+                <a className="drop-items-type drop-items" id="boolean" onClick={handleClickType} href="#">True/False</a>
+                <a className="drop-items-type drop-items" id="multiple" onClick={handleClickType} href="#">Multiple</a>
+            </div>
+        </div>
+
+        <button onClick={handleClickmakeURL}>makeURL</button>        
+        <button onClick={fetchData}>get API</button>        
+
+        </div>
 {/* 
 use the category num in the id=''
 
@@ -69,3 +139,4 @@ cartoon/ animations 31
     )
 }
 export default SearchForm
+// https://bobbyhadz.com/blog/react-onclick-get-id-of-element
