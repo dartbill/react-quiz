@@ -1,25 +1,21 @@
 // Main Imports
-import React from 'react'
-import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import axios from 'axios';
-import userEvent from '@testing-library/user-event';
-import {store} from "../store"
+import React from "react";
+import "@testing-library/jest-dom";
+import { render as rtlRender} from "@testing-library/react";
+import { Provider } from "react-redux";
+import axios from "axios";
+import userEvent from "@testing-library/user-event";
+import { default as store } from "../store";
 
 // Import Reducers
-import reducer from '../reducers/reducer';
+import reducer from "../reducers/reducer";
+
+export const render = (component) =>
+    rtlRender(
+    <Provider store={store}>
+      {component}
+    </Provider>);
 
 // Globals
 global.React = React;
-global.render = render;
 global.userEvent = userEvent;
-
-export const renderComponent = component => render(
-  {component}
-  )
-  
-  // <Provider store={store}>
-  // </Provider>
