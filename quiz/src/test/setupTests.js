@@ -7,10 +7,19 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import userEvent from '@testing-library/user-event';
+import {store} from "../store"
 
 // Import Reducers
+import reducer from '../reducers/reducer';
 
 // Globals
 global.React = React;
 global.render = render;
 global.userEvent = userEvent;
+
+export const renderComponent = component => render(
+  {component}
+  )
+  
+  // <Provider store={store}>
+  // </Provider>
