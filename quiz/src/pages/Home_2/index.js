@@ -9,28 +9,19 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const data = useSelector(state => state.questions)
-    let [search, setSearchResult] = useState()
 
+    let category = 30
 
     useEffect(() => {
-
-        setSearchResult(() => (searchTerm) => {
-
-            dispatch(GetQuestions(searchTerm))
-
-        })
-        console.log(search)
-        console.log('i have been run')
-
+        dispatch(GetQuestions({ cat: category, level: "easy", type: "multiple" }))
     }, [])
 
-    // console.log(data)
-    console.log(search)
+    console.log(data)
 
     return (
         <>
             <h1> Hello </h1>
-            {/* <SearchForm GetQuestions={search} /> */}
+            <SearchForm />
         </>
     )
 }

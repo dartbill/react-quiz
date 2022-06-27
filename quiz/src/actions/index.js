@@ -3,7 +3,9 @@ import axios from 'axios';
 
 
 export const GetQuestions = cat => {
-    console.log(cat.type)
+
+    console.log(cat.cat)
+
     return async (dispatch) => {
         try {
             const { data } = await axios.get('https://opentdb.com/api.php?&amount=10&category=17&difficulty=hard&type=multiple')
@@ -16,6 +18,15 @@ export const GetQuestions = cat => {
         }
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
