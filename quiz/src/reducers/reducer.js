@@ -1,13 +1,14 @@
 
 const initialState = {
-    results: {
-        category: "",
-        type: "",
-        difficulty: "",
-        question: "",
-        correct_answer: "",
-        incorrect_answers: []
-    }
+    questions: []
+    // results: {
+    //     category: "",
+    //     type: "",
+    //     difficulty: "",
+    //     question: "",
+    //     correct_answer: "",
+    //     incorrect_answers: []
+    // },
 }
 
 
@@ -21,6 +22,12 @@ const reducer = (state = initialState, action) => {
                     ...action.payload
                 }
             }
+        case "TEST":
+            return {
+                ...state,
+                questions: action.payload
+            }
+
         default:
             return initialState
     }

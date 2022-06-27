@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 
 const SearchForm = ({ GetQuestions }) => {
 
-    GetQuestions(20, "easy", "multiple")
+
+    GetQuestions({ cat: 20, level: "easy", type: "multiple" })
 
     return (
         <p>hello from component </p>
