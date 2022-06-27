@@ -26,15 +26,15 @@ npm i && npm start
 ```
 Browser should automatically open to the default `localhost:3000/`
 
+### Local Server Setup
+
+> TBC
+
 ## Process
 
 ## Licence
 
 ## Wins and Challenges
-
-### Local Server Setup
-
-> TBC
 
 ## Technologies
 
