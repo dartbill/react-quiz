@@ -3,13 +3,14 @@ import axios from 'axios';
 
 
 export const GetQuestions = cat => {
+    console.log(cat.type)
     return async (dispatch) => {
         try {
             const { data } = await axios.get('https://opentdb.com/api.php?&amount=10&category=17&difficulty=hard&type=multiple')
-            let newDogsArray = data.results.map((url) => (url))
+            let newArray = data.results.map((url) => (url))
             dispatch({
                 type: 'TEST',
-                payload: newDogsArray
+                payload: newArray
             })
         } catch (err) {
         }

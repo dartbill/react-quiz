@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { SearchForm } from "../../components";
 
@@ -8,26 +8,29 @@ import { GetQuestions } from "../../actions";
 const Home = () => {
 
     const dispatch = useDispatch();
-
-    let searchResult = searchTerm => { }
-
     const data = useSelector(state => state.questions)
+    let [search, setSearchResult] = useState()
 
-    console.log(data)
 
     useEffect(() => {
-        if (data.length != 0) {
-            console.log(data)
-            searchResult = searchTerm => { dispatch(GetQuestions(searchTerm)) }; //call once
-            console.log(searchResult)
-        }
+
+        setSearchResult(() => (searchTerm) => {
+
+            dispatch(GetQuestions(searchTerm))
+
+        })
+        console.log(search)
+        console.log('i have been run')
+
     }, [])
-    // const searchResult = searchTerm => { dispatch(GetQuestions(searchTerm)) };
-    // console.log(searchResult)
+
+    // console.log(data)
+    console.log(search)
+
     return (
         <>
             <h1> Hello </h1>
-            <SearchForm GetQuestions={searchResult} />
+            {/* <SearchForm GetQuestions={search} /> */}
         </>
     )
 }
