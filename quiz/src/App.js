@@ -1,4 +1,5 @@
-import './App.css';
+import './index.css';
+import Quiz from './components/Quiz'; 
 
 function App() {
   return (
@@ -6,6 +7,10 @@ function App() {
       <header className="App-header">
 
       </header>
+
+         <Quiz />
+
+
     </div>
   );
 }
