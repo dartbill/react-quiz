@@ -18,7 +18,6 @@ const Home = () => {
         dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
     }, [])
 
-    console.log(data)
 
     return (
         <>
