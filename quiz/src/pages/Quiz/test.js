@@ -1,12 +1,18 @@
-import { Quiz } from "./index";
-import { render, screen } from '@testing-library/react';
 import "@testing-library/jest-dom";
-import React from "react";
+import { Quiz } from "../../components";
+// import { screen, render } from "@testing-library/react";
+
+let initState = {
+    category: 20,
+    level: "easy",
+    typeOfQ: "multiple",
+    questions: [],
+};
 
 describe("Quiz Component", () => {
     beforeEach(() => {
-        render(
-            <Quiz />
+        renderWithReduxProvider(
+            <Quiz />, { initState }
         );
     });
 
@@ -16,7 +22,10 @@ describe("Quiz Component", () => {
             const e = screen.getByText(/next question/i)
             expect(e).toBeInTheDocument();
         });
+
+
     });
+
 });
 
 

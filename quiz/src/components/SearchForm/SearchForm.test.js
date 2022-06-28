@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchForm from './index.js';
-import { screen,render } from "@testing-library/react";
+import { SearchForm } from '.';
+import { screen, render } from "@testing-library/react";
 
 describe('SearchForm Component', () => {
-    beforeAll(()=>{
+    beforeAll(() => {
         render(<SearchForm />)
     })
     describe('Renders button',()=>{

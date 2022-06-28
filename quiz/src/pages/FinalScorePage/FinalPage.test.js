@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { FinalScorePage } from ".";
+import { FinalScores } from "../../components";
 import React from "react";
 import { screen, render } from "@testing-library/react";
 
@@ -13,12 +13,12 @@ let initState = {
 describe("FinalScorePage Component", () => {
     beforeEach(() => {
         render(
-        <FinalScorePage />
+            <FinalScores />
         );
     });
 
     describe("Renders", () => {
-        
+
         it("placeholder text", () => {
             const e = screen.getByText(/this is where we need to display final scores/i)
             expect(e).toBeInTheDocument();
