@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SearchForm } from "../../components";
 
 import { GetQuestions } from "../../actions";
+import { NavLink } from "react-router-dom";
 
 
 export const Home = () => {
@@ -24,6 +25,9 @@ export const Home = () => {
     return (
         <>
             <SearchForm />
+            <NavLink to="/quiz">
+                Play!
+            </NavLink>
         </>
     )
 }

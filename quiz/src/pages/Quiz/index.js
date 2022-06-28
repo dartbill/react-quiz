@@ -18,7 +18,6 @@ export const QuizPage = () => {
 
     useEffect(() => {
         dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
-        // console.log(data)
     }, [category, level, typeOfQ])
 
 
