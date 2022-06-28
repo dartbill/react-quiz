@@ -1,11 +1,14 @@
+import React from 'react'
+import "@testing-library/jest-dom";
 import { default as Home } from ".";
-import { screen,render } from "@testing-library/react";
-// import { render } from "../../test/setupTests";
+import { screen } from "@testing-library/react";
+import { render } from "../../test/setupTests";
 import reducer from "../../reducers/reducer";
 import { default as store } from "../../store";
 
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import React, { useEffect, useState } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+
 import { SearchForm } from "../../components";
 import { GetQuestions } from "../../actions";
 import { Provider } from "react-redux";
@@ -16,7 +19,7 @@ import { Provider } from "react-redux";
 //   useDispatch: () => mockDispatch
 // }));
 
-const dispatch = useDispatch()
+// const dispatch = useDispatch()
 
 const initialState = {
     category: 20,
@@ -27,10 +30,8 @@ const initialState = {
 
 describe("Home Component", () => {
     beforeAll(() => {
-        render(
-            <Provider store={store}>
-                <Home />
-            </Provider>
+        renderWithReduxProvider(
+            <Home />
         );
     });
 
@@ -49,21 +50,20 @@ describe("Home Component", () => {
             expect(store.getState()).toEqual(initialState);
         });
 
-        it("Returns for case SETCAT", () => {
-            dispatch({
-                    type: SETCAT,
-                    payload: 10,
-                });
-            expect(store.getState().category).toEqual(10);
-        });
-        it("Returns for case SETLEVEL", () => {
-            reducer({ level: "hard" });
-            expect(store.getState().level).toEqual("hard");
-        });
-        it("Returns for case SETTYPE", () => {
-            reducer({ typeOfQ: "boolean" });
-            expect(store.getState().typeOfQ).toEqual("boolean");
-        });
-        it("Returns for case TEST", () => {});
+        // it("Returns for case SETCAT", () => {
+        //     // test ui button for
+        //     expect(store.getState().category).toEqual(10);
+        // });
+        // it("Returns for case SETLEVEL", () => {
+        //     // test ui button for cat
+        //     expect(store.getState().level).toEqual("hard");
+        // });
+        // it("Returns for case SETTYPE", () => {
+        //     // test ui button for cat
+        //     expect(store.getState().typeOfQ).toEqual("boolean");
+        // });
+        // it("Returns for case TEST", () => {
+
+        // });
     });
 });

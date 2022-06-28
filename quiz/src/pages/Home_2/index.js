@@ -9,7 +9,6 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const data = useSelector(state => state.questions)
-
     const category = useSelector(state => state.category)
     let level = useSelector(state => state.level)
     let typeOfQ = useSelector(state => state.typeOfQ)
