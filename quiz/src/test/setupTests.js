@@ -66,6 +66,7 @@ axios.get.mockResolvedValue({ data: "" })
 
 // Globals
 global.React = React;
+global.screen = screen;
 global.userEvent = userEvent;
 global.renderWithReduxProvider = renderWithReduxProvider
 

@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { Home } from ".";
+import { Home } from "./index";
 import { screen, render } from "@testing-library/react";
 import { renderWithReduxProvider } from '../../test/setupTests'
 import userEvent from "@testing-library/user-event";
@@ -20,6 +20,7 @@ describe("Home Component", () => {
         getResultMock = jest.fn();
         store = mockStore(initState)
         renderWithReduxProvider(<Home />, { initState });
+        console.log(store)
     });
 
     describe("Renders", () => {
