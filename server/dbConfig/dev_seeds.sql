@@ -1,5 +1,5 @@
-INSERT INTO scoreBoard (name, score)
+INSERT INTO scoreBoard (id, name, score)
 VALUES
-("init2winit", 100),
-("Jamie", 53),
-("Stella", 0);
+(1, "init2winit", 100),
+(2, "Jamie", 53),
+(3, "Stella", 0);
