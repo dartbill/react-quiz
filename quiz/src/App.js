@@ -6,7 +6,6 @@ import * as Pages from './pages'
 
 // import './App.css';
 
-// import socketIOClient from "socket.io-client";
 import { io } from "socket.io-client";
 export const socket = io("http://localhost:5000");
 // const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
@@ -37,8 +36,8 @@ function App() {
           It's <time dateTime={response}>{response}</time>
         </p> */}
 
-
-        <Pages.LoginPage />
+        <Pages.HighscorePage />
+        {/* <Pages.LoginPage /> */}
       </header>
 
     </div>
