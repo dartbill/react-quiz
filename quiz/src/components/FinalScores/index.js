@@ -8,6 +8,6 @@ export const FinalScores = () => {
         <div >
             <p> this is where we need to display final scores</p>
         </div>
-
+        //we also need a button that goes back 
     )
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { io } from "socket.io-client";
 
 import { socket } from "../../App";
 
@@ -20,9 +19,9 @@ export const Login = () => {
             <div className="home-box">
                 <p className="connection"></p>
                 <h3>Room Name:</h3>
-                <div className="room">{roomText}</div>
+                <div >{roomText}</div>
                 <h3>Players</h3>
-                <div className="players">{players.current}</div>
+                <div >{players.current}</div>
             </div>
             <button>Start game!</button>
         </>
