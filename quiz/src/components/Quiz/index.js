@@ -25,7 +25,7 @@ export const Quiz = () => {
   return (
     <div className="quiz">
       <div>
-        <div className="score">Question 1/8</div>
+        <div className="score">{`Question ${state.currentQuestionIndex + 1}/8`}</div>
         <Question question={state.currentQuestionIndex} />
         <br />
         <div
