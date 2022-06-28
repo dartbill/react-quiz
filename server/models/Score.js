@@ -1,4 +1,4 @@
-const db = require('../initdb');
+const db = require('../dbConfig/init')
 
 class Score {
 	constructor(data) {
