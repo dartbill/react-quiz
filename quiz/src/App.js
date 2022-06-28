@@ -3,6 +3,11 @@ import './index.css';
 
 import React, { useState, useEffect } from "react";
 import * as Pages from './pages'
+import {Routes, Route, Link } from 'react-router-dom';
+
+import { Home } from './pages/Home';
+import { QuizPage } from './pages/Quiz';
+
 
 // import './App.css';
 
@@ -48,17 +53,30 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+
+  {/* the old stuff! */}
+
+      {/* <header className="App-header">
         <Pages.Home />
-        <Pages.QuizPage />
+        <Pages.QuizPage /> */}
         {/* <p>
           It's <time dateTime={response}>{response}</time>
         </p> */}
+      {/* </header> */}
+      <header>
 
         <Pages.HighscorePage />
         <Pages.LoginPage />
       </header>
 
+
+  {/* the new stuff! */}
+
+      <Routes>
+        <Route path='/home' element={<Home/>} />
+        <Route path='/quiz' element={<QuizPage/>} />
+        <Route path='/' element={<Home/>} />
+      </Routes>
     </div>
   );
 }
