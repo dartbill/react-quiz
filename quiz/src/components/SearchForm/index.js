@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 import './index.css'
@@ -10,22 +10,29 @@ export const SearchForm = () => {
 
     // let [urlType, SetUrlType] = useState (''); 
 
+    let [diffSelected, setDiffSelected] = useState('');
+    let [catSelected, setCatSelected] = useState ('');
+    let [typeSelected, setTypeSelected] = useState ('');
+    
+
     const dispatch = useDispatch()
     const handleBtnClick = (e) => {
         e.preventDefault()
         console.log(e.target.id)
+        setCatSelected(e.currentTarget.innerHTML)
         dispatch({ type: "SETCAT", payload: e.target.id })
     }
 
     const setDifficulty = (e) => {
         e.preventDefault()
         console.log(e.target.id)
+        setDiffSelected(e.currentTarget.id)
         dispatch({ type: "SETLEVEL", payload: e.target.id })
     }
 
     const handleClickType = (e) => {
         e.preventDefault();
-        // setTypeSelected(event.currentTarget.innerHTML)
+        setTypeSelected(e.currentTarget.innerHTML)
         dispatch({ type: "SETTYPE", payload: e.target.id })
         // SetUrlType('&type='+ event.currentTarget.id)
     }
@@ -33,6 +40,10 @@ export const SearchForm = () => {
 
     return (
         <>
+
+        <p>Category: {catSelected}</p>
+        <p>Type: {typeSelected}</p>
+        <p>Difficulty: {diffSelected}</p>
 
             {/* Ending up with loads of classNames */}
             <div className="dropdown">
