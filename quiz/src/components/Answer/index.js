@@ -6,7 +6,6 @@ export const Answer = (props) => {
     <div className='answer'>
       <div className="answer-letter">{props.num}</div>
       <div className="answer-text"> {props.answer} </div>
-
     </div>
 
   )

@@ -1,11 +1,19 @@
-//log in page
-//will need a room input
-// will have to call a fetch function to pass it to the back end might as well do it in here
 
-import React from 'react'
+import React, { useEffect } from "react";
+import { UserLogin } from "../../components";
 
-export default function LoginPage() {
-  return (
-    <div>LoginPage</div>
-  )
+
+
+export const LoginPage = () => {
+
+
+    return (
+        <>
+            <UserLogin />
+        </>
+    )
 }
+
+
+
+>>>>>>> 6f8212397bc9e1a3fa8620a1a79fe677d98a5bd0
