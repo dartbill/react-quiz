@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 
 export const Quiz = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log("state", state);
+  // console.log("state", state);
 
   return (
     <div className="quiz">
