@@ -18,15 +18,14 @@ export const QuizPage = () => {
 
     useEffect(() => {
         dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
-        // console.log(data)
     }, [category, level, typeOfQ])
 
 
 
     return (
         <>
-            <h1>Hi, this is the quiz page</h1>
-            <SearchForm />
+            {/* <h1>Hi, this is the quiz page</h1>
+            <SearchForm /> */}
             <Quiz />
         </>
     )

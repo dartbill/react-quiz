@@ -5,8 +5,7 @@ import React, { useState, useEffect } from "react";
 import * as Pages from './pages'
 import { Routes, Route, Link } from 'react-router-dom';
 
-import { Home } from './pages/Home';
-import { QuizPage } from './pages/Quiz';
+
 
 
 // import './App.css';
@@ -69,8 +68,9 @@ function App() {
 
       <Routes>
         {/* <Route path='/home' element={<Home />} /> */}
-        <Route path='/' element={<Home />} />
-        <Route path='/quiz' element={<QuizPage />} />
+        <Route path='/' element={<Pages.Home />} />
+        <Route path='/quiz' element={<Pages.QuizPage />} />
+        <Route path='/final' element={<Pages.FinalScorePage />} />
       </Routes>
     </div>
   );
