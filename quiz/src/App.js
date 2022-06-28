@@ -11,10 +11,6 @@ import { QuizPage } from './pages/Quiz';
 
 // import './App.css';
 
-<<<<<<< HEAD
-// import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
-=======
 // import { io } from "socket.io-client";
 
 // // const io = require("socket.io-client");
@@ -32,7 +28,6 @@ export const socket = io("http://localhost:5000", {
 });
 // export const socket = io("http://localhost:5000");
 // const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
->>>>>>> 6f8212397bc9e1a3fa8620a1a79fe677d98a5bd0
 
 
 
