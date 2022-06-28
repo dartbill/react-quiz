@@ -1,7 +1,9 @@
-const app = require('express')();
+const app = require('./server');
+
 const server = require('http').createServer(app);
 const io = require('socket.io')(server); // integrate our http server with a new instance of socket.io
 
+// socket connection will go here
 io.on('connection', (socket) => {
 	console.log("'Ello, who's this we got here?"); // runs when client first connects
 
@@ -11,8 +13,7 @@ io.on('connection', (socket) => {
 	});
 });
 
-const port = process.env.PORT || 5001;
-server.listen(port, () => console.log(`Express is running on port ${port}`));
+const port = process.env.PORT || 3000;
 
 server.listen(port, () => {
 	console.log(`Open for play on port ${port}!`);
