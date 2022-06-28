@@ -5,7 +5,7 @@ import { SearchForm } from "../../components";
 import { GetQuestions } from "../../actions";
 
 
-const Home = () => {
+export const Home = () => {
 
     const dispatch = useDispatch();
     const data = useSelector(state => state.questions)
@@ -29,4 +29,4 @@ const Home = () => {
 }
 
 
-export default Home
+
