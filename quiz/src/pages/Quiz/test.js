@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { Quiz } from "./";
+import { Quiz } from "../../components";
 // import { screen, render } from "@testing-library/react";
 
 let initState = {
@@ -12,12 +12,12 @@ let initState = {
 describe("Quiz Component", () => {
     beforeEach(() => {
         renderWithReduxProvider(
-        <Quiz />, { initState }
+            <Quiz />, { initState }
         );
     });
 
     describe("Renders", () => {
-        
+
         it("next question text", () => {
             const e = screen.getByText(/next question/i)
             expect(e).toBeInTheDocument();

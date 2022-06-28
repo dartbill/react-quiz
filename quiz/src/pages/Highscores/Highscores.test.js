@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { Highscores } from ".";
+import { Highscores } from "../../components";
 import { screen, render } from "@testing-library/react";
 import React from "react";
 let initState = {
@@ -17,7 +17,7 @@ describe("Highscores Component", () => {
     });
 
     describe("Renders", () => {
-        
+
         it("placeholder text", () => {
             const e = screen.getByText(/we need to display highscores here/i)
             expect(e).toBeInTheDocument();
