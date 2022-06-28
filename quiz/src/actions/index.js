@@ -4,14 +4,14 @@ import axios from 'axios';
 
 export const GetQuestions = cat => {
 
-    const catergory = cat.cat
+    const category = cat.cat
     const lev = cat.level
     const type = cat.typeOfQ
-    console.log(catergory, lev, type)
+    console.log(category, lev, type)
 
     return async (dispatch) => {
         try {
-            const { data } = await axios.get(`https://opentdb.com/api.php?&amount=10&category=${catergory}&difficulty=${lev}&type=${type}`)
+            const { data } = await axios.get(`https://opentdb.com/api.php?&amount=10&category=${category}&difficulty=${lev}&type=${type}`)
             let newArray = data.results.map((url) => (url))
             dispatch({
                 type: 'TEST',
