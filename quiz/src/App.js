@@ -19,13 +19,13 @@ import { QuizPage } from './pages/Quiz';
 
 // });
 
-const io = require("socket.io-client");
-export const socket = io("http://localhost:5000", {
-  withCredentials: true,
-  extraHeaders: {
-    "my-custom-header": "abcd"
-  }
-});
+// const io = require("socket.io-client");
+// export const socket = io("http://localhost:5000", {
+//   withCredentials: true,
+//   extraHeaders: {
+//     "my-custom-header": "abcd"
+//   }
+// });
 // export const socket = io("http://localhost:5000");
 // const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
 
@@ -68,9 +68,9 @@ function App() {
       {/* the new stuff! */}
 
       <Routes>
-        <Route path='/home' element={<Home />} />
-        <Route path='/quiz' element={<QuizPage />} />
+        {/* <Route path='/home' element={<Home />} /> */}
         <Route path='/' element={<Home />} />
+        <Route path='/quiz' element={<QuizPage />} />
       </Routes>
     </div>
   );
