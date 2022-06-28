@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, Route, useNavigate } from 'react-router-dom'
+
 
 import './index.css'
 import axios from "axios";
@@ -52,7 +53,7 @@ const [repos, setRepos] = useState([{ }]);
         try {
             
         const quizAPI = await axios.get(customURL);
-        console.log('TOM',quizAPI.data);
+        console.log('Toms api',quizAPI.data);
         setRepos(quizAPI.data);
 
 
@@ -61,7 +62,9 @@ const [repos, setRepos] = useState([{ }]);
         alert("No API fetched");
     }
 }
-
+/////////////////////
+//END OFAPI
+// ////////////////////
 
       return (
         <>
@@ -103,6 +106,8 @@ const [repos, setRepos] = useState([{ }]);
 
         <button onClick={handleClickmakeURL}>makeURL</button>        
         <button onClick={fetchData}>get API</button>        
+        <NavLink className="Navlink" to="/tomstest" repos='repos' >load page with api</NavLink>
+
 
         </div>
 {/* 
