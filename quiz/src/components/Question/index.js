@@ -2,10 +2,10 @@ import React from 'react'
 import { Answer } from '../'
 import { useSelector } from 'react-redux';
 
+                    
+export const Question = (props) => {
 
-export const Question = () => {
-
-  const q = useSelector(state => state.questions)
+  const q = useSelector(state => state.questions) //(state => state.questions) 
 
   let quest
   let correct
@@ -13,9 +13,9 @@ export const Question = () => {
 
   if (q.length !== 0) {
     console.log(q)
-    quest = q[1].question
-    incorrect = q[1].incorrect_answers
-    correct = q[1].correct_answer
+    quest = q[props.question].question
+    incorrect = q[props.question].incorrect_answers
+    correct = q[props.question].correct_answer
     console.log('this is quest' + incorrect + correct)
   }
 
