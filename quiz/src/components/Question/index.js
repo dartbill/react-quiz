@@ -2,10 +2,10 @@ import React from 'react'
 import { Answer } from '../'
 import { useSelector } from 'react-redux';
 
-                    
+
 export const Question = (props) => {
 
-  const q = useSelector(state => state.questions) //(state => state.questions) 
+  const q = useSelector(state => state.questions) //(
 
   let quest
   let correct
@@ -27,10 +27,10 @@ export const Question = (props) => {
 
       <div className="question">{quest}</div>
       <div className="answers">
-        <Answer num="A" answer={correct} />
-        <Answer num="B" answer={incorrect[0]} />
-        <Answer num="C" answer={incorrect[1]} />
-        <Answer num="D" answer={incorrect[2]} />
+        <Answer bool={true} num="A" answer={correct} />
+        <Answer bool={false} num="B" answer={incorrect[0]} />
+        <Answer bool={false} num="C" answer={incorrect[1]} />
+        <Answer bool={false} num="D" answer={incorrect[2]} />
       </div>
 
     </div>
