@@ -24,13 +24,13 @@ describe("Home Component", () => {
     });
 
     describe("Renders", () => {
-        
+
         it("category dropdown", () => {
-            const btn = screen.getByRole('button', {  name: /category/i})
+            const btn = screen.getByRole('button', { name: /category/i })
             expect(btn).toBeInTheDocument();
         });
         it("difficult dropdown", () => {
-            const btn = screen.getByRole('button', {  name: /difficult/i})
+            const btn = screen.getByRole('button', { name: /difficult/i })
             expect(btn).toBeInTheDocument();
         });
 
@@ -45,7 +45,7 @@ describe("Home Component", () => {
         it("for case SETCAT", async () => {
             // const btn = screen.getByRole('button', {  name: /category/i})
             // userEvent.click(btn)
-            const link = screen.getByRole('link', {  name: /general knowledge/i})
+            const link = screen.getByRole('link', { name: /general knowledge/i })
             userEvent.click(link)
             console.log(store)
             expect(link).toHaveBeenCalled(getResultMock)
