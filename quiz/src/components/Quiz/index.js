@@ -28,6 +28,7 @@ export const Quiz = () => {
       <div>
         <div className="score">Question 1/8</div>
         <Question />
+        <br />
         <div
           className="next-button"
           onClick={() => dispatch({ type: "NEXT_QUESTION" })}

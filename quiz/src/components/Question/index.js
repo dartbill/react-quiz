@@ -19,15 +19,18 @@ export const Question = () => {
     console.log('this is quest' + incorrect + correct)
   }
 
+
+  //need to go to the next question when an answer is chosen
+
   return (
     <div>
 
       <div className="question">{quest}</div>
       <div className="answers">
-        <Answer answer={correct} />
-        <Answer answer={incorrect[0]} />
-        <Answer answer={incorrect[1]} />
-        <Answer answer={incorrect[2]} />
+        <Answer num="A" answer={correct} />
+        <Answer num="B" answer={incorrect[0]} />
+        <Answer num="C" answer={incorrect[1]} />
+        <Answer num="D" answer={incorrect[2]} />
       </div>
 
     </div>
