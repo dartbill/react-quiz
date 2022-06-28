@@ -2,10 +2,10 @@ import React from 'react'
 import { Answer } from '../'
 import { useSelector } from 'react-redux';
 
-                    
+
 export const Question = (props) => {
 
-  const q = useSelector(state => state.questions) //(state => state.questions) 
+  const q = useSelector(state => state.questions) //(
 
   let quest
   let correct
