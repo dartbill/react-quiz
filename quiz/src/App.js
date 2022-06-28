@@ -3,10 +3,15 @@ import './index.css';
 
 import React, { useState, useEffect } from "react";
 import * as Pages from './pages'
+import {Routes, Route, Link } from 'react-router-dom';
+
+import { Home } from './pages/Home';
+import { QuizPage } from './pages/Quiz';
+
 
 // import './App.css';
 
-import socketIOClient from "socket.io-client";
+// import socketIOClient from "socket.io-client";
 const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
 
 
@@ -28,14 +33,25 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+
+  {/* the old stuff! */}
+
+      {/* <header className="App-header">
         <Pages.Home />
-        <Pages.QuizPage />
+        <Pages.QuizPage /> */}
         {/* <p>
           It's <time dateTime={response}>{response}</time>
         </p> */}
-      </header>
+      {/* </header> */}
 
+
+  {/* the new stuff! */}
+
+      <Routes>
+        <Route path='/home' element={<Home/>} />
+        <Route path='/quiz' element={<QuizPage/>} />
+        <Route path='/' element={<Home/>} />
+      </Routes>
     </div>
   );
 }
