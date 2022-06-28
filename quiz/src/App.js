@@ -27,6 +27,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Pages.Home />
+        <Pages.QuizPage />
         {/* <p>
           It's <time dateTime={response}>{response}</time>
         </p> */}
