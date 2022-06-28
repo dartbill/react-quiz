@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-
-
+// Damn cats!
 export const GetQuestions = cat => {
 
     const category = cat.cat
