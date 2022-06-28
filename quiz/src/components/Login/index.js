@@ -1,19 +1,29 @@
-import "@testing-library/jest-dom";
-import { Login } from ".";
-import { screen, render } from "@testing-library/react";
-import React from "react";
+import React, { useState } from "react";
 
-describe("Login Component", () => {
-    beforeEach(() => {
-        render(<Login />);
-    });
+// import { socket } from "../../App";
 
-    describe("Renders", () => {
-        it("placeholder text", () => {
-            const e = screen.getByText(
-                /this is where we need to display final scores/i
-            );
-            expect(e).toBeInTheDocument();
-        });
-    });
-});
+export const Login = () => {
+    // const [roomText, setRoomText] = useState("");
+    // const [players, setPlayers] = useState([]);
+
+    // socket.on("attachRoom", (room) => {
+    //     setRoomText(room);
+    // });
+
+    // socket.on("addPlayer", (room, user) => {
+    //     console.log(user, room);
+    // });
+
+    // return (
+    //     <>
+    //         <div className="home-box">
+    //             <p className="connection"></p>
+    //             <h3>Room Name:</h3>
+    //             <div >{roomText}</div>
+    //             <h3>Players</h3>
+    //             <div >{players.current}</div>
+    //         </div>
+    //         <button>Start game!</button>
+    //     </>
+    // );
+}
