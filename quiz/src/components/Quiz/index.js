@@ -4,7 +4,6 @@ import { Question } from "../Question";
 
 const initialState = {
   currentQuestionIndex: 0,
-  Questions: [],
 };
 
 const reducer = (state, action) => {
@@ -26,12 +25,14 @@ export const Quiz = () => {
   return (
     <div className="quiz">
       <div>
-        <div className="score">Question 1/8</div>
-        <Question />
+        <div className="score">{`Question ${state.currentQuestionIndex + 1}/8`}</div>
+        <Question question={state.currentQuestionIndex} />
         <br />
         <div
           className="next-button"
-          onClick={() => dispatch({ type: "NEXT_QUESTION" })}
+          onClick={() => {
+            dispatch({ type: "NEXT_QUESTION" })
+          }}
         >
           Next question
         </div>
