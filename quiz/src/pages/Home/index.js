@@ -25,7 +25,7 @@ export const Home = () => {
     return (
         <>
             <SearchForm />
-            <NavLink to="/quiz">
+            <NavLink className="ourBtns" to="/quiz">
                 Play!
             </NavLink>
         </>
