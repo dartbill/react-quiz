@@ -3,7 +3,7 @@ import './index.css';
 
 import React, { useState, useEffect } from "react";
 import * as Pages from './pages'
-import {Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { QuizPage } from './pages/Quiz';
@@ -11,10 +11,6 @@ import { QuizPage } from './pages/Quiz';
 
 // import './App.css';
 
-<<<<<<< HEAD
-//import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
-=======
 // import { io } from "socket.io-client";
 
 // // const io = require("socket.io-client");
@@ -32,7 +28,6 @@ export const socket = io("http://localhost:5000", {
 });
 // export const socket = io("http://localhost:5000");
 // const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
->>>>>>> 6f8212397bc9e1a3fa8620a1a79fe677d98a5bd0
 
 
 
@@ -54,12 +49,12 @@ function App() {
   return (
     <div className="App">
 
-  {/* the old stuff! */}
+      {/* the old stuff! */}
 
       {/* <header className="App-header">
         <Pages.Home />
         <Pages.QuizPage /> */}
-        {/* <p>
+      {/* <p>
           It's <time dateTime={response}>{response}</time>
         </p> */}
       {/* </header> */}
@@ -70,12 +65,12 @@ function App() {
       </header>
 
 
-  {/* the new stuff! */}
+      {/* the new stuff! */}
 
       <Routes>
-        <Route path='/home' element={<Home/>} />
-        <Route path='/quiz' element={<QuizPage/>} />
-        <Route path='/' element={<Home/>} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/quiz' element={<QuizPage />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </div>
   );
