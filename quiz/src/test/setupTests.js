@@ -3,14 +3,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import axios from "axios";
 import userEvent from "@testing-library/user-event";
-import { screen, within } from "@testing-library/react";
-// Import Reducers
 import reducer from "../reducers/reducer";
-// import { render as rtlRender } from "@testing-library/react";
-import { default as store } from "../store";
-
-import '@testing-library/jest-dom';
-
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -69,9 +62,11 @@ const renderWithReduxProvider = (ui, options={}) => {
 }
 
 jest.mock('axios')
-axios.get.mockResolvedValue({ data: [ { latlng: [123, 456] }]})
+axios.get.mockResolvedValue({ data: "" })
 
 // Globals
 global.React = React;
 global.userEvent = userEvent;
 global.renderWithReduxProvider = renderWithReduxProvider
+
+export {renderWithReduxProvider}
