@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "jest --setupFiles ./_tests_/integration/config.js --watchAll --detectOpenHandles --runInBand --verbose",
-		"dev": "nodemon index.js",
+		"start": "node index.js",
 		"coverage": "jest --testPathPattern=/unit/ --coverage"
 	},
 	"keywords": [],
