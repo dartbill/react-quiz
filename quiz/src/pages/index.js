@@ -1,17 +1,1 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export { default as Home } from './Home_2'
+export { Home } from './Home'

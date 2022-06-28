@@ -1,11 +1,11 @@
 
 import './index.css';
-import Quiz from './components/Quiz'; 
 
 import React, { useState, useEffect } from "react";
-import { Home } from './pages'
+import * as Pages from './pages'
 
-import './App.css';
+// import './App.css';
+
 import socketIOClient from "socket.io-client";
 const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
 
@@ -26,14 +26,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Home />
+        <Pages.Home />
         {/* <p>
           It's <time dateTime={response}>{response}</time>
         </p> */}
       </header>
-
-         <Quiz />
-
 
     </div>
   );
