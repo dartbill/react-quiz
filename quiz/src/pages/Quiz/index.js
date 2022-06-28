@@ -25,8 +25,8 @@ export const QuizPage = () => {
 
     return (
         <>
-            <h1>Hi, this is the quiz page</h1>
-            <SearchForm />
+            {/* <h1>Hi, this is the quiz page</h1>
+            <SearchForm /> */}
             <Quiz />
         </>
     )
