@@ -67,7 +67,6 @@ function App() {
       {/* the new stuff! */}
 
       <Routes>
-        {/* <Route path='/home' element={<Home />} /> */}
         <Route path='/' element={<Pages.Home />} />
         <Route path='/quiz' element={<Pages.QuizPage />} />
         <Route path='/final' element={<Pages.FinalScorePage />} />
