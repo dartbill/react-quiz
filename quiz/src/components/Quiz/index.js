@@ -19,6 +19,7 @@ const reducer = (state, action) => {
 
 
 export const Quiz = () => {
+  // eslint-disable-next-line
   const [state, dispatch] = useReducer(reducer, initialState);
   // console.log("state", state);
 
