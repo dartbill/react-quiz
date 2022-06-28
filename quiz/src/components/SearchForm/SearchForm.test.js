@@ -1,7 +1,6 @@
-
+import React from 'react';
 import { default as SearchForm } from '.';
-import { screen } from '@testing-library/react';
-import { render } from '../../test/setupTests'
+import { screen,render } from "@testing-library/react";
 
 describe('SearchForm Component', () => {
     beforeAll(()=>{
@@ -14,5 +13,3 @@ describe('SearchForm Component', () => {
     });
 
 });
-
-
