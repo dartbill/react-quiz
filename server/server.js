@@ -1,22 +1,17 @@
-const express = require('express');
 
-const app = express();
+const express = require('express');
 const cors = require('cors');
 
-const scoreBoardRoutes = require('./routes/scoreBoard');
+const server = express();
+server.use(cors());
+server.use(express.json());
 
-app.use(cors());
-app.use('/scoreboard', scoreBoardRoutes);
 
-app.get('/', (req, res) => res.send('Quiz time!'));
 
-app.get('/highscores', (req, res) =>
-	res.send('Keep playing, and hopefully your name will be on the scoreboard!')
-);
 
-app.post('/login', (req, res) => {});
+server.get('/', (req, res) => res.send('Welcome to the library'))
 
-// post username + score/login stuff
-// post scores
 
-module.exports = app;
+
+
+module.exports = server
