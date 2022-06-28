@@ -6,6 +6,7 @@ export const FinalScorePage = () => {
 
     return (
         <>
+        <h2>Final Scores</h2>
             <FinalScores />
         </>
     )

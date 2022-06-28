@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './index.css'
 
-
-
 export const SearchForm = () => {
     // GetQuestions({ cat: 20, level: "easy", type: "multiple" })
 
@@ -47,7 +45,6 @@ export const SearchForm = () => {
         // SetUrlType('&type='+ event.currentTarget.id)
     }
 
-
     return (
         <>
 
@@ -86,36 +83,35 @@ export const SearchForm = () => {
 
 
 
-            {/* 
-use the category num in the id=''
-
-General knowledge= category=9
-Book = category=10
-Film 11
-Music 12
-Theatre 13
-Tv 14
-Game 15
-Boardgames 16
-Natural sci 17
-Computer sci18
-Math sci19
-Mythology20
-Sports21
-Geograph22
-History23
-Politics 24
-Art = category=25
-Celebrities 26
-Animals 27
-Vehicles 28
-Comics 29
-Gadgets 30
-anime/ manga 30
-cartoon/ animations 31
-
- */}
 
         </>
     )
 }
+ 
+// use the category num in the id=''
+
+// General knowledge= category=9
+// Book = category=10
+// Film 11
+// Music 12
+// Theatre 13
+// Tv 14
+// Game 15
+// Boardgames 16
+// Natural sci 17
+// Computer sci18
+// Math sci19
+// Mythology20
+// Sports21
+// Geograph22
+// History23
+// Politics 24
+// Art = category=25
+// Celebrities 26
+// Animals 27
+// Vehicles 28
+// Comics 29
+// Gadgets 30
+// anime/ manga 30
+// cartoon/ animations 31
+

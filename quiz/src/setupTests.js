@@ -3,7 +3,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import axios from "axios";
 import userEvent from "@testing-library/user-event";
-import reducer from "../reducers/reducer";
+import reducer from "./reducers/reducer";
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';

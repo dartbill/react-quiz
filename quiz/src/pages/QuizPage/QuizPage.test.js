@@ -1,4 +1,4 @@
-import { Quiz } from ".";
+import { QuizPage } from ".";
 import { render, screen } from '@testing-library/react';
 import "@testing-library/jest-dom";
 import React from "react";
@@ -6,7 +6,7 @@ import React from "react";
 describe("Quiz Component", () => {
     beforeEach(() => {
         render(
-            <Quiz />
+            <QuizPage />
         );
     });
 
