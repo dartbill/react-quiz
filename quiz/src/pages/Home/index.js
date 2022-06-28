@@ -5,7 +5,7 @@ import { SearchForm } from "../../components";
 import { GetQuestions } from "../../actions";
 
 
-const Home = () => {
+export const Home = () => {
 
     const dispatch = useDispatch();
     const data = useSelector(state => state.questions)
@@ -16,17 +16,16 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
-    }, [])
+    }, [category, level, typeOfQ])
 
     console.log(data)
 
     return (
         <>
-            <h1> Hello </h1>
             <SearchForm />
         </>
     )
 }
 
 
-export default Home
+
