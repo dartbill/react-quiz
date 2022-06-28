@@ -25,13 +25,18 @@ export const Quiz = () => {
   return (
     <div className="quiz">
       <div>
-        <div className="score">{`Question ${state.currentQuestionIndex + 1}/8`}</div>
+        <div className="score">{`Question ${state.currentQuestionIndex + 1}/10`}</div>
         <Question question={state.currentQuestionIndex} />
         <br />
         <div
           className="next-button"
           onClick={() => {
-            dispatch({ type: "NEXT_QUESTION" })
+            console.log(state.currentQuestionIndex)
+            if (state.currentQuestionIndex < 10) {
+              dispatch({ type: "NEXT_QUESTION" })
+            } else {
+              window.open("http://localhost:3000/final")
+            }
           }}
         >
           Next question
