@@ -7,6 +7,9 @@ import './index.css'
 
 export const SearchForm = () => {
     // GetQuestions({ cat: 20, level: "easy", type: "multiple" })
+
+    // let [urlType, SetUrlType] = useState (''); 
+
     const dispatch = useDispatch()
     const handleBtnClick = (e) => {
         e.preventDefault()
@@ -19,6 +22,15 @@ export const SearchForm = () => {
         console.log(e.target.id)
         dispatch({ type: "SETLEVEL", payload: e.target.id })
     }
+
+    const handleClickType = (e) => {
+        e.preventDefault();       
+        // setTypeSelected(event.currentTarget.innerHTML)
+        dispatch({ type: "SETTYPE", payload: e.target.id })
+        // SetUrlType('&type='+ event.currentTarget.id)
+    }
+
+
     return (
         <>
 
@@ -42,6 +54,16 @@ export const SearchForm = () => {
                     <a onClick={handleBtnClick} className="drop-items-cat drop-items" id="18" href="#">Computer Shit</a>
                 </div>
             </div>
+
+            <div className="dropdown">
+            <button className="dropbtn-type">Type</button>
+            <div className="dropdown-content-cat">
+                <a className="drop-items-type drop-items" id="boolean" onClick={handleClickType} href="#">True/False</a>
+                <a className="drop-items-type drop-items" id="multiple" onClick={handleClickType} href="#">Multiple</a>
+            </div>
+        </div>
+
+
 
             {/* 
 use the category num in the id=''
