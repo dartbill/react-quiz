@@ -1,14 +1,27 @@
 import App from './App.js';
-import { screen, within } from '@testing-library/react';
-
+import React from "react";
+import "@testing-library/jest-dom";
+import { render, screen } from '@testing-library/react';
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import store from "./store";
 
 describe('Render App', () => {
     beforeEach(() => {
-        render(<App />)
+        render(
+            <React.StrictMode>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter>
+    </React.StrictMode>
+        )
     })
 
-    test("Heading exists", () => {
-      const heading = screen.getByRole("heading")
-      expect(heading).toBeInTheDocument();
+    test("Play button exists", () => {
+      const element = screen.getByRole('link', {  name: /play!/i})
+      expect(element).toBeInTheDocument();
   });
 })

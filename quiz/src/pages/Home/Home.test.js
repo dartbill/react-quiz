@@ -1,14 +1,16 @@
-import React from 'react'
+import Home from './index';
+import React from "react";
 import "@testing-library/jest-dom";
-import { Home } from "./";
-import { screen, render } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from '@testing-library/react';
+import { Provider } from "react-redux";
+import store from "../../store";
 
-
-describe("Home Component", () => {
+describe('Home Component', () => {
     beforeEach(() => {
-        render(<Home />);
-    });
+        render(
+                <Home />
+        )
+    })
 
     describe("Renders", () => {
         
