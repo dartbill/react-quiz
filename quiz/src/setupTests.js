@@ -3,8 +3,8 @@ import React from "react";
 import "@testing-library/jest-dom";
 import axios from "axios";
 import userEvent from "@testing-library/user-event";
-import reducer from "../reducers/reducer";
-import { render } from '@testing-library/react';
+import reducer from "./reducers/reducer";
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -67,7 +67,8 @@ axios.get.mockResolvedValue({ data: "" })
 // Globals
 global.React = React;
 global.screen = screen;
+global.render = render;
 global.userEvent = userEvent;
 global.renderWithReduxProvider = renderWithReduxProvider
 
-export {renderWithReduxProvider}
+

@@ -6,6 +6,7 @@ export const HighscorePage = () => {
 
     return (
         <>
+        <h2>High Scores</h2>
             <Highscores />
         </>
     )

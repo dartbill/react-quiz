@@ -1,27 +1,16 @@
+import Home from './index';
+import React from "react";
 import "@testing-library/jest-dom";
-import { Home } from "./index";
-import { screen, render } from "@testing-library/react";
-import { renderWithReduxProvider } from '../../test/setupTests'
-import userEvent from "@testing-library/user-event";
-import mockStore from 'redux-mock-store'
+import { render, screen } from '@testing-library/react';
+import { Provider } from "react-redux";
+import store from "../../store";
 
-let initState = {
-    category: 20,
-    level: "easy",
-    typeOfQ: "multiple",
-    questions: [],
-};
-
-let getResultMock;
-let store;
-
-describe("Home Component", () => {
+describe('Home Component', () => {
     beforeEach(() => {
-        getResultMock = jest.fn();
-        store = mockStore(initState)
-        renderWithReduxProvider(<Home />, { initState });
-        console.log(store)
-    });
+        render(
+                <Home />
+        )
+    })
 
     describe("Renders", () => {
 

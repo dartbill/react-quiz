@@ -6,7 +6,7 @@ import React from "react";
 describe("Quiz Component", () => {
     beforeEach(() => {
         render(
-            <Quiz />
+            <QuizPage />
         );
     });
 
