@@ -23,5 +23,5 @@ class Score {
 		});
 	}
 }
-
+// let's try this...
 module.exports = Score;
