@@ -5,9 +5,9 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-const scoreBoardRoutes = require('./routes/scoreBoard');
+// const scoreBoardRoutes = require('./routes/scoreBoard');
 
-server.use('/scoreboard', scoreBoardRoutes);
+// server.use('/scoreboard', scoreBoardRoutes);
 
 server.get('/', (req, res) => res.send('Welcome to the library'));
 
