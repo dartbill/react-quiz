@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Inputs } from "../../components";
+import { UserLogin } from "../../components";
 
 
 
@@ -8,7 +8,7 @@ export const LoginPage = () => {
 
     return (
         <>
-            <Inputs />
+            <UserLogin />
         </>
     )
 }

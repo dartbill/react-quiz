@@ -3,7 +3,7 @@ import { Login } from "../index";
 import { socket } from "../../App";
 
 
-export const Inputs = () => {
+export const UserLogin = () => {
     const [usernameInput, setUsernameInput] = useState("");
     const [roomInput, setRoomInput] = useState("");
 

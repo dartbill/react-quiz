@@ -6,8 +6,22 @@ import * as Pages from './pages'
 
 // import './App.css';
 
-import { io } from "socket.io-client";
-export const socket = io("http://localhost:5000");
+// import { io } from "socket.io-client";
+
+// // const io = require("socket.io-client");
+// export const socket = io("http://localhost:5000", {
+//   withCredentials: true,
+
+// });
+
+const io = require("socket.io-client");
+export const socket = io("http://localhost:5000", {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
+});
+// export const socket = io("http://localhost:5000");
 // const ENDPOINT = "http://127.0.0.1:4001"; //endpoint of the server once it's running
 
 
@@ -30,14 +44,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <Pages.Home />
-        <Pages.QuizPage /> */}
+        <Pages.Home />
+        <Pages.QuizPage />
         {/* <p>
           It's <time dateTime={response}>{response}</time>
         </p> */}
 
         <Pages.HighscorePage />
-        {/* <Pages.LoginPage /> */}
+        <Pages.LoginPage />
       </header>
 
     </div>
