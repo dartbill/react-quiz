@@ -12,6 +12,8 @@ class Score {
 			try {
 				const results = await db.query('SELECT * FROM scoreboard');
 				const scoreBoard = results.rows.map((s) => new Score(s));
+				console.log('results', results);
+				console.log('scoreboard', scoreBoard);
 
 				if (!scoreBoard.length) {
 					throw new Error('No scores on the score board yet!');
