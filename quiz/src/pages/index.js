@@ -1,17 +1,2 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export { default as Home } from './Home_2'
+export { Home } from './Home'
+export { QuizPage } from './Quiz'
