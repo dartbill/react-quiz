@@ -15,12 +15,11 @@ export const Home = () => {
 
     useEffect(() => {
         dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
-    }, [])
+    }, [category, level, typeOfQ])
 
 
     return (
         <>
-            <h1> Hello </h1>
             <SearchForm />
         </>
     )

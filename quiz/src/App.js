@@ -23,6 +23,9 @@ function App() {
   //   return () => socket.disconnect();
   // }, []);
 
+
+  //we need to work out routes so that we can redirect
+
   return (
     <div className="App">
       <header className="App-header">
