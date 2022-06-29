@@ -21,6 +21,15 @@ async function getUser(req, res) {
 	}
 }
 
+async function addUser(req, res) {
+	try {
+		await Score.create(req.body.name, req.body.score)
+		res.status(200).json({ msg: "User added" })
+	} catch (err) {
+		res.status(400).json({ err })
+	}
+}
 
 
-module.exports = { index, getUser };
+
+module.exports = { index, getUser, addUser };

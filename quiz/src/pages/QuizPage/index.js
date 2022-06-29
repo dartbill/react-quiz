@@ -16,7 +16,7 @@ export const QuizPage = () => {
 
 	useEffect(() => {
 		dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }));
-	}, [category, level, typeOfQ]);
+	}, [category, level, typeOfQ, dispatch]);
 
 	return (
 		<>
