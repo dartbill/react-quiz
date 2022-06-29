@@ -25,12 +25,12 @@ module.exports = class Score {
 		})
 	}
 
-	static findByUsername(username) {
+	static findByUsername(name) {
 
-		console.log('username is ' + username)
+		console.log('username is ' + name)
 		return new Promise(async (res, rej) => {
 			try {
-				let userData = await db.query("SELECT * FROM users WHERE name = $1;", [username]);
+				let userData = await db.query("SELECT * FROM users WHERE name = $1;", [name]);
 				let user = new Score(userData.rows[0]);
 				res(user);
 			} catch (err) {
