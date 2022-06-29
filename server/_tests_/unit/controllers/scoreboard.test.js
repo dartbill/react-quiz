@@ -53,7 +53,7 @@ describe('scores controller', () => {
       const mockReq = { body: testUser }
       await scoreBoardController.addUser(mockReq, mockRes);
       expect(mockStatus).toHaveBeenCalledWith(200);
-      // expect(mockJson).toHaveBeenCalledWith(new Score(testUser));
+      // expect(mockJson).toHaveBeenCalledWith(new Score(testUser));testUser
     })
   });
 });

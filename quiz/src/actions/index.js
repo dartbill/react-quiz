@@ -9,7 +9,7 @@ export const GetQuestions = (cat) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `https://opentdb.com/api.php?&amount=10&category=${category}&difficulty=${lev}&type=${type}`
+        `https://opentdb.com/api.php?&amount=20&category=${category}&difficulty=${lev}&type=${type}`
       );
       let resultsData = data.results;
 
