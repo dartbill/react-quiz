@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-
 export const HighScoresButton = () => {
 
   let navigate = useNavigate();
@@ -9,7 +8,7 @@ export const HighScoresButton = () => {
   }
 
   return (
-    <button onClick={routeChange}>HighScores</button>
+    <button onClick={routeChange('/highscores')}>HighScores</button>
   )
 }
 
