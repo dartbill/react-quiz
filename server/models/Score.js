@@ -11,7 +11,7 @@ class Score {
 	static get all() {
 		return new Promise(async (res, rej) => {
 			try {
-				const results = await db.query('SELECT * FROM scoreBoard');
+				const results = await db.query('SELECT * FROM scoreboard;');
 				const scoreBoard = results.rows.map((s) => ({ id: s.id, name: s.name }));
 
 				// if (!scoreBoard.length) {
