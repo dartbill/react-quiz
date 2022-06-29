@@ -6,20 +6,19 @@ async function index(req, res) {
 		res.status(200).json(scoreBoard);
 	} catch (err) {
 		console.error(err);
-		res.status(500).json({ err });
+		res.status(500).json(err);
 	}
 }
 
-// async function show(req, res) {
-// 	try {
-// 		const score = await Score.findById(parseInt(req.params.id));
-// 		console.log(score);
-// 		res.status(200).json(score);
-// 	} catch {
-
-// 		res.status(404).json({ err });
-// 	}
-// }
+async function getUser(req, res) {
+	try {
+		const username = req.params.name
+		const user = await Score.findByUsername(username)
+		res.status(200).json(user)
+	} catch (err) {
+		res.status(404).json({ err })
+	}
+}
 
 // async function create(req, res) {
 // 	try {
@@ -36,4 +35,4 @@ async function index(req, res) {
 // 	}
 // }
 
-module.exports = { index };
+module.exports = { index, getUser };
