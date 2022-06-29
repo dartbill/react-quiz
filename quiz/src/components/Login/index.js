@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
+import { useDispatch} from 'react-redux';
+// import {  useSelector } from 'react-redux';
 
 export const Login = () => {
     
     const dispatch = useDispatch();
-    const player1 = useSelector(state => state.player1)
-    const player2 = useSelector(state => state.player2)
+    // const player1 = useSelector(state => state.player1)
+    // const player2 = useSelector(state => state.player2)
 
     const updateUsername = (e) => {
         e.preventDefault();

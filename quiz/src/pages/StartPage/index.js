@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+// import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { Login } from '../../components'
 
 export const StartPage = () => {
 
-    let navigate = useNavigate();
-    const routeChange = (path) => {
-      navigate(path);
-    }
+    // let navigate = useNavigate();
+    // const routeChange = (path) => {
+    //   navigate(path);
+    // }
 
     const data = useSelector((state) => state.playerCount);
     const dispatch = useDispatch(); 
