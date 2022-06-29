@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Answer = ({ nextQuestion }) => {
+export const Answer = ({ onNextQuestion,bool }) => {
     return (
         <div className="answer">
             <button
-                onClick={nextQuestion}
+                onClick={() => onNextQuestion(bool)}
                 className="answer-letter"
                 style={{ cursor: "pointer" }}
             >

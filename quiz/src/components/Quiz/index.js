@@ -85,7 +85,7 @@ export const Quiz = () => {
                 <Question
                     index={state.currentQuestionIndex}
                     turn={turn}
-                    onClick={nextQuestion}
+                    onNextQuestion={nextQuestion}
                 />
                 <br />
             </div>

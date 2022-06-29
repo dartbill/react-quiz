@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Answer } from "../";
 
-export const Question = ({index,turn,onClick}) => {
+export const Question = ({index,turn,onNextQuestion}) => {
 
   // TOMS STUFF FOR BETTING///////////////////////////////////////////
       const [orderA, setOrderA] = useState("0");
@@ -30,10 +30,10 @@ export const Question = ({index,turn,onClick}) => {
     let questionType;
 
     if (questions.length !== 0) {
-        question = questions[question].question;
-        incorrectAnswers = questions[question].incorrect_answers;
-        correctAnswer = questions[question].correct_answer;
-        questionType = questions[question].type;
+        question = questions[index].question;
+        incorrectAnswers = questions[index].incorrect_answers;
+        correctAnswer = questions[index].correct_answer;
+        questionType = questions[index].type;
     }
 
 
@@ -45,7 +45,7 @@ export const Question = ({index,turn,onClick}) => {
                     <div className="Container-Answers">
                         <div className="genBtn correctBtn bx3" id={orderA}>
                             <Answer
-                                onClick={nextQuestion}
+                                onNextQuestion={onNextQuestion}
                                 turn={turn}
                                 bool={true}
                                 num="A"
@@ -54,7 +54,7 @@ export const Question = ({index,turn,onClick}) => {
                         </div>
                         <div className="genBtn wrongBtn bx4" id={orderB}>
                             <Answer
-                                onClick={nextQuestion}
+                                onNextQuestion={onNextQuestion}
                                 turn={turn}
                                 bool={false}
                                 num="B"
@@ -66,7 +66,7 @@ export const Question = ({index,turn,onClick}) => {
                     <div className="Container-Answers" onLoad={createRandOrder}>
                         <div className="genBtn correctBtn bx3" id={orderA}>
                             <Answer
-                                onClick={nextQuestion}
+                                onNextQuestion={onNextQuestion}
                                 turn={turn}
                                 bool={true}
                                 num="A"
@@ -75,7 +75,7 @@ export const Question = ({index,turn,onClick}) => {
                         </div>
                         <div className="genBtn wrongBtn bx4" id={orderB}>
                             <Answer
-                                onClick={nextQuestion}
+                                onNextQuestion={onNextQuestion}
                                 turn={turn}
                                 bool={false}
                                 num="B"
@@ -84,7 +84,7 @@ export const Question = ({index,turn,onClick}) => {
                         </div>
                         <div className="genBtn wrongBtn bx1" id={orderC}>
                             <Answer
-                                onClick={nextQuestion}
+                                onNextQuestion={onNextQuestion}
                                 turn={turn}
                                 bool={false}
                                 num="C"
@@ -93,7 +93,7 @@ export const Question = ({index,turn,onClick}) => {
                         </div>
                         <div className="genBtn wrongBtn bx2" id={orderD}>
                             <Answer
-                                onClick={nextQuestion}
+                                onNextQuestion={onNextQuestion}
                                 turn={turn}
                                 bool={false}
                                 num="D"
