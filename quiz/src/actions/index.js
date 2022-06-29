@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';
 
 
 
@@ -13,6 +13,34 @@ export const GetQuestions = cat => {
         try {
             const { data } = await axios.get(`https://opentdb.com/api.php?&amount=10&category=${catergory}&difficulty=${lev}&type=${type}`)
             let newArray = data.results.map((url) => (url))
+
+            dispatch({
+                type: 'TEST',
+                payload: newArray
+            })
+        } catch (err) {
+        }
+    }
+}*/
+
+/////////////////////////////////////////////////////////
+
+import axios from 'axios';
+
+export const GetQuestions = cat => {
+
+    const catergory = cat.cat
+    const lev = cat.level
+    const type = cat.typeOfQ
+    console.log(catergory, lev, type)
+
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(`https://opentdb.com/api.php?&amount=10&category=${catergory}&difficulty=${lev}&type=${type}`)
+            let resultData = data.results
+            let random = Math.floor(Math.random()*resultData.length)
+            let newArray = resultData[random].map((url) => (url))
+
             dispatch({
                 type: 'TEST',
                 payload: newArray
@@ -21,6 +49,16 @@ export const GetQuestions = cat => {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
