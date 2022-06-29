@@ -36,4 +36,4 @@ async function index(req, res) {
 // 	}
 // }
 
-module.exports = { index, show, create };
+module.exports = { index };
