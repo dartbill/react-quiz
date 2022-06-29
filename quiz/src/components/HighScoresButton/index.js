@@ -8,7 +8,6 @@ export const HighScoresButton = () => {
     navigate(path);
   }
 
-routeChange('/highscores');
   return (
     <button onClick={routeChange}>HighScores</button>
   )
