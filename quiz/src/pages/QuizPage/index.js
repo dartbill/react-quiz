@@ -24,6 +24,7 @@ export const QuizPage = () => {
 
     return (
         <>
+        <h2>Quiz Page</h2>
             {/* <h1>Hi, this is the quiz page</h1>
             <SearchForm /> */}
             <Quiz />

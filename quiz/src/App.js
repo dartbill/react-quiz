@@ -5,9 +5,6 @@ import React, { useState, useEffect } from "react";
 import * as Pages from './pages'
 import { Routes, Route, Link } from 'react-router-dom';
 
-
-
-
 // import './App.css';
 
 // import { io } from "socket.io-client";
@@ -58,7 +55,7 @@ function App() {
         </p> */}
       {/* </header> */}
       <header>
-
+        <h1>App</h1>
         <Pages.HighscorePage />
         <Pages.LoginPage />
       </header>
@@ -67,7 +64,6 @@ function App() {
       {/* the new stuff! */}
 
       <Routes>
-        {/* <Route path='/home' element={<Home />} /> */}
         <Route path='/' element={<Pages.Home />} />
         <Route path='/quiz' element={<Pages.QuizPage />} />
         <Route path='/final' element={<Pages.FinalScorePage />} />
