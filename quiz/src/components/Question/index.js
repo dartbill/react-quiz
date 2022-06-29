@@ -7,17 +7,18 @@ export const Question = (props) => {
 
   const q = useSelector(state => state.questions) //(
 
-  let quest
-  let correct
-  let incorrect = []
+  let quest;
+  let correct;
+  let incorrect = [];
+  let type;
 
   if (q.length !== 0) {
-    console.log(q)
-    quest = q[props.question].question
-    incorrect = q[props.question].incorrect_answers
-    correct = q[props.question].correct_answer
-    type = q[props.question].typeOfQ
-    console.log('this is quest' + incorrect + correct)
+    console.log(q);
+    quest = q[props.question].question;
+    incorrect = q[props.question].incorrect_answers;
+    correct = q[props.question].correct_answer;
+    type = q[props.question].type;
+    console.log('this is quest' + incorrect + correct);
   }
 
   // boolean
@@ -46,11 +47,12 @@ export const Question = (props) => {
   return (
     <>
     <div className="quiz">
+      <h1>{console.log("Question Type",type)}</h1>
       <div className="question">{quest}</div>
         { 
         type === 'boolean' ? 
-        <div className="answers"> 
-            <div className='genBtn correctBtn bx3'  id={orderA}><Answer bool={true} num="A" answer={correct} /></div>
+        <div className="Container-Answers"> 
+            <div className='genBtn correctBtn bx3'id={orderA}><Answer bool={true} num="A" answer={correct} /></div>
             <div className='genBtn wrongBtn bx4' id={orderB}><Answer bool={false} num="B" answer={incorrect[0]} /></div>
         </div>
         : 
