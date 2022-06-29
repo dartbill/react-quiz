@@ -1,4 +1,3 @@
-
 const db = require('../dbConfig/init')
 
 module.exports = class Score {
@@ -15,7 +14,7 @@ module.exports = class Score {
 			try {
 
 				const result = await db.query('SELECT * FROM users;')
-				const users = result.rows.map(a => ({ id: a.id, name: a.name, score: a.score }))
+				const users = result.rows.map(a => ({ name: a.name, score: a.score }))
 				console.log(users)
 				res(users)
 
@@ -52,5 +51,4 @@ module.exports = class Score {
 		})
 	}
 
-}
-
+};

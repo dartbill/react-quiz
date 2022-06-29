@@ -89,3 +89,40 @@ div {
 .ourBtns:hover {
     background-color: red;
 }
+
+/* for the quiz answers....................................... */
+
+.Container-Answers{
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  justify-content: center;
+}
+
+#bx1{
+  order:1;
+
+}
+#bx2{
+  order:2;
+
+}
+#bx3{
+  order:3;
+
+}
+#bx4{
+  order:4;
+  
+}
+
+.genBtn{
+  /* flex: 50%; */
+  margin: 2%;
+  width: 100px;
+  height: 40px;
+  border-radius: 5%;
+  background-color: rgb(141, 113, 84);
+  cursor: pointer;
+}
+/* end of for the quiz answers....................................... */
