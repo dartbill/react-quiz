@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 const fs = require('fs');
 
 const request = require('supertest');
-const apiServer = require('../../../server');
+const apiServer = require('../../server');
 
 // import reset query
 const reset = fs.readFileSync(__dirname + '/reset.sql').toString();
