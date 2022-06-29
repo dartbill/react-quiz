@@ -1,6 +1,6 @@
 const Score = require('../models/score');
 
-const index = async (req, res) => {
+async function index(req, res) {
 	try {
 		const scoreBoard = await Score.all;
 		res.status(200).json({ data: scoreBoard });
