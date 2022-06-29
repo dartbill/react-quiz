@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-// import {  useSelector } from 'react-redux';
 
 export const Login = () => {
 
@@ -8,7 +7,7 @@ export const Login = () => {
     const player1 = useSelector(state => state.player1)
     const player2 = useSelector(state => state.player2)
     const playerCount = useSelector(state => state.playerCount)
-    
+
     console.log(playerCount)
     console.log("this is player one " + player1 + " this is player two " + player2)
 

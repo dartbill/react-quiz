@@ -12,12 +12,3 @@ export const StartPage = () => {
     </>
   )
 }
-
-
-// p === 1 ? dispatch({ type: 'SET_PLAYER1', payload: })
-// : dispatch({ type: 'SET_PLAYER2', payload: })
-// routeChange('/');
-
-
-
-
