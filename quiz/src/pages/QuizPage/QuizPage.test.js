@@ -1,7 +1,15 @@
-import { Quiz } from "../../components";
+import { QuizPage } from "./";
 import { render, screen } from '@testing-library/react';
 import "@testing-library/jest-dom";
 import React from "react";
+
+// Main Imports
+import axios from "axios";
+import userEvent from "@testing-library/user-event";
+import reducer from "../../reducers/reducer";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 const initialState = {
     category: 20,
@@ -27,7 +35,7 @@ const renderWithReduxProvider = (ui, options={}) => {
     render(ui, { wrapper: TestWrapper, ...options })
 }
 
-describe("Quiz Component", () => {
+describe("QuizPage Component", () => {
     beforeEach(() => {
         renderWithReduxProvider(
             <QuizPage />
@@ -36,7 +44,7 @@ describe("Quiz Component", () => {
 
     describe("Renders", () => {
 
-        it("next question text", () => {
+        it("\"Next Question\" text", () => {
             const e = screen.getByText(/next question/i)
             expect(e).toBeInTheDocument();
         });
