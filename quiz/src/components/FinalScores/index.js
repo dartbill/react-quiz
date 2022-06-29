@@ -6,9 +6,6 @@ export const FinalScores = () => {
     //fetch or get final scores from the database
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
-    console.log(player1);
-
-    // const players = [{ player1 }, { player2 }];
 
     useEffect(() => {
         const postScores = async () => {
@@ -51,9 +48,7 @@ export const FinalScores = () => {
 
     return (
         <div>
-            <p> this is where we need to display final scores</p>
-
-            <p>here are your scores: </p>
+            <p>Here are your scores: </p>
             <ul>
                 <li>
                     {player1.name}
@@ -64,6 +59,9 @@ export const FinalScores = () => {
                     {player2.score}
                 </li>
             </ul>
+            <p>{`Congratualtions ${
+                player1.score > player2.score ? player1.name : player2.name
+            }!`}</p>
         </div>
         //we also need a button that goes back
     );
