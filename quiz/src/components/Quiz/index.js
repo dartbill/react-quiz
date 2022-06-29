@@ -1,8 +1,9 @@
 import React, { useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import { useSelector } from "react-redux";
 import { Question } from "../Question";
 import "../.././index.css";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 
 const initialState = {
     currentQuestionIndex: 0,
@@ -26,28 +27,26 @@ export const Quiz = () => {
     };
     const [state, dispatch] = useReducer(reducer, initialState);
     const [turn, setTurn] = useState(true);
+    const [score1, setScore1] = useState(0);
+    const [score2, setScore2] = useState(0);
 
-    let [score1, setScore1] = useState(0);
-    let [score2, setScore2] = useState(0);
-    const player1 = useSelector((state) => state.player1);
-    const player2 = useSelector((state) => state.player1);
+    const submitAnswer = (bool) => {
 
-    const nextQuestion = (e) => {
-        // Updates Score
-        updateScore();
+        // Updates Score if answer was correct
+        if (bool){updateScore()}
 
-        // Updates Question to Next Question
+        // Updates Question to Next Question OR ends game
         state.currentQuestionIndex < 19
             ? dispatch({ type: "NEXT_QUESTION" })
             : routeChange("/final");
-        // Updates Turn
-        updateTurn(e);
+
+        // Updates Turn, alternating between player 1 & 2 with boolean
+        updateTurn();
     };
 
-    const updateScore = (e) => {
-        e.preventDefault();
+    const updateScore = () => {
         if (turn) {
-            setScore1((score1 = score1 + 1));
+            setScore1((score1 + 1));
             dispatch({
                 type: "SET_PLAYER1",
                 payload: {
@@ -55,7 +54,7 @@ export const Quiz = () => {
                 },
             });
         } else {
-            setScore2((score2 = score2 + 1));
+            setScore2((score2 + 1));
             dispatch({
                 type: "SET_PLAYER2",
                 payload: {
@@ -63,18 +62,11 @@ export const Quiz = () => {
                 },
             });
         }
-        console.log("this is score2 " + score2);
-        console.log("this is player2 " + player2.score);
+        console.log("score1:",score1)
+        console.log("score2:",score2)
     };
 
-    const updateTurn = (e) => {
-        e.preventDefault(e);
-        if (turn) {
-            setTurn(false);
-        } else {
-            setTurn(true);
-        }
-    };
+    const updateTurn = () => turn ? setTurn(false) : setTurn(true);
 
     return (
         <div className="quiz">
@@ -84,8 +76,7 @@ export const Quiz = () => {
                 </div>
                 <Question
                     index={state.currentQuestionIndex}
-                    turn={turn}
-                    onNextQuestion={nextQuestion}
+                    onSubmitQuestion={submitAnswer}
                 />
                 <br />
             </div>
