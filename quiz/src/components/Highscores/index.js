@@ -1,30 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const Highscores = () => {
+	//fetching and sorting out highscores to be done here
+	const [scores, setScores] = useState([]);
 
-  //fetching and sorting out highscores to be done here
+	const sortArray = (arr) => {
+		const newArray = arr.sort(function (a, b) {
+			return a - b;
+		});
+		return newArray.slice(0, 5); //returns just to top 5
+	};
 
-  const sortArray = (arr) => {
-    const newArray = arr.sort(function (a, b) { return a - b });
-    return newArray.slice(0, 5) //returns just to top 5
-  }
+	useEffect(() => {
+		const getScores = async () => {
+			try {
+				let opts = { headers: { Accept: 'application/json' } };
+				let { data } = await axios.get(
+					'https://quizfutureproof.herokuapp.com/scoreboard/',
+					opts
+				);
 
-  async function getScores() {
-    try {
-      let opts = { headers: { 'Accept': 'application/json' } }
-      let { data } = await axios.get('replace this with url', opts)
-      return sortArray(data)
+				setScores(sortArray(data));
+			} catch (err) {
+				console.warn(err);
+			}
+		};
+		getScores();
+	}, []);
 
-    } catch (err) {
-      console.warn(err)
-    }
-  }
-
-  return (
-    <div>
-      <p>We need to display highscores here</p>
-    </div>
-
-  )
-}
+	// console.log('scores value', scores);
+	return (
+		<ol>
+			{scores.map((score) => (
+				<li key={score.id}>
+					{score.name} &nbsp;
+					{score.score}
+				</li>
+			))}
+		</ol>
+	);
+};
