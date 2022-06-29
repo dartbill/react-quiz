@@ -1,66 +1,66 @@
-
 const initialState = {
     category: 9,
-    level: '',
-    typeOfQ: '',
-    playerCount: 0,
+    level: "",
+    typeOfQ: "",
+    playerCount: 1,
     questions: [],
     player1: {
         name: "player1",
-        score: 0
+        score: 0,
     },
     player2: {
         name: "player2",
-        score: 0
-    }
-}
-
+        score: 0,
+    },
+};
 
 const reducer = (state = initialState, action) => {
-
     switch (action.type) {
-
         case "SETCAT":
             return {
-                ...state, category: action.payload
-            }
+                ...state,
+                category: action.payload,
+            };
         case "SETLEVEL":
             return {
-                ...state, level: action.payload
-            }
+                ...state,
+                level: action.payload,
+            };
         case "SETTYPE":
             return {
-                ...state, typeOfQ: action.payload
-            }
+                ...state,
+                typeOfQ: action.payload,
+            };
         case "TEST":
             return {
                 ...state,
-                questions: action.payload
-            }
+                questions: action.payload,
+            };
         case "SET_PLAYER_COUNT":
             return {
                 ...state,
-                playerCount: action.payload
-            }
+                playerCount: action.payload,
+            };
         case "SET_PLAYER1":
             return {
-                ...state, player1: {
+                ...state,
+                player1: {
                     ...state.player1,
-                    ...action.payload
-                }
-            }
+                    ...action.payload,
+                },
+            };
         case "SET_PLAYER2":
             return {
-                ...state, player2: {
+                ...state,
+                player2: {
                     ...state.player2,
-                    ...action.payload
-                }
-            }
+                    ...action.payload,
+                },
+            };
 
         default:
-            return initialState
+            return initialState;
     }
+};
 
-}
-
-export default reducer
+export default reducer;

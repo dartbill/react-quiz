@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const NewGameButton = () => {
+    let navigate = useNavigate();
+    const routeChange = (path) => {
+        navigate(path);
+    };
 
-  let navigate = useNavigate();
-  const routeChange = (path) => {
-    navigate(path);
-  }
-
-routeChange('/start');
-  return (
-    <button onClick={routeChange}>NewGame</button>
-  )
-}
-
+    return (
+        <button className="ourBtns" onClick={()=>routeChange("/")}>
+            NewGame
+        </button>
+    );
+};

@@ -11,9 +11,10 @@ export const PlayerCount = () => {
     const dispatch = useDispatch(); 
 
     const updatePlayers = (p) => {
-        p === 1 ? dispatch({ type: 'SET_PLAYER_COUNT', payload: 1 })
-        : dispatch({ type: 'SET_PLAYER_COUNT', payload: 2 })
-        routeChange('/');
+        p === 1 
+        ? dispatch({ type: 'SET_PLAYER_COUNT', payload: 1 })
+        : dispatch({ type: 'SET_PLAYER_COUNT', payload: 2 });
+        routeChange('/newgame');
     }
 
   return (
