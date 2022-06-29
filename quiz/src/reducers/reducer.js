@@ -6,11 +6,11 @@ const initialState = {
     playerCount: 1,
     questions: [],
     player1: {
-        username: "player1",
+        name: "player1",
         score: 0
     },
     player2: {
-        username: "player2",
+        name: "player2",
         score: 0
     }
 }

@@ -1,13 +1,14 @@
 
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import {  useSelector } from 'react-redux';
+
 
 export const Login = () => {
 
     const dispatch = useDispatch();
     const player1 = useSelector(state => state.player1)
     const player2 = useSelector(state => state.player2)
+
 
     console.log("this is player one " + player1 + " this is player two " + player2)
 
