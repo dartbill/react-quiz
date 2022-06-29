@@ -1,5 +1,6 @@
-TRUNCATE scoreBoard RESTART IDENTITY 
+TRUNCATE TABLE users RESTART IDENTITY;
 
-INSERT INTO scoreBoard (name, score) VALUES
-("John", 17)
-("Stella", 30)
+INSERT INTO users (name, score)
+VALUES
+    ('june', 10),
+    ('bug', 20);

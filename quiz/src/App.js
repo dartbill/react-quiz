@@ -60,6 +60,7 @@ function App() {
 
 			<Routes>
 				<Route path='/' element={<Pages.Home />} />
+				<Route path='/start' element={<Pages.StartPage />} />
 				<Route path='/quiz' element={<Pages.QuizPage />} />
 				<Route path='/final' element={<Pages.FinalScorePage />} />
 			</Routes>
