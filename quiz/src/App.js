@@ -7,8 +7,8 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Pages.Home />} />
-                <Route path="/start" element={<Pages.StartPage />} />
+                <Route path="/" element={<Pages.StartPage />} />
+                <Route path="/newgame" element={<Pages.NewGamePage />} />
                 <Route path="/quiz" element={<Pages.QuizPage />} />
                 <Route path="/final" element={<Pages.FinalScorePage />} />
                 <Route path="/highscores" element={<Pages.HighscorePage />} />
