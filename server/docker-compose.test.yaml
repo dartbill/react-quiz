@@ -1,6 +1,6 @@
 services:
   api:
-    container_name: scores_test_api
+    container_name: demo_test_api
     environment:
       - PGUSER=admin
       - PGHOST=db
