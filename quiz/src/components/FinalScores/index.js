@@ -8,7 +8,7 @@ export const FinalScores = () => {
 	const player2 = useSelector((state) => state.player2);
 	console.log(player1)
 
-	const players = [{ player1 }, { player2 }];
+	// const players = [{ player1 }, { player2 }];
 
 	useEffect(() => {
 		const postScores = async () => {

@@ -2,14 +2,14 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
-
 export const Login = () => {
 
     const dispatch = useDispatch();
     const player1 = useSelector(state => state.player1)
     const player2 = useSelector(state => state.player2)
+    const playerCount = useSelector(state => state.playerCount)
 
-
+    console.log(playerCount)
     console.log("this is player one " + player1 + " this is player two " + player2)
 
     const updateUsername = (e) => {
@@ -32,8 +32,8 @@ export const Login = () => {
 
     return (
         <>
-            <h1>High from Login</h1>
             <form className="add-form" onSubmit={updateUsername}>
+
                 <div className="form-control">
                     <label>Username 1</label>
                     <input
@@ -42,6 +42,7 @@ export const Login = () => {
                         placeholder="Add Username"
                     />
                 </div>
+
                 <div className="form-control">
                     <label>Username 2</label>
                     <input

@@ -86,11 +86,11 @@ export const Quiz = () => {
         <div
           className="next-button"
           onClick={(e) => {
-            { state.currentQuestionIndex < 19 ? dispatch({ type: "NEXT_QUESTION" }) : routeChange('/final') }
+             state.currentQuestionIndex < 19 
+              ? dispatch({ type: "NEXT_QUESTION" }) 
+              : routeChange('/final') 
             updateTurn(e)
-
-          }
-
+            }
           }
         >
           Next question

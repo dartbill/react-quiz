@@ -3,7 +3,7 @@ const initialState = {
     category: 9,
     level: '',
     typeOfQ: '',
-    playerCount: 1,
+    playerCount: 0,
     questions: [],
     player1: {
         name: "player1",
