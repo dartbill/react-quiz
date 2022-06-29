@@ -42,7 +42,7 @@ module.exports = class Score {
 	static create(name, score) {
 		return new Promise(async (resolve, reject) => {
 			try {
-				const result = await db.query('INSERT INTO users (name, score) VALUES ($2, $3) RETURNING *;', [name, score]);
+				let result = await db.query('INSERT INTO users (name, score) VALUES ($1, $2);', [name, score]);
 				const user = new Score(result.rows[0]);
 				resolve(user)
 			} catch (err) {
