@@ -1,5 +1,5 @@
-TRUNCATE scoreBoard RESTART IDENTITY 
+TRUNCATE scoreboard RESTART IDENTITY 
 
-INSERT INTO scoreBoard (name, score) VALUES
+INSERT INTO scoreboard (name, score) VALUES
 ("John", 17)
 ("Stella", 30)
