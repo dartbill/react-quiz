@@ -7,8 +7,8 @@ import { GetQuestions } from '../../actions';
 
 export const QuizPage = () => {
 	const dispatch = useDispatch();
-	const data = useSelector((state) => state.questions);
-	console.log(data);
+	// const data = useSelector((state) => state.questions);
+	// console.log(data);
 
 	const category = useSelector((state) => state.category);
 	let level = useSelector((state) => state.level);

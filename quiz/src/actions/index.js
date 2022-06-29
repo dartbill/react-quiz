@@ -1,39 +1,31 @@
-import axios from 'axios';
+import axios from "axios";
 // Damn cats!
-export const GetQuestions = cat => {
+export const GetQuestions = (cat) => {
+  const category = cat.cat;
+  const lev = cat.level;
+  const type = cat.typeOfQ;
+  // console.log(category, lev, type);
 
-    const category = cat.cat
-    const lev = cat.level
-    const type = cat.typeOfQ
-    console.log(category, lev, type)
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(
+        `https://opentdb.com/api.php?&amount=20&category=${category}&difficulty=${lev}&type=${type}`
+      );
+      let resultsData = data.results;
 
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(`https://opentdb.com/api.php?&amount=10&category=${category}&difficulty=${lev}&type=${type}`)
-            let newArray = data.results.map((url) => (url))
-            dispatch({
-                type: 'TEST',
-                payload: newArray
-            })
-        } catch (err) {
-        }
+      dispatch({
+        type: "TEST",
+        payload: shuffleArray(resultsData),
+      });
+    } catch (err) {
+      // console.log("error", err);
     }
+  };
+};
+//returns random question 
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export const GetQuestions = cat => {
 
@@ -43,12 +35,10 @@ export const GetQuestions = cat => {
 //     //     payload: { category: category, type: type, difficulty: difficulty, question: question, correct_answer: correct_answer, incorrect_answers: incorrect_answers }
 //     // });
 
-
 //     const loadResult = () => ({
 //         type: 'TEST',
 //         payload: []
 //     });
-
 
 //     return async dispatch => {
 //         try {
@@ -86,9 +76,3 @@ export const GetQuestions = cat => {
 //         };
 //     };
 // };
-
-
-
-
-
-

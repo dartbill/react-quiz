@@ -14,7 +14,7 @@ services:
       - PGUSER=admin
       - PGHOST=db
       - PGPASSWORD=scorespass
-      - PGDATABASE=scoreboard
+      - PGDATABASE=users
       - PGPORT=5432
     depends_on:
       - db
@@ -24,7 +24,7 @@ services:
     container_name: heroku_db
     image: postgres:latest
     environment:
-      - POSTGRES_DB=scoreboard
+      - POSTGRES_DB=users
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=scorespass
     volumes:

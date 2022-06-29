@@ -53,7 +53,7 @@ function App() {
 			<header>
 				<h1>App</h1>
 				<Pages.HighscorePage />
-				<Pages.LoginPage />
+				<Pages.StartPage />
 			</header>
 
 			{/* the new stuff! */}

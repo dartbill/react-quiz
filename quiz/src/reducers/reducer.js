@@ -3,14 +3,14 @@ const initialState = {
     category: 9,
     level: '',
     typeOfQ: '',
-    playerCount: 1,
+    playerCount: 0,
     questions: [],
     player1: {
-        username: "",
+        username: "player1",
         score: 0
     },
     player2: {
-        username: "",
+        username: "player2",
         score: 0
     }
 }
@@ -43,18 +43,18 @@ const reducer = (state = initialState, action) => {
                 playerCount: action.payload
             }
         case "SET_PLAYER1":
-                return {
-                    ...state, player1: {
-                        ...state.player1,
-                        ...action.payload
-                    }
+            return {
+                ...state, player1: {
+                    ...state.player1,
+                    ...action.payload
+                }
             }
         case "SET_PLAYER2":
-                return {
-                    ...state, player2: {
-                        ...state.player2,
-                        ...action.payload
-                    }
+            return {
+                ...state, player2: {
+                    ...state.player2,
+                    ...action.payload
+                }
             }
 
         default:

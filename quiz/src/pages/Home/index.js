@@ -1,6 +1,7 @@
 import { SearchForm } from '../../components';
+import { Login } from '../../components';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import React from 'react';
 // useEffect?
 // import { useDispatch, useSelector } from 'react-redux';
@@ -8,8 +9,8 @@ import React from 'react';
 
 export const Home = () => {
 
-	const dispatch = useDispatch();
-	console.log(()=>dispatch())
+	// const dispatch = useDispatch();
+	// console.log(()=>dispatch())
 
 	// const dispatch = useDispatch();
 	// const data = useSelector(state => state.questions)
@@ -27,6 +28,7 @@ export const Home = () => {
 	return (
 		<>
 			<h2>Home</h2>
+			<Login/>
 			<SearchForm />
 			<NavLink className='ourBtns' to='/quiz'>
 				Play!

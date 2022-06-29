@@ -1,3 +1,4 @@
+
 const db = require('../dbConfig/init')
 
 module.exports = class Score {
@@ -51,4 +52,5 @@ module.exports = class Score {
 		})
 	}
 
-}; 
+}
+
