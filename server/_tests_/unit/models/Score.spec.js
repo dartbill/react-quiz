@@ -3,7 +3,7 @@ const Score = require('../../../models/Score');
 const pg = require('pg');
 jest.mock('pg');
 
-const db = require('../../../initdb');
+const db = require('../../../dbConfig/init');
 
 describe('Score', () => {
 	beforeEach(() => jest.clearAllMocks());
