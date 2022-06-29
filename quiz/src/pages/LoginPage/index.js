@@ -1,6 +1,6 @@
 import React from 'react';
 // useEffect ?
-import { UserLogin } from '../../components';
+// import { UserLogin } from '../../components';
 
 export const LoginPage = () => {
 	return (
