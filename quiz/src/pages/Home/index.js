@@ -1,12 +1,16 @@
 import { SearchForm } from '../../components';
 import { NavLink } from 'react-router-dom';
-
+// import { useDispatch } from 'react-redux';
 import React from 'react';
 // useEffect?
 // import { useDispatch, useSelector } from 'react-redux';
 // import { GetQuestions } from "../../actions";
 
 export const Home = () => {
+
+	// const dispatch = useDispatch();
+	// console.log(()=>dispatch())
+
 	// const dispatch = useDispatch();
 	// const data = useSelector(state => state.questions)
 	// console.log(data)
