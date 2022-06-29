@@ -63,6 +63,7 @@ function App() {
 				<Route path='/start' element={<Pages.StartPage />} />
 				<Route path='/quiz' element={<Pages.QuizPage />} />
 				<Route path='/final' element={<Pages.FinalScorePage />} />
+				<Route path='/highscores' element={<Pages.FinalScorePage />} />
 			</Routes>
 		</div>
 	);
