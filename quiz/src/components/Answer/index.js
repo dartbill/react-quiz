@@ -40,12 +40,12 @@ export const Answer = (props) => {
 
   }
 
-  const handleBtnClick = () => {
-    if (props.bool) {
-      setScore1(score1 = score1 + 1)
-    }
+  // const handleBtnClick = () => {
+  //   if (props.bool) {
+  //     setScore1(score1 = score1 + 1)
+  //   }
     // console.log(score1)
-  }
+  // }
 
   return (
     <div className='answer'>
