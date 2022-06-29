@@ -7,18 +7,22 @@ export const Question = (props) => {
 
   const q = useSelector(state => state.questions) //(
 
-  let quest
-  let correct
-  let incorrect = []
+  let quest;
+  let correct;
+  let incorrect = [];
+  let type;
 
   if (q.length !== 0) {
-    console.log(q)
-    quest = q[props.question].question
-    incorrect = q[props.question].incorrect_answers
-    correct = q[props.question].correct_answer
-    console.log('this is quest' + incorrect + correct)
+    console.log(q);
+    quest = q[props.question].question;
+    incorrect = q[props.question].incorrect_answers;
+    correct = q[props.question].correct_answer;
+    type = q[props.question].type;
+    console.log('this is quest' + incorrect + correct);
   }
 
+  // boolean
+  // multiple
   
   // TOMS STUFF FOR BETTING///////////////////////////////////////////
   const [orderA,setOrderA] = useState('0')
@@ -38,38 +42,29 @@ export const Question = (props) => {
   }
   //end of TOMS STUFF FOR BETTING///////////////////////////////////////////
 
-
-
   //need to go to the next question when an answer is chosen
 
   return (
     <>
-    <div>
-
+    <div className="quiz">
+      <h1>{console.log("Question Type",type)}</h1>
       <div className="question">{quest}</div>
-        <div className="answers">
-          <Answer bool={true} num="A" answer={correct} />
-          <Answer bool={false} num="B" answer={incorrect[0]} />
-          <Answer bool={false} num="C" answer={incorrect[1]} />
-          <Answer bool={false} num="D" answer={incorrect[2]} />
+        { 
+        type === 'boolean' ? 
+        <div className="Container-Answers"> 
+            <div className='genBtn correctBtn bx3'id={orderA}><Answer bool={true} num="A" answer={correct} /></div>
+            <div className='genBtn wrongBtn bx4' id={orderB}><Answer bool={false} num="B" answer={incorrect[0]} /></div>
         </div>
-      </div>
-
-
-      <div className="quiz">
-          <div className='Container-Answers' onLoad={createRandOrder}>
+        : 
+        <div className='Container-Answers' onLoad={createRandOrder}> 
             <div className='genBtn correctBtn bx3'  id={orderA}><Answer bool={true} num="A" answer={correct} /></div>
             <div className='genBtn wrongBtn bx4' id={orderB}><Answer bool={false} num="B" answer={incorrect[0]} /></div>
             <div className='genBtn wrongBtn bx1' id={orderC}><Answer bool={false} num="C" answer={incorrect[1]} /></div>
             <div className='genBtn wrongBtn bx2' id={orderD}><Answer bool={false} num="D" answer={incorrect[2]} /></div>
-          </div>
-      </div>
-
-
+        </div>
+        }
       <button onClick={ createRandOrder}>randomise </button>
-
-    
+    </div>
     </>
   )
 }
-
