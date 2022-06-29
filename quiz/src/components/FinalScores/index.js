@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 export const FinalScores = () => {
-    //fetch or get final scores from the database
+
+    // fetch or get final scores from the database
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
 
@@ -51,16 +52,14 @@ export const FinalScores = () => {
             <p>Here are your scores: </p>
             <ul>
                 <li>
-                    {player1.name}
-                    {player1.score}
+                    {player1.name} : {player1.score}
                 </li>
                 <li>
-                    {player2.name}
-                    {player2.score}
+                    {player2.name} : {player2.score}
                 </li>
             </ul>
             <p>{`Congratualtions ${
-                player1.score > player2.score ? player1.name : player2.name
+                player1.score > player2.score ? player1.username : player2.username
             }!`}</p>
         </div>
         //we also need a button that goes back
