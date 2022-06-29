@@ -1,15 +1,16 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 export const Highscores = () => {
 	//fetching and sorting out highscores to be done here
 
-	const sortArray = (arr) => {
-		const newArray = arr.sort(function (a, b) {
-			return a - b;
-		});
-		return newArray.slice(0, 5); //returns just to top 5
-	};
+	// Add when everything's working
+	// const sortArray = (arr) => {
+	// 	const newArray = arr.sort(function (a, b) {
+	// 		return a - b;
+	// 	});
+	// 	return newArray.slice(0, 5); //returns just to top 5
+	// };
 
 	// Add when server's working
 	// async function getScores() {
