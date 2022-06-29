@@ -19,7 +19,7 @@ class Score {
 				// }
 				res(scoreBoard);
 			} catch (err) {
-				ref(`Error retrieving score board: ${err}`);
+				rej(`Error retrieving score board: ${err}`);
 			}
 		});
 	}
