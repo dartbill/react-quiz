@@ -7,28 +7,28 @@ export const FinalScores = () => {
 	const player1 = useSelector((state) => state.player1);
 	const player2 = useSelector((state) => state.player2);
 
-	// useEffect(() => {
-	// 	const postScores = async () => {
-	// 		try {
-	// 			let opts = {
-	// 				headers: {
-	// 					Accept: 'application/json',
-	// 					'Content-Type': 'application/json;charset=UTF-8',
-	// 				},
-	// 			};
+	const players = [{ player1 }, { player2 }];
 
-	// 			await axios.post(
-	// 				'https://quizfutureproof.herokuapp.com/scoreboard/new',
-	// 				opts,
-	// 				{ player1 },
-	// 				{ player2 }
-	// 			);
-	// 		} catch (err) {
-	// 			console.warn(err);
-	// 		}
-	// 	};
-	// 	postScores();
-	// }, []);
+	useEffect(() => {
+		const postScores = async () => {
+			try {
+				let opts = {
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				};
+
+				await axios.post(
+					'https://quizfutureproof.herokuapp.com/scoreboard/new',
+					players,
+					opts
+				);
+			} catch (err) {
+				console.warn(err);
+			}
+		};
+		postScores();
+	}, []);
 
 	return (
 		<div>
