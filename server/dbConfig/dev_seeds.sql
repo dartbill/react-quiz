@@ -1,4 +1,4 @@
-INSERT INTO scoreboard (id, name, score)
+INSERT INTO Users (id, name, score)
 VALUES
 ("init2winit", 100),
 ("Jamie", 53),

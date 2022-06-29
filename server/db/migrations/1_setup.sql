@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS scoreboard;
+DROP TABLE IF EXISTS Users;
 
-CREATE TABLE scoreboard (
+CREATE TABLE Users (
   id serial PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   score int NOT NULL
