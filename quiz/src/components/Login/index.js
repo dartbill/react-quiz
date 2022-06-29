@@ -1,29 +1,56 @@
-// import React, { useState } from "react";
+import React from "react";
+import { useDispatch} from 'react-redux';
+// import {  useSelector } from 'react-redux';
 
-// import { socket } from "../../App";
+export const Login = () => {
+    
+    const dispatch = useDispatch();
+    // const player1 = useSelector(state => state.player1)
+    // const player2 = useSelector(state => state.player2)
 
-// export const Login = () => {
-// const [roomText, setRoomText] = useState("");
-// const [players, setPlayers] = useState([]);
+    const updateUsername = (e) => {
+        e.preventDefault();
+        dispatch({
+            type:'SET_PLAYER1',
+            payload: {
+                username: e.target.player1.value
+            }
+        })
+        // console.log(player1)
+        dispatch({
+            type:'SET_PLAYER2',
+            payload: {
+                username: e.target.player2.value
+            }
+        })
+        // console.log(player2)
+    }
 
-// socket.on("attachRoom", (room) => {
-//     setRoomText(room);
-// });
-
-// socket.on("addPlayer", (room, user) => {
-//     console.log(user, room);
-// });
-
-// return (
-//     <>
-//         <div className="home-box">
-//             <p className="connection"></p>
-//             <h3>Room Name:</h3>
-//             <div >{roomText}</div>
-//             <h3>Players</h3>
-//             <div >{players.current}</div>
-//         </div>
-//         <button>Start game!</button>
-//     </>
-// );
-// }
+    return (
+        <>
+                <h1>High from Login</h1>
+            <form className="add-form" onSubmit={updateUsername}>
+                <div className="form-control">
+                    <label>Username 1</label>
+                    <input
+                        type="text"
+                        id="player1"
+                        placeholder="Add Username"
+                    />
+                </div>
+                <div className="form-control">
+                    <label>Username 2</label>
+                    <input
+                        type="text"
+                        id="player2"
+                        placeholder="Add Username"
+                    />
+                </div>
+                <input
+                    type="submit"
+                    value="Save Task"
+                />
+            </form>
+        </>
+    );
+};
