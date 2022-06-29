@@ -1,12 +1,21 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
 
+const server = express();
+server.use(cors());
+server.use(express.json());
+
+
+
+// const scoreBoardRoutes = require('./controllers/scoreBoard');
+// server.use('/scores', scoreBoardRoutes);
+
+//routes will break the code
 const scoreBoardRoutes = require('./routes/scoreBoard');
+server.use('/scoreboard', scoreBoardRoutes)
 
-app.use(cors());
-app.use('/scoreboard', scoreBoardRoutes);
+// server.use('/scoreboard', scoreBoardRoutes); // these break the build so need to be worked on
 
-app.get('/', (req, res) => res.send('Quiz time!'));
+server.get('/', (req, res) => res.send('Welcome to the library'));
 
-module.exports = app;
+module.exports = server;

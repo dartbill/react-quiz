@@ -1,4 +1,5 @@
-const db = require('../initdb');
+
+const db = require('../dbConfig/init')
 
 class Score {
 	constructor(data) {
@@ -8,20 +9,20 @@ class Score {
 	}
 
 	static get all() {
-		return new Promise(async (resolve, reject) => {
+		return new Promise(async (res, rej) => {
 			try {
-				const results = await db.query('SELECT * FROM scoreboard');
-				const scoreBoard = results.rows.map((s) => new Score(s));
+				const results = await db.query('SELECT * FROM scoreboard;');
+				const scoreBoard = results.rows.map((s) => ({ id: s.id, name: s.name }));
 
-				if (!scoreBoard.length) {
-					throw new Error('No scores on the score board yet!');
-				}
-				resolve(scoreBoard);
+				// if (!scoreBoard.length) {
+				// 	throw new Error('No scores on the score board yet!');
+				// }
+				res(scoreBoard);
 			} catch (err) {
-				reject(`Error retrieving score board: ${err.message}`);
+				rej(`Error retrieving score board: ${err}`);
 			}
 		});
 	}
 }
 
-module.exports = Score;
+module.exports = Score; 

@@ -79,3 +79,13 @@ div {
             margin-left: 20px;
           }
           
+.ourBtns{
+    padding: 3%;
+    background-color: blue;
+    color: white;
+    border-radius: 5%;
+}
+
+.ourBtns:hover {
+    background-color: red;
+}

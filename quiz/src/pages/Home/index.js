@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { SearchForm } from "../../components";
+import { SearchForm } from '../../components';
+import { NavLink } from 'react-router-dom';
 
-import { GetQuestions } from "../../actions";
-
+import React from 'react';
+// useEffect?
+// import { useDispatch, useSelector } from 'react-redux';
+// import { GetQuestions } from "../../actions";
 
 export const Home = () => {
+	// const dispatch = useDispatch();
+	// const data = useSelector(state => state.questions)
+	// console.log(data)
 
-    const dispatch = useDispatch();
-    const data = useSelector(state => state.questions)
+	// const category = useSelector(state => state.category)
+	// let level = useSelector(state => state.level)
+	// let typeOfQ = useSelector(state => state.typeOfQ)
 
-    const category = useSelector(state => state.category)
-    let level = useSelector(state => state.level)
-    let typeOfQ = useSelector(state => state.typeOfQ)
+	// useEffect(() => {
+	//     dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
+	//     // console.log(data)
+	// }, [category, level, typeOfQ])
 
-    useEffect(() => {
-        dispatch(GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ }))
-    }, [category, level, typeOfQ])
-
-    console.log(data)
-
-    return (
-        <>
-            <SearchForm />
-        </>
-    )
-}
-
-
-
+	return (
+		<>
+			<h2>Home</h2>
+			<SearchForm />
+			<NavLink className='ourBtns' to='/quiz'>
+				Play!
+			</NavLink>
+		</>
+	);
+};
