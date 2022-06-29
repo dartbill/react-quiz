@@ -3,13 +3,6 @@ import { FinalScores } from "../../components";
 import React from "react";
 import { screen, render } from "@testing-library/react";
 
-let initState = {
-    category: 20,
-    level: "easy",
-    typeOfQ: "multiple",
-    questions: [],
-};
-
 describe("FinalScorePage Component", () => {
     beforeEach(() => {
         render(

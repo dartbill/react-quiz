@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import { Question } from "../Question";
-
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
   currentQuestionIndex: 0,
@@ -16,9 +16,12 @@ const reducer = (state, action) => {
   return state;
 };
 
-
 export const Quiz = () => {
   // eslint-disable-next-line
+  let navigate = useNavigate(); 
+  const routeChange = (path) =>{ 
+    navigate(path);
+  }
   const [state, dispatch] = useReducer(reducer, initialState);
   // console.log("state", state);
 
@@ -31,12 +34,9 @@ export const Quiz = () => {
         <div
           className="next-button"
           onClick={() => {
-            console.log(state.currentQuestionIndex)
-            if (state.currentQuestionIndex < 10) {
-              dispatch({ type: "NEXT_QUESTION" })
-            } else {
-              window.open("http://localhost:3000/final")
-            }
+            state.currentQuestionIndex < 9 
+            ? dispatch({ type: "NEXT_QUESTION" }) 
+            : routeChange('/final');
           }}
         >
           Next question
