@@ -1,4 +1,4 @@
-const Score = require('../models/score');
+const Score = require('../models/Score');
 
 async function index(req, res) {
 	try {
