@@ -1,25 +1,26 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Answer } from "../";
 
-export const Question = ({index,turn,onNextQuestion}) => {
+export const Question = ({ index, onSubmitQuestion }) => {
+    
+    // TOMS STUFF FOR BETTING///////////////////////////////////////////
+    const [orderA, setOrderA] = useState("0");
+    const [orderB, setOrderB] = useState("");
+    const [orderC, setOrderC] = useState("0");
+    const [orderD, setOrderD] = useState("0");
 
-  // TOMS STUFF FOR BETTING///////////////////////////////////////////
-      const [orderA, setOrderA] = useState("0");
-      const [orderB, setOrderB] = useState("");
-      const [orderC, setOrderC] = useState("0");
-      const [orderD, setOrderD] = useState("0");
-
-      function createRandOrder() {
-          const rand1 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
-          const rand2 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
-          const rand3 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
-          const rand4 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
-          setOrderA("bx" + rand1);
-          setOrderB("bx" + rand2);
-          setOrderC("bx" + rand3);
-          setOrderD("bx" + rand4);
-      }
-  // End of TOMS STUFF FOR BETTING///////////////////////////////////////////
+    function createRandOrder() {
+        const rand1 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
+        const rand2 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
+        const rand3 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
+        const rand4 = Math.floor(Math.random() * (4 - 0 + 1) + 0);
+        setOrderA("bx" + rand1);
+        setOrderB("bx" + rand2);
+        setOrderC("bx" + rand3);
+        setOrderD("bx" + rand4);
+    }
+    // End of TOMS STUFF FOR BETTING///////////////////////////////////////////
 
     // qustion data
     const questions = useSelector((state) => state.questions);
@@ -29,36 +30,75 @@ export const Question = ({index,turn,onNextQuestion}) => {
     let incorrectAnswers = [];
     let questionType;
 
+    // Remove garbage html chars from question text
+    function stripHtml(html) {
+        let tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    }
+
     if (questions.length !== 0) {
-        question = questions[index].question;
-        incorrectAnswers = questions[index].incorrect_answers;
-        correctAnswer = questions[index].correct_answer;
+        question = stripHtml(questions[index].question);
+        incorrectAnswers = questions[index].incorrect_answers.map((answer) =>
+            stripHtml(answer)
+        );
+        correctAnswer = stripHtml(questions[index].correct_answer);
         questionType = questions[index].type;
     }
 
+    // Randomize Order
+    function shuffle(array) {
+        let currentIndex = array.length,
+            randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex !== 0) {
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex],
+                array[currentIndex],
+            ];
+        }
+
+        return array;
+    }
+    let answerArray
+
+    questionType === "boolean" 
+    ? ( answerArray = shuffle([
+        {answer: correctAnswer, bool: true},
+        {answer: incorrectAnswers[0], bool: false},
+    ])) : (answerArray = shuffle([
+        {answer: correctAnswer, bool: true},
+        {answer: incorrectAnswers[0], bool: false},
+        {answer: incorrectAnswers[1], bool: false},
+        {answer: incorrectAnswers[2], bool: false},
+    ]))
 
     return (
         <>
             <div className="quiz">
                 <div className="question">{question}</div>
                 {questionType === "boolean" ? (
-                    <div className="Container-Answers">
+                    <div className="Container-Answers" onLoad={createRandOrder}>
                         <div className="genBtn correctBtn bx3" id={orderA}>
                             <Answer
-                                onNextQuestion={onNextQuestion}
-                                turn={turn}
-                                bool={true}
+                                onSubmitQuestion={onSubmitQuestion}
+                                bool={answerArray[0].bool}
                                 num="A"
-                                answer={correctAnswer}
+                                answer={answerArray[0].answer}
                             />
                         </div>
                         <div className="genBtn wrongBtn bx4" id={orderB}>
                             <Answer
-                                onNextQuestion={onNextQuestion}
-                                turn={turn}
-                                bool={false}
+                                onSubmitQuestion={onSubmitQuestion}
+                                bool={answerArray[1].bool}
                                 num="B"
-                                answer={incorrectAnswers[0]}
+                                answer={answerArray[1].answer}
                             />
                         </div>
                     </div>
@@ -66,38 +106,34 @@ export const Question = ({index,turn,onNextQuestion}) => {
                     <div className="Container-Answers" onLoad={createRandOrder}>
                         <div className="genBtn correctBtn bx3" id={orderA}>
                             <Answer
-                                onNextQuestion={onNextQuestion}
-                                turn={turn}
-                                bool={true}
+                                onSubmitQuestion={onSubmitQuestion}
+                                bool={answerArray[0].bool}
                                 num="A"
-                                answer={correctAnswer}
+                                answer={answerArray[0].answer}
                             />
                         </div>
                         <div className="genBtn wrongBtn bx4" id={orderB}>
                             <Answer
-                                onNextQuestion={onNextQuestion}
-                                turn={turn}
-                                bool={false}
+                                onSubmitQuestion={onSubmitQuestion}
+                                bool={answerArray[1].bool}
                                 num="B"
-                                answer={incorrectAnswers[0]}
+                                answer={answerArray[1].answer}
                             />
                         </div>
                         <div className="genBtn wrongBtn bx1" id={orderC}>
                             <Answer
-                                onNextQuestion={onNextQuestion}
-                                turn={turn}
-                                bool={false}
+                                onSubmitQuestion={onSubmitQuestion}
+                                bool={answerArray[2].bool}
                                 num="C"
-                                answer={incorrectAnswers[1]}
+                                answer={answerArray[2].answer}
                             />
                         </div>
                         <div className="genBtn wrongBtn bx2" id={orderD}>
                             <Answer
-                                onNextQuestion={onNextQuestion}
-                                turn={turn}
-                                bool={false}
+                                onSubmitQuestion={onSubmitQuestion}
+                                bool={answerArray[3].bool}
                                 num="D"
-                                answer={incorrectAnswers[2]}
+                                answer={answerArray[3].answer}
                             />
                         </div>
                     </div>
