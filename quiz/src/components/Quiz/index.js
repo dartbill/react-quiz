@@ -1,6 +1,6 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { Question } from "../Question";
-import '../.././index.css' 
+import '../.././index.css'
 
 import { useNavigate } from "react-router-dom";
 
@@ -20,8 +20,8 @@ const reducer = (state, action) => {
 
 export const Quiz = () => {
   // eslint-disable-next-line
-  let navigate = useNavigate(); 
-  const routeChange = (path) =>{ 
+  let navigate = useNavigate();
+  const routeChange = (path) => {
     navigate(path);
   }
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -55,7 +55,7 @@ export const Quiz = () => {
     <div className="quiz">
       <div>
 
-      {/* <div className='Container-Answers' onLoad={createRandOrder}>
+        {/* <div className='Container-Answers' onLoad={createRandOrder}>
         <div className='genBtn correctBtn bx3'  id={orderA}>1</div>
         <div className='genBtn wrongBtn bx4' id={orderB}>2</div>
         <div className='genBtn wrongBtn bx1' id={orderC}>3</div>
@@ -70,16 +70,16 @@ export const Quiz = () => {
         <div className='genBtn wrongBtn bx2' onClick={handleClickWrong} id={orderB}>{dataQnA[counter]["a2"]}</div>
         <div className='genBtn wrongBtn bx3' onClick={handleClickWrong} id={orderC}>{dataQnA[counter]["a3"]}</div>
         <div className='genBtn wrongBtn bx4' onClick={handleClickWrong} id={orderD}>{dataQnA[counter]["a4"]}</div> */}
-        
+
         <div className="score">{`Question ${state.currentQuestionIndex + 1}/10`}</div>
         <Question question={state.currentQuestionIndex} />
         <br />
         <div
           className="next-button"
           onClick={() => {
-            state.currentQuestionIndex < 9 
-            ? dispatch({ type: "NEXT_QUESTION" }) 
-            : routeChange('/final');
+            state.currentQuestionIndex < 9
+              ? dispatch({ type: "NEXT_QUESTION" })
+              : routeChange('/final');
           }}
         >
           Next question
