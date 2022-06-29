@@ -14,7 +14,7 @@ module.exports = class Score {
 		return new Promise(async (res, rej) => {
 			try {
 
-				const result = await db.query('SELECT * FROM Users;')
+				const result = await db.query('SELECT * FROM users;')
 				const users = result.rows.map(a => ({ id: a.id, name: a.name, score: a.score }))
 				console.log(users)
 				res(users)
