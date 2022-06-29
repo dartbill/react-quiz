@@ -5,7 +5,6 @@ async function index(req, res) {
 		const scoreBoard = await Score.all;
 		res.status(200).json(scoreBoard);
 	} catch (err) {
-		console.error(err);
 		res.status(500).json(err);
 	}
 }
