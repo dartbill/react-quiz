@@ -1,9 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
 const Score = require('../models/score');
 
-router.get('/scores', async (req, res) => {
+async function index(req, res) {
 	try {
 		const scoreBoard = await Score.all;
 		console.log(scoreBoard);
@@ -12,9 +9,9 @@ router.get('/scores', async (req, res) => {
 		console.error(err);
 		res.status(500).json({ err });
 	}
-});
+}
 
-router.get('/scores/:id', async (req, res) => {
+async function show(req, res) {
 	try {
 		const score = await Score.findById(parseInt(req.params.id));
 		console.log(score);
@@ -23,9 +20,9 @@ router.get('/scores/:id', async (req, res) => {
 		console.error(err);
 		res.status(404).json({ err });
 	}
-});
+}
 
-router.post('/scores/new', async (req, res) => {
+async function create(req, res) {
 	try {
 		const score = await Score.create(
 			req.body.id,
@@ -38,6 +35,6 @@ router.post('/scores/new', async (req, res) => {
 		console.error(err);
 		res.status(404).json({ err });
 	}
-});
+}
 
-module.exports = router;
+module.exports = { index, show, create };
