@@ -4,12 +4,12 @@ export const GetQuestions = (cat) => {
   const category = cat.cat;
   const lev = cat.level;
   const type = cat.typeOfQ;
-  console.log(category, lev, type);
+  // console.log(category, lev, type);
 
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `https://opentdb.com/api.php?&amount=10&category=${category}&difficulty=${lev}&type=${type}`
+        `https://opentdb.com/api.php?&amount=20&category=${category}&difficulty=${lev}&type=${type}`
       );
       let resultsData = data.results;
 
@@ -18,7 +18,7 @@ export const GetQuestions = (cat) => {
         payload: shuffleArray(resultsData),
       });
     } catch (err) {
-      console.log("error", err);
+      // console.log("error", err);
     }
   };
 };

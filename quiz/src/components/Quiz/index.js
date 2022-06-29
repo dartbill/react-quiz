@@ -1,4 +1,5 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
+
 import { Question } from "../Question";
 import '../.././index.css'
 
@@ -25,9 +26,17 @@ export const Quiz = () => {
     navigate(path);
   }
   const [state, dispatch] = useReducer(reducer, initialState);
-  // console.log("state", state);
+  const [turn, setTurn] = useState(true)
 
 
+  const updateTurn = (e) => {
+    e.preventDefault(e)
+    if (turn) {
+      setTurn(false)
+    } else {
+      setTurn(true)
+    }
+  }
 
 
   // // TOMS STUFF FOR BETTING///////////////////////////////////////////
@@ -72,15 +81,17 @@ export const Quiz = () => {
         <div className='genBtn wrongBtn bx4' onClick={handleClickWrong} id={orderD}>{dataQnA[counter]["a4"]}</div> */}
 
         <div className="score">{`Question ${state.currentQuestionIndex + 1}/10`}</div>
-        <Question question={state.currentQuestionIndex} />
+        <Question turn={turn} question={state.currentQuestionIndex} />
         <br />
         <div
           className="next-button"
-          onClick={() => {
-            state.currentQuestionIndex < 9
-              ? dispatch({ type: "NEXT_QUESTION" })
-              : routeChange('/final');
-          }}
+          onClick={(e) => {
+            { state.currentQuestionIndex < 19 ? dispatch({ type: "NEXT_QUESTION" }) : routeChange('/final') }
+            updateTurn(e)
+
+          }
+
+          }
         >
           Next question
         </div>
