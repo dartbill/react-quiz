@@ -4,7 +4,7 @@ export const GetQuestions = (cat) => {
   const category = cat.cat;
   const lev = cat.level;
   const type = cat.typeOfQ;
-  console.log(category, lev, type);
+  // console.log(category, lev, type);
 
   return async (dispatch) => {
     try {
@@ -18,7 +18,7 @@ export const GetQuestions = (cat) => {
         payload: shuffleArray(resultsData),
       });
     } catch (err) {
-      console.log("error", err);
+      // console.log("error", err);
     }
   };
 };

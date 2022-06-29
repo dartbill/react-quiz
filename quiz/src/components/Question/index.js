@@ -13,12 +13,12 @@ export const Question = (props) => {
   let type;
 
   if (q.length !== 0) {
-    console.log(q);
+    // console.log(q);
     quest = q[props.question].question;
     incorrect = q[props.question].incorrect_answers;
     correct = q[props.question].correct_answer;
     type = q[props.question].type;
-    console.log('this is quest' + incorrect + correct);
+    // console.log('this is quest' + incorrect + correct);
   }
 
   // boolean
@@ -47,7 +47,7 @@ export const Question = (props) => {
   return (
     <>
       <div className="quiz">
-        <h1>{console.log("Question Type", type)}</h1>
+        {/* <h1>{console.log("Question Type", type)}</h1> */}
         <div className="question">{quest}</div>
         {
           type === 'boolean' ?

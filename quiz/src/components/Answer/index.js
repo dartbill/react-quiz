@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Answer = (props) => {
 
@@ -7,6 +7,8 @@ export const Answer = (props) => {
 
   let [score1, setScore1] = useState(0)
   let [score2, setScore2] = useState(0)
+  const player1 = useSelector((state) => state.player1);
+  const player2 = useSelector((state) => state.player1);
 
 
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ export const Answer = (props) => {
         }
       })
       console.log("this is score1 " + score1)
+      console.log("this is player1 " + player1.score)
     } else {
       setScore2(score2 = score2 + 1)
       dispatch({
@@ -33,13 +36,15 @@ export const Answer = (props) => {
       })
     }
     console.log("this is score2 " + score2)
+    console.log("this is player2 " + player2.score)
+
   }
 
   const handleBtnClick = () => {
     if (props.bool) {
       setScore1(score1 = score1 + 1)
     }
-    console.log(score1)
+    // console.log(score1)
   }
 
   return (

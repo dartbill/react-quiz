@@ -27,13 +27,12 @@ export const Quiz = () => {
   }
   const [state, dispatch] = useReducer(reducer, initialState);
   const [turn, setTurn] = useState(true)
-  console.log(turn)
+
 
   const updateTurn = (e) => {
     e.preventDefault(e)
     if (turn) {
       setTurn(false)
-      console.log(turn)
     } else {
       setTurn(true)
     }
