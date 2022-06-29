@@ -6,8 +6,18 @@ export const Highscores = () => {
 	const [scores, setScores] = useState([]);
 
 	const sortArray = (arr) => {
-		const newArray = arr.sort(function (a, b) {
-			return a - b;
+		const newArray = arr.sort((a, b) => {
+			let sa = a.score;
+			let sb = b.score;
+
+			if (sa > sb) {
+				return -1;
+			}
+			if (sb < sa) {
+				return 1;
+			}
+
+			return 0;
 		});
 		return newArray.slice(0, 5); //returns just to top 5
 	};

@@ -2,12 +2,7 @@ import "@testing-library/jest-dom";
 import { HighscorePage } from "./";
 import { screen, render } from "@testing-library/react";
 import React from "react";
-let initState = {
-    category: 20,
-    level: "easy",
-    typeOfQ: "multiple",
-    questions: [],
-};
+
 
 describe("Highscores Component", () => {
     beforeEach(() => {
