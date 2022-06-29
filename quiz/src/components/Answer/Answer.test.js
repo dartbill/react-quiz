@@ -14,7 +14,6 @@ describe("Answers Component", () => {
         );
     });
 
-
         it("should render an answer", () => {
             const e = screen.getByText(/answer/i)
             expect(e).toBeInTheDocument();
