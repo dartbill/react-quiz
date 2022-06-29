@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
 import { SearchForm } from "../../components";
-
-import { GetQuestions } from "../../actions";
 import { NavLink } from "react-router-dom";
 
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { GetQuestions } from "../../actions";
 
 export const Home = () => {
 

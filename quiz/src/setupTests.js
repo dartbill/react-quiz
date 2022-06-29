@@ -9,32 +9,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-// provider wrapper attempt 1 =================================
-// function render(
-//     ui,
-//     {
-//         preloadedState,
-//         store,
-//         ...options
-//     } = {}
-// ) {
-//     function Wrapper({ component }) {
-//         return (
-//             <Provider store={store}>
-//                 {component}
-//             </Provider>
-//         ) 
-//     }
-//     return rtlRender(ui, {wrapper: Wrapper, ...options})
-// }
-
- 
-//   // re-export everything
-//   export * from '@testing-library/react'
-  
-//   // override render method
-//   export {render}
-
 // futureproof provider wrapper attempt 2 =================================
 
 const initialState = {
@@ -72,3 +46,28 @@ global.userEvent = userEvent;
 global.renderWithReduxProvider = renderWithReduxProvider
 
 
+// provider wrapper attempt 1 =================================
+// function render(
+//     ui,
+//     {
+//         preloadedState,
+//         store,
+//         ...options
+//     } = {}
+// ) {
+//     function Wrapper({ component }) {
+//         return (
+//             <Provider store={store}>
+//                 {component}
+//             </Provider>
+//         ) 
+//     }
+//     return rtlRender(ui, {wrapper: Wrapper, ...options})
+// }
+
+ 
+//   // re-export everything
+//   export * from '@testing-library/react'
+  
+//   // override render method
+//   export {render}

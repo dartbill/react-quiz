@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { Highscores } from "../../components";
+import { HighscorePage } from "./";
 import { screen, render } from "@testing-library/react";
 import React from "react";
 let initState = {

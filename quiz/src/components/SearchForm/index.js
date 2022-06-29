@@ -23,7 +23,7 @@ export const SearchForm = () => {
     const dispatch = useDispatch()
     const handleBtnClick = (e) => {
         e.preventDefault()
-        console.log(e.target.id)
+        // console.log(e.target.id)
         setCatSelected(e.currentTarget.innerHTML)
         setCatBtnText(e.currentTarget.innerHTML)
         dispatch({ type: "SETCAT", payload: e.target.id })
@@ -31,7 +31,7 @@ export const SearchForm = () => {
 
     const setDifficulty = (e) => {
         e.preventDefault()
-        console.log(e.target.id)
+        // console.log(e.target.id)
         setDiffBtnText(e.currentTarget.id)
         setDiffSelected(e.currentTarget.id)
         dispatch({ type: "SETLEVEL", payload: e.target.id })
