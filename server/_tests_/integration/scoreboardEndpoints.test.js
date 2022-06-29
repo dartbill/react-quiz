@@ -33,8 +33,8 @@ describe('score board endpoints', () => {
     const res = await request(api)
       .post('/scoreboard/new')
       .send({
-        name: 'Maddy',
-        score: 30
+        "name": 'Maddy',
+        "score": 30
       })
     // expect(res.statusCode).toEqual(201);
     // expect(res.body).toHaveProperty("id");
