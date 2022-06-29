@@ -4,7 +4,6 @@ const initialState = {
     level: '',
     typeOfQ: '',
     questions: []
-
 }
 
 

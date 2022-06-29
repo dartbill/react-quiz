@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
 import { SearchForm } from "../../components";
-
-import { GetQuestions } from "../../actions";
 import { NavLink } from "react-router-dom";
 
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { GetQuestions } from "../../actions";
 
 export const Home = () => {
 
@@ -24,8 +23,9 @@ export const Home = () => {
 
     return (
         <>
+        <h2>Home</h2>
             <SearchForm />
-            <NavLink to="/quiz">
+            <NavLink className="ourBtns" to="/quiz">
                 Play!
             </NavLink>
         </>

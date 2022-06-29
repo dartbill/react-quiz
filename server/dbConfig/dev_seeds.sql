@@ -1,4 +1,4 @@
-INSERT INTO scoreBoard (name, score)
+INSERT INTO scoreBoard (id, name, score)
 VALUES
 ("init2winit", 100),
 ("Jamie", 53),

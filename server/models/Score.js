@@ -1,3 +1,4 @@
+
 const db = require('../dbConfig/init')
 
 class Score {

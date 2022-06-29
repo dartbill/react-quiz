@@ -5,6 +5,9 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+const scoreBoardRoutes = require('./controllers/scoreBoard');
+server.use('/scores', scoreBoardRoutes);
+
 //routes will break the code
 // const scoreBoardRoutes = require('./routes/scoreBoard');
 
