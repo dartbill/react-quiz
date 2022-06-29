@@ -43,13 +43,15 @@ describe("QuizPage Component", () => {
     });
 
     describe("Renders", () => {
-
+        
+        it("Question 1 / 10 text", () => {
+            const e = screen.getByText(/question 1\/10/i)
+            expect(e).toBeInTheDocument();
+        });
         it("\"Next Question\" text", () => {
             const e = screen.getByText(/next question/i)
             expect(e).toBeInTheDocument();
         });
-
-
     });
 
 });
