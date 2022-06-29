@@ -23,7 +23,7 @@ async function getUser(req, res) {
 
 async function addUser(req, res) {
 	try {
-		const response = await Score.create(req.body.name, req.body.score)
+		await Score.create(req.body.name, req.body.score)
 		res.status(200).json({ msg: "User added" })
 	} catch (err) {
 		res.status(400).json({ err })
