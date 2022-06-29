@@ -12,19 +12,17 @@ class Score {
 		return new Promise(async (resolve, reject) => {
 			try {
 				const results = await db.query('SELECT * FROM scoreboard');
-				const scoreBoard = results.rows.map((s) => new Score(s));
-				console.log('results', results);
-				console.log('scoreboard', scoreBoard);
+				const scoreBoard = results.rows.map((s) => ({ id: s.id, name: s.name }));
 
-				if (!scoreBoard.length) {
-					throw new Error('No scores on the score board yet!');
-				}
+				// if (!scoreBoard.length) {
+				// 	throw new Error('No scores on the score board yet!');
+				// }
 				resolve(scoreBoard);
 			} catch (err) {
-				reject(`Error retrieving score board: ${err.message}`);
+				reject(`Error retrieving score board: ${err}`);
 			}
 		});
 	}
 }
 
-module.exports = Score;
+module.exports = Score; 
