@@ -1,6 +1,6 @@
 import React from "react";
 import { FinalScores } from "../../components";
-import { NewGame } from '../../components'
+import { NewGameButton } from '../../components'
 
 export const FinalScorePage = () => {
 
@@ -8,7 +8,7 @@ export const FinalScorePage = () => {
         <>
         <h2>Final Scores</h2>
             <FinalScores />
-            <NewGame/>
+            <NewGameButton/>
         </>
     )
 }
