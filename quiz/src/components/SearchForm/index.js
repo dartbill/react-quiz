@@ -1,93 +1,149 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import './index.css'
+// Add useEffect & useSelector?
+
+import './index.css';
 
 export const SearchForm = () => {
-    // GetQuestions({ cat: 20, level: "easy", type: "multiple" })
+	// GetQuestions({ cat: 20, level: "easy", type: "multiple" })
 
-    // let [urlType, SetUrlType] = useState (''); 
+	// let [urlType, SetUrlType] = useState ('');
 
-    let [diffSelected, setDiffSelected] = useState('');
-    let [catSelected, setCatSelected] = useState ('');
-    let [typeSelected, setTypeSelected] = useState ('');
-    
-    let [diffBtnText, setDiffBtnText] = useState('Difficulty');
-    let [catBtnText, setCatBtnText] = useState('Category');
-    let [typeBtnText, setTypeBtnText] = useState('Type');
+	let [diffSelected, setDiffSelected] = useState('');
+	let [catSelected, setCatSelected] = useState('');
+	let [typeSelected, setTypeSelected] = useState('');
 
-    // let [catSelected, setCatSelected] = useState ('');
-    // let [typeSelected, setTypeSelected] = useState ('');
+	let [diffBtnText, setDiffBtnText] = useState('Difficulty');
+	let [catBtnText, setCatBtnText] = useState('Category');
+	let [typeBtnText, setTypeBtnText] = useState('Type');
 
+	// let [catSelected, setCatSelected] = useState ('');
+	// let [typeSelected, setTypeSelected] = useState ('');
 
-    const dispatch = useDispatch()
-    const handleBtnClick = (e) => {
-        e.preventDefault()
-        // console.log(e.target.id)
-        setCatSelected(e.currentTarget.innerHTML)
-        setCatBtnText(e.currentTarget.innerHTML)
-        dispatch({ type: "SETCAT", payload: e.target.id })
-    }
+	const dispatch = useDispatch();
+	const handleBtnClick = (e) => {
+		e.preventDefault();
+		// console.log(e.target.id)
+		setCatSelected(e.currentTarget.innerHTML);
+		setCatBtnText(e.currentTarget.innerHTML);
+		dispatch({ type: 'SETCAT', payload: e.target.id });
+	};
 
-    const setDifficulty = (e) => {
-        e.preventDefault()
-        // console.log(e.target.id)
-        setDiffBtnText(e.currentTarget.id)
-        setDiffSelected(e.currentTarget.id)
-        dispatch({ type: "SETLEVEL", payload: e.target.id })
-    }
+	const setDifficulty = (e) => {
+		e.preventDefault();
+		// console.log(e.target.id)
+		setDiffBtnText(e.currentTarget.id);
+		setDiffSelected(e.currentTarget.id);
+		dispatch({ type: 'SETLEVEL', payload: e.target.id });
+	};
 
-    const handleClickType = (e) => {
-        e.preventDefault();
-        setTypeSelected(e.currentTarget.innerHTML)
-        setTypeBtnText(e.currentTarget.innerHTML)
-        dispatch({ type: "SETTYPE", payload: e.target.id })
-        // SetUrlType('&type='+ event.currentTarget.id)
-    }
+	const handleClickType = (e) => {
+		e.preventDefault();
+		setTypeSelected(e.currentTarget.innerHTML);
+		setTypeBtnText(e.currentTarget.innerHTML);
+		dispatch({ type: 'SETTYPE', payload: e.target.id });
+		// SetUrlType('&type='+ event.currentTarget.id)
+	};
 
-    return (
-        <>
+	return (
+		<>
+			<p>Category: {catSelected}</p>
+			<p>Type: {typeSelected}</p>
+			<p>Difficulty: {diffSelected}</p>
 
-        <p>Category: {catSelected}</p>
-        <p>Type: {typeSelected}</p>
-        <p>Difficulty: {diffSelected}</p>
+			{/* Ending up with loads of classNames */}
+			<div className='dropdown'>
+				<button className='dropbtn-diff'>{diffBtnText}</button>
+				<div className='dropdown-content-diff'>
+					<a
+						href='/#'
+						onClick={setDifficulty}
+						className='drop-items-diff drop-items'
+						id='easy'>
+						Piss easy
+					</a>
+					<a
+						href='/#'
+						onClick={setDifficulty}
+						className='drop-items-diff drop-items'
+						id='medium'>
+						medium
+					</a>
+					<a
+						href='/#'
+						onClick={setDifficulty}
+						className='drop-items-diff drop-items'
+						id='hard'>
+						Hard af
+					</a>
+				</div>
+			</div>
 
-            {/* Ending up with loads of classNames */}
-            <div className="dropdown">
-                <button className="dropbtn-diff">{diffBtnText}</button>
-                <div className="dropdown-content-diff">
-                    <a onClick={setDifficulty} className="drop-items-diff drop-items" id="easy" >Piss easy </a>
-                    <a onClick={setDifficulty} className="drop-items-diff drop-items" id="medium" >medium</a>
-                    <a onClick={setDifficulty} className="drop-items-diff drop-items" id="hard" >Hard af</a>
-                </div>
-            </div>
+			<div className='dropdown'>
+				<button className='dropbtn-cat'>{catBtnText}</button>
+				<div className='dropdown-content-cat'>
+					<a
+						href='/#'
+						onClick={handleBtnClick}
+						className='drop-items-cat drop-items'
+						id='9'>
+						General knowledge
+					</a>
+					<a
+						href='/#'
+						onClick={handleBtnClick}
+						className='drop-items-cat drop-items'
+						id='11'>
+						Films
+					</a>
+					<a
+						href='/#'
+						onClick={handleBtnClick}
+						className='drop-items-cat drop-items'
+						id='15'>
+						Games
+					</a>
+					<a
+						href='/#'
+						onClick={handleBtnClick}
+						className='drop-items-cat drop-items'
+						id='27'>
+						Animals
+					</a>
+					<a
+						href='/#'
+						onClick={handleBtnClick}
+						className='drop-items-cat drop-items'
+						id='18'>
+						Computer Shit
+					</a>
+				</div>
+			</div>
 
-            <div className="dropdown">
-                <button className="dropbtn-cat">{catBtnText}</button>
-                <div className="dropdown-content-cat">
-                    <a onClick={handleBtnClick} className="drop-items-cat drop-items" id="9" >General knowledge</a>
-                    <a onClick={handleBtnClick} className="drop-items-cat drop-items" id="11" >Films</a>
-                    <a onClick={handleBtnClick} className="drop-items-cat drop-items" id="15" >Games</a>
-                    <a onClick={handleBtnClick} className="drop-items-cat drop-items" id="27" >Animals</a>
-                    <a onClick={handleBtnClick} className="drop-items-cat drop-items" id="18" >Computer Shit</a>
-                </div>
-            </div>
+			<div className='dropdown'>
+				<button className='dropbtn-type'>{typeBtnText}</button>
+				<div className='dropdown-content-cat'>
+					<a
+						href='/#'
+						className='drop-items-type drop-items'
+						id='boolean'
+						onClick={handleClickType}>
+						True/False
+					</a>
+					<a
+						href='/#'
+						className='drop-items-type drop-items'
+						id='multiple'
+						onClick={handleClickType}>
+						Multiple
+					</a>
+				</div>
+			</div>
+		</>
+	);
+};
 
-            <div className="dropdown">
-                <button className="dropbtn-type">{typeBtnText}</button>
-                <div className="dropdown-content-cat">
-                    <a className="drop-items-type drop-items" id="boolean" onClick={handleClickType} >True/False</a>
-                    <a className="drop-items-type drop-items" id="multiple" onClick={handleClickType} >Multiple</a>
-                </div>
-            </div>
-
-
-
-
-        </>
-    )
-}
- 
 // use the category num in the id=''
 
 // General knowledge= category=9
@@ -114,4 +170,3 @@ export const SearchForm = () => {
 // Gadgets 30
 // anime/ manga 30
 // cartoon/ animations 31
-
