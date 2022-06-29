@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
+import { render, screen } from '@testing-library/react';
 // mocks react-dom and its render method
 // so that we can assert that render is
 // called with <App /> and HTML element with id = root
@@ -13,7 +13,7 @@ test('renders with App and root div', () => {
   // an HTML element with id = root
   const root = document.createElement('div');
   root.id = 'root';
-  document.body.appendChild(root);
+  screen.body.appendChild(root);
 
   // Requires index.js so that react-dom render method is called
   require('./index.js');
