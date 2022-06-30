@@ -8,10 +8,10 @@ export const FinalScorePage = () => {
 	return (
 		<>
 			<h2>Final Scores</h2>
-			<Confetti
+			{/* <Confetti
 				width={window.innerWidth || 300}
 				height={window.innerHeight || 200}
-			/>
+			/> */}
 			<FinalScores />
 			<h3>All time Highscores</h3>
 			<Highscores />

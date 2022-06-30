@@ -1,27 +1,29 @@
 import "@testing-library/jest-dom";
-import { FinalScorePage } from "./";
+import { default as LandingPage } from "./LandingPage";
 import { screen, render } from "@testing-library/react";
 import React from "react";
 
 
-describe("finalscore Component", () => {
+describe("Highscores Component", () => {
     beforeEach(() => {
         renderWithReduxProvider(
-            <FinalScorePage />
+            <LandingPage />
         );
     });
 
     describe("Renders", () => {
 
         it("placeholder text", () => {
-            const e = screen.getByText(/Final Scores/i)
-            expect(e).toBeInTheDocument();
-        });
-        it("placeholder text", () => {
-            const e = screen.getByText(/All time Highscores/i)
+            const e = screen.getByText(/Quiz-Nado/i)
             expect(e).toBeInTheDocument();
         });
     });
+
+    it("placeholder text", () => {
+        const e = screen.getByText(/Nuff Said/i)
+        expect(e).toBeInTheDocument();
+    });
+
 });
 
 

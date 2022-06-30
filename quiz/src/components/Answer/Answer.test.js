@@ -27,15 +27,7 @@ describe("Answers Component", () => {
     });
 
     // Awaiting Score On Screen to be Created
-    // it("button updates score", async () => {
-    //     const user = userEvent.setup()
-    //     const btn = screen.getByRole('button')
-    //     const score = screen.getByRole()
-    //     const currentScore = score.value
-    //     user.click(btn);
-    //     const newScore = score.value
-    //     expect(btn).toBeInTheDocument();
-    // });
+
 });
 
 
