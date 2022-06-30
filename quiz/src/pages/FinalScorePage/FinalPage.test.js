@@ -10,10 +10,10 @@ describe("FinalScorePage Component", () => {
         );
     });
 
-    describe("Renders", () => {
+    describe("FinalScore Page", () => {
 
-        it("placeholder text", () => {
-            const e = screen.getByText(/this is where we need to display final scores/i)
+        it("renders newgame button", () => {
+            const e = screen.getByRole('button', {  name: /newgame/i})
             expect(e).toBeInTheDocument();
         });
 
