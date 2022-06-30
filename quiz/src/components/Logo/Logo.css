@@ -1,0 +1,25 @@
+.logo-Container{
+    /* background-color: blue; */
+    width: 250px;
+    height: 350px;
+    padding: 0%;
+    margin: 0px;
+}
+#logo-Name{
+    font-family:  "Copperplate",'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    padding: 0%;
+    margin: 0px;
+
+}
+
+.logo-Image{
+    width: 100%;
+    padding: 0%;
+    margin: 0px;
+}
+
+#logo-Slogan{
+    padding: 0%;
+    margin: 0px;
+}
