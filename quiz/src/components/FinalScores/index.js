@@ -6,9 +6,7 @@ export const FinalScores = () => {
 	//fetch or get final scores from the database
 	const player1 = useSelector((state) => state.player1);
 	const player2 = useSelector((state) => state.player2);
-	console.log(player1)
-
-	const players = [{ player1 }, { player2 }];
+	console.log(player1);
 
 	useEffect(() => {
 		const postScores = async () => {
@@ -56,11 +54,11 @@ export const FinalScores = () => {
 			<p>here are your scores: </p>
 			<ul>
 				<li>
-					{player1.name}
+					{player1.username}
 					{player1.score}
 				</li>
 				<li>
-					{player2.name}
+					{player2.username}
 					{player2.score}
 				</li>
 			</ul>
