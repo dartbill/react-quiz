@@ -1,95 +1,102 @@
-import React, { useReducer, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { Question } from "../Question";
-import "../.././index.css";
+import React, { useReducer, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Question } from '../Question';
+import '../.././index.css';
 
+// ******** Move to Question???!?
 const initialState = {
-    currentQuestionIndex: 0,
+	currentQuestionIndex: 0,
 };
 
 const reducer = (state, action) => {
-    if (action.type === "NEXT_QUESTION") {
-        return {
-            ...state,
-            currentQuestionIndex: state.currentQuestionIndex + 1,
-        };
-    }
-    return state;
+	if (action.type === 'NEXT_QUESTION') {
+		return {
+			...state,
+			currentQuestionIndex: state.currentQuestionIndex + 1,
+		};
+	}
+	return state;
 };
 
+// **************************
+
 export const Quiz = () => {
+	// For debugging poiposes ***************************************
 
-    // For debugging poiposes ***************************************
+	const player1 = useSelector((state) => state.player1);
+	const player2 = useSelector((state) => state.player2);
+	console.log('player1 :', player1);
+	console.log('player2 :', player2);
 
-    const player1 = useSelector((state) => state.player1);
-    const player2 = useSelector((state) => state.player2);
-    console.log("player1 :", player1)
-    console.log("player2 :", player2)
+	// **************************************************************
 
-    // **************************************************************
+	// eslint-disable-next-line
+	let navigate = useNavigate();
+	const routeChange = (path) => {
+		navigate(path);
+	};
+	const [state, dispatch] = useReducer(reducer, initialState);
+	const [turn, setTurn] = useState(true);
+	const [score1, setScore1] = useState(0);
+	const [score2, setScore2] = useState(0);
 
+	// On Click Event for Answers ***********************************
+	const submitAnswer = (bool) => {
+		// Updates Score if answer was correct
+		if (bool) {
+			updateScore();
+		}
 
-    // eslint-disable-next-line 
-    let navigate = useNavigate();
-    const routeChange = (path) => {
-        navigate(path);
-    };
-    const [state, dispatch] = useReducer(reducer, initialState);
-    const [turn, setTurn] = useState(true);
-    const [score1, setScore1] = useState(0);
-    const [score2, setScore2] = useState(0);
+		// Updates Question to Next Question OR ends game
+		state.currentQuestionIndex < 19
+			? dispatch({ type: 'NEXT_QUESTION' })
+			: routeChange('/final');
 
-    // On Click Event for Answers ***********************************
-    const submitAnswer = (bool) => {
+		// Update Turn, alternating between player 1 & 2 with boolean
+		updateTurn();
+	};
 
-        // Updates Score if answer was correct
-        if (bool) { updateScore() }
+	const playerDispatch = useDispatch();
 
-        // Updates Question to Next Question OR ends game
-        state.currentQuestionIndex < 19
-            ? dispatch({ type: "NEXT_QUESTION" })
-            : routeChange("/final");
+	const updateScore = () => {
+		if (turn) {
+			setScore1(score1 + 1);
+			playerDispatch({
+				type: 'SET_PLAYER1',
+				payload: {
+					score: score1,
+				},
+			});
+		} else {
+			setScore2(score2 + 1);
+			playerDispatch({
+				type: 'SET_PLAYER2',
+				payload: {
+					score: score2,
+				},
+			});
+		}
+		console.log('score1:', score1);
+		console.log('score2:', score2);
+	};
 
-        // Update Turn, alternating between player 1 & 2 with boolean
-        updateTurn();
-    };
+	const updateTurn = () => (turn ? setTurn(false) : setTurn(true));
 
-    const playerDispatch = useDispatch()
-
-    const updateScore = () => {
-        if (turn) {
-            setScore1(score1 + 1);
-            playerDispatch({
-                type: "SET_PLAYER1",
-                payload: {
-                    score: score1,
-                },
-            });
-        } else {
-            setScore2(score2 + 1);
-            playerDispatch({
-                type: "SET_PLAYER2",
-                payload: {
-                    score: score2,
-                },
-            });
-        }
-        console.log("score1:", score1)
-        console.log("score2:", score2)
-    };
-
-    const updateTurn = () => turn ? setTurn(false) : setTurn(true);
-
-    return (
-        <div className="quiz">
-            <div className="score">
-                {`Question ${state.currentQuestionIndex + 1}/10`}
-            </div>
-            <Question
-                index={state.currentQuestionIndex}
-                onSubmitQuestion={submitAnswer}
-            />
-        </div>
-    );
+	return (
+		<div className='quiz'>
+			{turn ? (
+				<p>{player1.username}, it's your turn!</p>
+			) : (
+				<p>{player2.username}, it's your turn!</p>
+			)}
+			<div className='score'>
+				{`Question ${state.currentQuestionIndex + 1}/10`}
+			</div>
+			<Question
+				index={state.currentQuestionIndex}
+				onSubmitQuestion={submitAnswer}
+			/>
+		</div>
+	);
 };
