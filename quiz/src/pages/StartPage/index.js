@@ -6,7 +6,7 @@ export const StartPage = () => {
 
 
   return (
-    <div className='btn-container'>  
+    <div>  
         <PlayerCount/>
         <HighScoresButton/>
     </div>

@@ -8,7 +8,7 @@ export const HighScoresButton = () => {
   }
 
   return (
-    <button className="highScores btn" onClick={()=>routeChange('/highscores')}>HighScores</button>
+    <button className="highscores-btn btn" onClick={()=>routeChange('/highscores')}>HighScores</button>
   )
 }
 

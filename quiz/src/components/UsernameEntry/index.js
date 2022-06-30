@@ -34,7 +34,7 @@ export const UsernameEntry = () => {
     };
 
     return (
-        <>
+        <div>
             <form className="add-form" onSubmit={updateUsername}>
                 {playerCount === 1 ? (
                     <div className="form-control">
@@ -66,8 +66,8 @@ export const UsernameEntry = () => {
                     </>
                 )}
 
-                <input type="submit" value="Save" />
+                <input id ="save-btn" type="submit" value="Save" />
             </form>
-        </>
+        </div>
     );
 };
