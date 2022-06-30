@@ -5,15 +5,18 @@ import React from "react";
 
 describe("Login Component", () => {
     beforeEach(() => {
-        render(<UsernameEntry />);
+        renderWithReduxProvider(<UsernameEntry />);
     });
 
     describe("Renders", () => {
-        it("placeholder text", () => {
-            const e = screen.getByText(
-                /this is where we need to display final scores/i
-            );
+        it("textbox", () => {
+            const e = screen.getByRole('textbox')
             expect(e).toBeInTheDocument();
         });
+        it("button", () => {
+            const e = screen.getByRole('button')
+            expect(e).toBeInTheDocument();
+        });
+
     });
 });

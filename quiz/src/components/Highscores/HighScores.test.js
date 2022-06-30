@@ -5,15 +5,15 @@ import React from "react";
 
 describe("Highscores Component", () => {
     beforeEach(() => {
-        render(
+        renderWithReduxProvider(
             <Highscores />
         );
     });
 
     describe("Renders", () => {
 
-        it("placeholder text", () => {
-            const e = screen.getByText(/we need to display highscores here/i)
+        it("list", () => {
+            const e = screen.getByRole('list')
             expect(e).toBeInTheDocument();
         });
     });

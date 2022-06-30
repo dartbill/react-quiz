@@ -32,9 +32,10 @@ export const GameProperties = () => {
     return (
         <>
             <div className="dropdown">
-                <button className="dropbtn-diff">{diffBtnText}</button>
+                <button data-testid="button" className="dropbtn-diff">{diffBtnText}</button>
                 <div className="dropdown-content-diff">
                     <a
+                        data-testid="link"
                         href="/#"
                         onClick={setDifficulty}
                         className="drop-items-diff drop-items"

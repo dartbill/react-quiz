@@ -32,8 +32,8 @@ export const Highscores = () => {
 				);
 
 				setScores(sortArray(data));
-			} catch (err) {
-				console.warn(err);
+			} catch ({ err }) {
+				// console.warn(err);
 			}
 		};
 		getScores();

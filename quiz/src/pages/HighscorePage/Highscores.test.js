@@ -6,7 +6,7 @@ import React from "react";
 
 describe("Highscores Component", () => {
     beforeEach(() => {
-        render(
+        renderWithReduxProvider(
             <HighscorePage />
         );
     });
@@ -14,7 +14,7 @@ describe("Highscores Component", () => {
     describe("Renders", () => {
 
         it("placeholder text", () => {
-            const e = screen.getByText(/we need to display highscores here/i)
+            const e = screen.getByText(/High Scores/i)
             expect(e).toBeInTheDocument();
         });
     });
