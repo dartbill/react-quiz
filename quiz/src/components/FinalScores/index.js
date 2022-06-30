@@ -67,7 +67,7 @@ export const FinalScores = () => {
                         </li>
                     </ul>
                     <p>{`Congratualtions ${
-                        player1.score > player2.score
+                        player1.score > player2.score 
                             ? player1.username
                             : player2.username
                     }!`}</p>
