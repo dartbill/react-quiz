@@ -19,84 +19,91 @@ const reducer = (state, action) => {
 	return state;
 };
 
-// **************************
 
 export const Quiz = () => {
-	// For debugging poiposes ***************************************
 
-	const player1 = useSelector((state) => state.player1);
-	const player2 = useSelector((state) => state.player2);
-	console.log('player1 :', player1);
-	console.log('player2 :', player2);
+    // For debugging poiposes ***************************************
 
-	// **************************************************************
+    const player1 = useSelector((state) => state.player1);
+    const player2 = useSelector((state) => state.player2);
+    const playerCount = useSelector((state) => state.playerCount);
+    console.log("player1 :", player1)
+    console.log("player2 :", player2)
 
-	// eslint-disable-next-line
-	let navigate = useNavigate();
-	const routeChange = (path) => {
-		navigate(path);
-	};
-	const [state, dispatch] = useReducer(reducer, initialState);
-	const [turn, setTurn] = useState(true);
-	const [score1, setScore1] = useState(0);
-	const [score2, setScore2] = useState(0);
+    // **************************************************************
 
-	// On Click Event for Answers ***********************************
-	const submitAnswer = (bool) => {
-		// Updates Score if answer was correct
-		if (bool) {
-			updateScore();
-		}
 
-		// Updates Question to Next Question OR ends game
-		state.currentQuestionIndex < 19
-			? dispatch({ type: 'NEXT_QUESTION' })
-			: routeChange('/final');
+    // eslint-disable-next-line 
+    let navigate = useNavigate();
+    const routeChange = (path) => {
+        navigate(path);
+    };
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const [turn, setTurn] = useState(true);
+    const [score1, setScore1] = useState(0);
+    const [score2, setScore2] = useState(0);
 
-		// Update Turn, alternating between player 1 & 2 with boolean
-		updateTurn();
-	};
+    // On Click Event for Answers ***********************************
+    const submitAnswer = (bool) => {
 
-	const playerDispatch = useDispatch();
+        // Updates Score if answer was correct
+        if (bool) { updateScore() }
 
-	const updateScore = () => {
-		if (turn) {
-			setScore1(score1 + 1);
-			playerDispatch({
-				type: 'SET_PLAYER1',
-				payload: {
-					score: score1,
-				},
-			});
-		} else {
-			setScore2(score2 + 1);
-			playerDispatch({
-				type: 'SET_PLAYER2',
-				payload: {
-					score: score2,
-				},
-			});
-		}
-		console.log('score1:', score1);
-		console.log('score2:', score2);
-	};
+        // Updates Question to Next Question OR ends game
+        if (playerCount === 2) {
+            state.currentQuestionIndex < 19
+                ? dispatch({ type: "NEXT_QUESTION" })
+                : routeChange("/final");
+        }
+        else {
+            state.currentQuestionIndex < 9
+                ? dispatch({ type: "NEXT_QUESTION" })
+                : routeChange("/final");
+        }
 
-	const updateTurn = () => (turn ? setTurn(false) : setTurn(true));
+        // Update Turn, alternating between player 1 & 2 with boolean
+        updateTurn();
+    };
 
-	return (
-		<div className='quiz'>
-			{turn ? (
+    const playerDispatch = useDispatch()
+
+    const updateScore = () => {
+        if (turn) {
+            setScore1(score1 + 1);
+            playerDispatch({
+                type: "SET_PLAYER1",
+                payload: {
+                    score: score1,
+                },
+            });
+        } else {
+            setScore2(score2 + 1);
+            playerDispatch({
+                type: "SET_PLAYER2",
+                payload: {
+                    score: score2,
+                },
+            });
+        }
+
+    };
+
+    const updateTurn = () => turn ? setTurn(false) : setTurn(true);
+
+    return (
+        <div className="quiz">
+        			{turn ? (
 				<p>{player1.username}, it's your turn!</p>
 			) : (
 				<p>{player2.username}, it's your turn!</p>
 			)}
-			<div className='score'>
-				{`Question ${state.currentQuestionIndex + 1}/10`}
-			</div>
-			<Question
-				index={state.currentQuestionIndex}
-				onSubmitQuestion={submitAnswer}
-			/>
-		</div>
-	);
+            <div className="score">
+                {`Question ${state.currentQuestionIndex + 1}/10`}
+            </div>
+            <Question
+                index={state.currentQuestionIndex}
+                onSubmitQuestion={submitAnswer}
+            />
+        </div>
+    );
 };
