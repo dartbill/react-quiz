@@ -4,6 +4,10 @@ import React from 'react';
 // useState, useEffect?
 import * as Pages from './pages';
 import { Routes, Route } from 'react-router-dom';
+import PlayerWelcomePage from './pages/PlayerWelcome/PlayerWelcomePage';
+import LandingPage from './pages/LandingPage/LandingPage';
+
+
 // Link?
 
 // import './App.css';
@@ -50,21 +54,30 @@ function App() {
           It's <time dateTime={response}>{response}</time>
         </p> */}
 			{/* </header> */}
-			<header>
+			{/* /<header>
 				<h1>App</h1>
 				<Pages.HighscorePage />
 				<Pages.LoginPage />
-			</header>
+			</header> */}
 
 			{/* the new stuff! */}
 
-			<Routes>
+			{/* <Routes>
 				<Route path='/' element={<Pages.Home />} />
 				<Route path='/start' element={<Pages.StartPage />} />
 				<Route path='/quiz' element={<Pages.QuizPage />} />
 				<Route path='/final' element={<Pages.FinalScorePage />} />
-			</Routes>
+			</Routes> */}
+             <PlayerWelcomePage />
+			 <LandingPage />
+			
+
+
+
+
+
 		</div>
+
 	);
 }
 
