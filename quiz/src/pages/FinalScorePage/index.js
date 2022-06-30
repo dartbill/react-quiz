@@ -1,7 +1,7 @@
 import React from 'react';
 import Confetti from 'react-confetti';
 
-import { FinalScores } from '../../components';
+import { FinalScores, Highscores } from '../../components';
 import { NewGameButton } from '../../components';
 
 export const FinalScorePage = () => {
@@ -13,6 +13,8 @@ export const FinalScorePage = () => {
 				height={window.innerHeight || 200}
 			/>
 			<FinalScores />
+			<h3>All time Highscores</h3>
+			<Highscores />
 			<NewGameButton />
 		</>
 	);

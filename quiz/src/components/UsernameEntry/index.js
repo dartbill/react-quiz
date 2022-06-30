@@ -80,8 +80,9 @@ export const UsernameEntry = () => {
                         <div>
                             <p>player 1: {player1}</p>
                             <p>player 2: {player2}</p>
-                        </div>) : (
-                        <p>player 1: {player1}</p>)}
+                        </div>)
+                        : (
+                            <p>player 1: {player1}</p>)}
 
                 </div>}
         </>
