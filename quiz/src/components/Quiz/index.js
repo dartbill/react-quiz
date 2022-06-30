@@ -65,7 +65,9 @@ export const Quiz = () => {
         }
 
         // Update Turn, alternating between player 1 & 2 with boolean
-        updateTurn();
+        if (playerCount === 2) {
+            updateTurn();
+        }
     };
 
     const playerDispatch = useDispatch()
