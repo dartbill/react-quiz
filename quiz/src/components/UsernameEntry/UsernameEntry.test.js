@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { Login } from "./index";
+import { UsernameEntry } from "./index";
 import { screen, render } from "@testing-library/react";
 import React from "react";
 

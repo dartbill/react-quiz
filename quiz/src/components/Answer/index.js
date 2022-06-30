@@ -1,24 +1,20 @@
-import React, { useState } from 'react'
+import React from "react";
 
-export const Answer = (props) => {
+export const Answer = ({ onSubmitQuestion, bool, answer, num }) => {
 
-  let [score, setScore] = useState(0)
-
-
-  const handleBtnClick = () => {
-    if (props.bool) {
-      setScore(score = score + 1)
-    }
-    console.log(score)
-  }
-
-  return (
-    <div className='answer'>
-      <button onClick={handleBtnClick} className="answer-letter">{props.num}</button>
-      <div className="answer-text"> {props.answer} </div>
-    </div>
-
-  )
-}
-
-
+    // onClick calls function from Question 
+    // passes in bool (true or false) in order to allow/disallow update score
+    
+    return (
+        <div className="answer">
+            <button
+                onClick={ () => onSubmitQuestion(bool) }
+                className="answer-letter"
+                style={{ cursor: "pointer" }}
+            >
+                {num}
+            </button>
+            <div className="answer-text"> { answer } </div>
+        </div>
+    );
+};

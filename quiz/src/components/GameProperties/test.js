@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchForm } from '.';
+import { GameProperties } from '.';
 import { screen, render } from "@testing-library/react";
 
 // Main Imports
@@ -38,9 +38,9 @@ const renderWithReduxProvider = (ui, options = {}) => {
 
 
 
-describe('SearchForm Component', () => {
+describe('GameProperties Component', () => {
     beforeAll(() => {
-        renderWithReduxProvider(<SearchForm />)
+        renderWithReduxProvider(<GameProperties />)
     })
     // describe('Renders button',()=>{
     //     test('difficult', () => {
