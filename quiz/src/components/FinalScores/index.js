@@ -45,7 +45,7 @@ export const FinalScores = () => {
         };
         postScores();
         postScores2();
-    }, []);
+    }, [player1, player2]);
 
     return (
         <div>
@@ -68,8 +68,8 @@ export const FinalScores = () => {
                         </li>
                     </ul>
                     <p>{`Congratualtions ${player1.score > player2.score
-                            ? player1.username
-                            : player2.username
+                        ? player1.username
+                        : player2.username
                         }!`}</p>
                 </>
             )}
