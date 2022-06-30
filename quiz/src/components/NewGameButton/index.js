@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-
 export const NewGameButton = () => {
     const currentState = useSelector(state => state);
     console.log("state :",currentState)
@@ -15,21 +14,6 @@ export const NewGameButton = () => {
         dispatch({type:"RESET"})
         // go someplace special
         navigate(path);
-        
-        // dispatch({
-        //     type: "SET_PLAYER1",
-        //     payload: {
-        //       score: 0,
-        //     },
-        //   })
-    
-        //   dispatch({
-        //     type: "SET_PLAYER2",
-        //     payload: {
-        //       score: 0,
-        //     },
-        //   })
-
     };
 
 
