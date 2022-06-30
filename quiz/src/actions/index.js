@@ -26,7 +26,7 @@ export const GetQuestions = (cat) => {
         type: "TEST",
         payload: shuffleArray(resultsData),
       });
-    } catch (err) {
+    } catch ({ err }) {
     }
   };
 };

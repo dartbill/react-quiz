@@ -13,7 +13,7 @@ test('renders with App and root div', () => {
   // an HTML element with id = root
   const root = document.createElement('div');
   root.id = 'root';
-  screen.body.appendChild(root);
+  // screen.body.appendChild(root);
 
   // Requires index.js so that react-dom render method is called
   require('./index.js');
