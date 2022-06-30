@@ -79,6 +79,8 @@ export const Question = ({ index, onSubmitQuestion }) => {
             { answer: incorrectAnswers[2], bool: false },
         ]))
 
+    console.log(answerArray[0].bool)
+
     return (
         <>
             <div className="quiz">

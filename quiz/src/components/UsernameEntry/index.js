@@ -79,10 +79,11 @@ export const UsernameEntry = () => {
                 <div className="playerNamesSelected">
                     {playerCount === 2 ? (
                         <div>
-                            <p>Player 1: {player1}</p>
-                            <p>Player 2: {player2}</p>
-                        </div>) : (
-                        <p>Player 1: {player1}</p>)}
+                            <p>player 1: {player1}</p>
+                            <p>player 2: {player2}</p>
+                        </div>)
+                        : (
+                            <p>player 1: {player1}</p>)}
 
                 </div>}
         </>

@@ -71,8 +71,6 @@ export const FinalScores = () => {
 						<li>{`${player1.username} : ${player1.score}`}</li>
 						<li>{`${player2.username} : ${player2.score}`}</li>
 					</ul>
-					{/* <p>{`Congratulations ${player1.score > player2.score ? player1.username : player2.username
-						}!`}</p> */}
 					<p>{whoWon()}</p>
 				</>
 			)}
