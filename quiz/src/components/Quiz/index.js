@@ -1,15 +1,16 @@
-import React, { useReducer, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { Question } from "../Question";
-import "../.././index.css";
+import React, { useReducer, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Question } from '../Question';
+import '../.././index.css';
 
+// ******** Move to Question???!?
 const initialState = {
     currentQuestionIndex: 0,
 };
 
 const reducer = (state, action) => {
-    if (action.type === "NEXT_QUESTION") {
+    if (action.type === 'NEXT_QUESTION') {
         return {
             ...state,
             currentQuestionIndex: state.currentQuestionIndex + 1,
@@ -18,14 +19,16 @@ const reducer = (state, action) => {
     return state;
 };
 
+
 export const Quiz = () => {
 
     // For debugging poiposes ***************************************
 
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
-    console.log("player1 :", player1)
-    console.log("player2 :", player2)
+    const playerCount = useSelector((state) => state.playerCount);
+    // console.log("player1 :", player1)
+    // console.log("player2 :", player2)
 
     // **************************************************************
 
@@ -47,9 +50,19 @@ export const Quiz = () => {
         if (bool) { updateScore() }
 
         // Updates Question to Next Question OR ends game
-        state.currentQuestionIndex < 19
-            ? dispatch({ type: "NEXT_QUESTION" })
-            : routeChange("/final");
+        if (playerCount === 2) {
+            if (turn) {
+                // console.log(state.currentQuestionIndex)
+                state.currentQuestionIndex < 9
+                    ? dispatch({ type: "NEXT_QUESTION" })
+                    : routeChange("/final");
+            }
+        }
+        else {
+            state.currentQuestionIndex < 9
+                ? dispatch({ type: "NEXT_QUESTION" })
+                : routeChange("/final");
+        }
 
         // Update Turn, alternating between player 1 & 2 with boolean
         updateTurn();
@@ -75,17 +88,34 @@ export const Quiz = () => {
                 },
             });
         }
-        console.log("score1:", score1)
-        console.log("score2:", score2)
+
     };
 
     const updateTurn = () => turn ? setTurn(false) : setTurn(true);
 
+    const updateQuestionIndex = () => {
+        if (playerCount === 2) {
+            if (turn) {
+                return `Question ${state.currentQuestionIndex + 1}/10`
+            } else {
+                return `Question ${state.currentQuestionIndex}/10`
+            }
+
+        } else
+            return `Question ${state.currentQuestionIndex + 1}/10`
+    }
+
     return (
         <div className="quiz">
+            {turn ? (
+                <p>{player1.username}, it's your turn!</p>
+            ) : (
+                <p>{player2.username}, it's your turn!</p>
+            )}
             <div className="score">
-                {`Question ${state.currentQuestionIndex + 1}/10`}
+                <p>{updateQuestionIndex()}</p>
             </div>
+
             <Question
                 index={state.currentQuestionIndex}
                 onSubmitQuestion={submitAnswer}

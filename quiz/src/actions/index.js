@@ -1,17 +1,24 @@
+
 import axios from "axios";
 
-// Damn cats!
 
 export const GetQuestions = (cat) => {
   const category = cat.cat;
   const lev = cat.level;
   const type = cat.typeOfQ;
+  let numOfq = 10
+
+
+
+  if (cat.playerCount === 2) {
+    numOfq = 20
+  }
 
   //fetch questions functions
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `https://opentdb.com/api.php?&amount=20&category=${category}&difficulty=${lev}&type=${type}`
+        `https://opentdb.com/api.php?&amount=${numOfq}&category=${category}&difficulty=${lev}&type=${type}`
       );
       let resultsData = data.results;
 
