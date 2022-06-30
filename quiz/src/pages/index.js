@@ -1,6 +1,5 @@
-export { Home } from './Home'
+export { StartPage } from './StartPage'
+export { NewGamePage } from './NewGamePage'
 export { QuizPage } from './QuizPage'
-export { LoginPage } from './LoginPage'
 export { HighscorePage } from './HighscorePage'
 export { FinalScorePage } from './FinalScorePage'
-export { StartPage } from './StartPage'
