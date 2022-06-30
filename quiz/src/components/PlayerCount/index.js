@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 export const PlayerCount = () => {
 
-    let navigate = useNavigate();
-    const routeChange = (path) => {
-      navigate(path);
-    }
+  let navigate = useNavigate();
+  const routeChange = (path) => {
+    navigate(path);
+  }
 
-    const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
-    const updatePlayers = (p) => {
-        p === 1 
-        ? dispatch({ type: 'SET_PLAYER_COUNT', payload: 1 })
-        : dispatch({ type: 'SET_PLAYER_COUNT', payload: 2 });
-        routeChange('/newgame');
-    }
+  const updatePlayers = (p) => {
+    p === 1
+      ? dispatch({ type: 'SET_PLAYER_COUNT', payload: 1 })
+      : dispatch({ type: 'SET_PLAYER_COUNT', payload: 2 });
+    routeChange('/newgame');
+  }
 
   return (
     <>
-    <div className="container">
+      <div className="container">
         <h2>Select Player Count</h2>
         <button className='button-55' onClick={()=> updatePlayers(1)}>One</button>
         <button className='button-49' onClick={()=> updatePlayers(2)}>Two</button>
