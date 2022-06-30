@@ -6,17 +6,17 @@ import '../.././index.css';
 
 // ******** Move to Question???!?
 const initialState = {
-	currentQuestionIndex: 0,
+    currentQuestionIndex: 0,
 };
 
 const reducer = (state, action) => {
-	if (action.type === 'NEXT_QUESTION') {
-		return {
-			...state,
-			currentQuestionIndex: state.currentQuestionIndex + 1,
-		};
-	}
-	return state;
+    if (action.type === 'NEXT_QUESTION') {
+        return {
+            ...state,
+            currentQuestionIndex: state.currentQuestionIndex + 1,
+        };
+    }
+    return state;
 };
 
 
@@ -51,9 +51,12 @@ export const Quiz = () => {
 
         // Updates Question to Next Question OR ends game
         if (playerCount === 2) {
-            state.currentQuestionIndex < 19
-                ? dispatch({ type: "NEXT_QUESTION" })
-                : routeChange("/final");
+            if (turn) {
+                console.log(state.currentQuestionIndex)
+                state.currentQuestionIndex < 9
+                    ? dispatch({ type: "NEXT_QUESTION" })
+                    : routeChange("/final");
+            }
         }
         else {
             state.currentQuestionIndex < 9
@@ -90,16 +93,19 @@ export const Quiz = () => {
 
     const updateTurn = () => turn ? setTurn(false) : setTurn(true);
 
+
+
     return (
         <div className="quiz">
-        			{turn ? (
-				<p>{player1.username}, it's your turn!</p>
-			) : (
-				<p>{player2.username}, it's your turn!</p>
-			)}
+            {turn ? (
+                <p>{player1.username}, it's your turn!</p>
+            ) : (
+                <p>{player2.username}, it's your turn!</p>
+            )}
             <div className="score">
-                {`Question ${state.currentQuestionIndex + 1}/10`}
+                {turn ? (`Question ${state.currentQuestionIndex + 1}/10`) : (`Question ${state.currentQuestionIndex}/10`)}
             </div>
+
             <Question
                 index={state.currentQuestionIndex}
                 onSubmitQuestion={submitAnswer}
