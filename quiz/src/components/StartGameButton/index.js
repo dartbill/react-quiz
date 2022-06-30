@@ -25,7 +25,7 @@ export const StartGameButton = () => {
 
             default:
                 if (player1.username) {
-                    console.log(player1.username)
+                    // console.log(player1.username)
                     routeChange(path);
                 } else {
                     window.alert("Please save a username");
@@ -34,5 +34,5 @@ export const StartGameButton = () => {
         }
     };
 
-    return <button onClick={startGame}>Play!</button>;
+    return <button className="coolbutton" onClick={startGame}>Play!</button>;
 };

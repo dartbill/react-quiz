@@ -39,7 +39,6 @@ export const Highscores = () => {
 		getScores();
 	}, []);
 
-	// console.log('scores value', scores);
 	return (
 		<ol>
 			{scores.map((score) => (

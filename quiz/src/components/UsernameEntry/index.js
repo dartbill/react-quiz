@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export const UsernameEntry = () => {
     const dispatch = useDispatch();
     const playerCount = useSelector((state) => state.playerCount);
+    const player1 = useSelector((state) => state.player1.username);
+    const player2 = useSelector((state) => state.player2.username);
+    let [bool, setBool] = useState(true)
 
     const updateUsername = (e) => {
         e.preventDefault();
@@ -31,43 +34,58 @@ export const UsernameEntry = () => {
                 });
                 break;
         }
+        setBool(false)
+
     };
 
+
     return (
-        <div>
-            <form className="add-form" onSubmit={updateUsername}>
-                {playerCount === 1 ? (
-                    <div className="form-control">
-                        <label>Username 1</label>
-                        <input
-                            type="text"
-                            id="player1"
-                            placeholder="Add Username"
-                        />
-                    </div>
-                ) : (
-                    <>
+        <>
+            {bool ?
+                <form className="add-form" onSubmit={updateUsername}>
+                    {playerCount === 1 ? (
                         <div className="form-control">
-                            <label>Username 1</label>
+                            <label>Player 1  -</label>
                             <input
+                            className="usernameInputs"
                                 type="text"
                                 id="player1"
                                 placeholder="Add Username"
                             />
                         </div>
-                        <div className="form-control">
-                            <label>Username 2</label>
-                            <input
-                                type="text"
-                                id="player2"
-                                placeholder="Add Username"
-                            />
-                        </div>
-                    </>
-                )}
+                    ) : (
+                        <>
+                            <div className="form-control">
+                                <label>Player 1</label>
+                                <input
+                                    type="text"
+                                    id="player1"
+                                    placeholder="Add Username"
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label>Player 2</label>
+                                <input
+                                    type="text"
+                                    id="player2"
+                                    placeholder="Add Username"
+                                />
+                            </div>
+                        </>
+                    )}
 
-                <input id ="save-btn" type="submit" value="Save" />
-            </form>
-        </div>
+                    <input className="coolbutton" type="submit" value="Save" />
+                </form> :
+                <div className="playerNamesSelected">
+                    {playerCount === 2 ? (
+                        <div>
+                            <p>player 1: {player1}</p>
+                            <p>player 2: {player2}</p>
+                        </div>)
+                        : (
+                            <p>player 1: {player1}</p>)}
+
+                </div>}
+        </>
     );
 };
