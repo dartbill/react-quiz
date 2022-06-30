@@ -8,7 +8,7 @@ export const NewGameButton = () => {
     };
 
     return (
-        <button className="ourBtns" onClick={()=>routeChange("/")}>
+        <button className="coolbutton " onClick={()=>routeChange("/")}>
             NewGame
         </button>
     );

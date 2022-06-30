@@ -34,5 +34,5 @@ export const StartGameButton = () => {
         }
     };
 
-    return <button onClick={startGame}>Play!</button>;
+    return <button className="coolbutton" onClick={startGame}>Play!</button>;
 };

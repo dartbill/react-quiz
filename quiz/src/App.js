@@ -1,4 +1,5 @@
 import "./index.css";
+import "./form.css"
 import React from "react";
 import * as Pages from "./pages";
 import { Routes, Route } from "react-router-dom";

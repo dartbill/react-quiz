@@ -1,7 +1,10 @@
  body { 
-   background-color: #d5e3ec;
-   background-size: cover;
-      background-image: url("./Images/BGslighttransparent.png");
+    background-color: #a4cbe4;
+    background-size: cover;
+
+    background-image: url("./Images/BGslighttransparent.png");
+    /* background-repeat: ; */
+    
       
     }   
 

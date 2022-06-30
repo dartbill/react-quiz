@@ -45,8 +45,9 @@ export const UsernameEntry = () => {
                 <form className="add-form" onSubmit={updateUsername}>
                     {playerCount === 1 ? (
                         <div className="form-control">
-                            <label>Username 1</label>
+                            <label>Player 1  -</label>
                             <input
+                            className="usernameInputs"
                                 type="text"
                                 id="player1"
                                 placeholder="Add Username"
@@ -55,7 +56,7 @@ export const UsernameEntry = () => {
                     ) : (
                         <>
                             <div className="form-control">
-                                <label>Username 1</label>
+                                <label>Player 1</label>
                                 <input
                                     type="text"
                                     id="player1"
@@ -63,7 +64,7 @@ export const UsernameEntry = () => {
                                 />
                             </div>
                             <div className="form-control">
-                                <label>Username 2</label>
+                                <label>Player 2</label>
                                 <input
                                     type="text"
                                     id="player2"
@@ -73,9 +74,9 @@ export const UsernameEntry = () => {
                         </>
                     )}
 
-                    <input type="submit" value="Save" />
+                    <input className="coolbutton" type="submit" value="Save" />
                 </form> :
-                <div>
+                <div className="playerNamesSelected">
                     {playerCount === 2 ? (
                         <div>
                             <p>player 1: {player1}</p>
