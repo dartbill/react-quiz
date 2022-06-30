@@ -21,9 +21,10 @@ export const PlayerCount = () => {
     <>
       <div className="container">
         <h2>Select Player Count</h2>
-        <button onClick={() => updatePlayers(1)}>One</button>
-        <button onClick={() => updatePlayers(2)}>Two</button>
-      </div>
+        <button className='button-55' onClick={()=> updatePlayers(1)}>One</button>
+        <button className='button-49' onClick={()=> updatePlayers(2)}>Two</button>
+        {/* <button>High Scores</button> */}
+    </div>
     </>
   )
 }
