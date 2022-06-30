@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Answer } from '../';
 
@@ -86,8 +86,8 @@ export const Question = ({ index, onSubmitQuestion }) => {
 			<div className='quiz'>
 				<div className='question'>{question}</div>
 				{questionType === 'boolean' ? (
-					<div className='Container-Answers' onLoad={createRandOrder}>
-						<div className='genBtn correctBtn bx3' id={orderA}>
+					<div className='Container-Answers' >
+						<div className='genBtn correctBtn bx3'>
 							<Answer
 								onSubmitQuestion={onSubmitQuestion}
 								bool={answerArray[0].bool}
@@ -95,7 +95,7 @@ export const Question = ({ index, onSubmitQuestion }) => {
 								answer={answerArray[0].answer}
 							/>
 						</div>
-						<div className='genBtn wrongBtn bx4' id={orderB}>
+						<div className='genBtn wrongBtn bx4'>
 							<Answer
 								onSubmitQuestion={onSubmitQuestion}
 								bool={answerArray[1].bool}
@@ -105,8 +105,8 @@ export const Question = ({ index, onSubmitQuestion }) => {
 						</div>
 					</div>
 				) : (
-					<div className='Container-Answers' onLoad={createRandOrder}>
-						<div className='genBtn correctBtn bx3' id={orderA}>
+					<div className='Container-Answers' >
+						<div className='genBtn correctBtn bx3'>
 							<Answer
 								onSubmitQuestion={onSubmitQuestion}
 								bool={answerArray[0].bool}
@@ -114,7 +114,7 @@ export const Question = ({ index, onSubmitQuestion }) => {
 								answer={answerArray[0].answer}
 							/>
 						</div>
-						<div className='genBtn wrongBtn bx4' id={orderB}>
+						<div className='genBtn wrongBtn bx4'>
 							<Answer
 								onSubmitQuestion={onSubmitQuestion}
 								bool={answerArray[1].bool}
@@ -122,7 +122,7 @@ export const Question = ({ index, onSubmitQuestion }) => {
 								answer={answerArray[1].answer}
 							/>
 						</div>
-						<div className='genBtn wrongBtn bx1' id={orderC}>
+						<div className='genBtn wrongBtn bx1' >
 							<Answer
 								onSubmitQuestion={onSubmitQuestion}
 								bool={answerArray[2].bool}
@@ -130,7 +130,7 @@ export const Question = ({ index, onSubmitQuestion }) => {
 								answer={answerArray[2].answer}
 							/>
 						</div>
-						<div className='genBtn wrongBtn bx2' id={orderD}>
+						<div className='genBtn wrongBtn bx2'>
 							<Answer
 								onSubmitQuestion={onSubmitQuestion}
 								bool={answerArray[3].bool}
