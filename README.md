@@ -9,7 +9,7 @@ LAP 3 Project: react-quiz
 
 ## Project Goal
 
-Create a multiplayer quiz app using React, Redux
+Create a multiplayer quiz app using React and Redux
 - Screenshots/Images
  
 ## Installation and Usage
