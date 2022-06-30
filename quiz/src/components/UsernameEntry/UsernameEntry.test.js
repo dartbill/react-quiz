@@ -5,7 +5,7 @@ import React from "react";
 
 describe("Login Component", () => {
     beforeEach(() => {
-        render(<Login />);
+        render(<UsernameEntry />);
     });
 
     describe("Renders", () => {

@@ -33,7 +33,7 @@ export const Quiz = () => {
     // **************************************************************
 
 
-    // eslint-disable-next-line 
+
     let navigate = useNavigate();
     const routeChange = (path) => {
         navigate(path);

@@ -11,17 +11,17 @@ describe('Render App', () => {
     beforeEach(() => {
         render(
             <React.StrictMode>
-        <BrowserRouter>
-            <Provider store={store}>
-                <App />
-            </Provider>
-        </BrowserRouter>
-    </React.StrictMode>
+                <BrowserRouter>
+                    <Provider store={store}>
+                        <App />
+                    </Provider>
+                </BrowserRouter>
+            </React.StrictMode>
         )
     })
 
     test("Play button exists", () => {
-      const element = screen.getByRole('link', {  name: /play!/i})
-      expect(element).toBeInTheDocument();
-  });
+        const element = screen.getByAltText('logo')
+        expect(element).toBeInTheDocument();
+    });
 })
