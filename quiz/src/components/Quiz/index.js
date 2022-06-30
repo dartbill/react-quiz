@@ -1,9 +1,8 @@
 import React, { useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Question } from "../Question";
 import "../.././index.css";
-
 
 const initialState = {
     currentQuestionIndex: 0,
@@ -20,7 +19,18 @@ const reducer = (state, action) => {
 };
 
 export const Quiz = () => {
-    // eslint-disable-next-line
+
+    // For debugging poiposes ***************************************
+
+    const player1 = useSelector((state) => state.player1);
+    const player2 = useSelector((state) => state.player2);
+    console.log("player1 :",player1)
+    console.log("player2 :",player2)
+
+    // **************************************************************
+
+
+    // eslint-disable-next-line ??
     let navigate = useNavigate();
     const routeChange = (path) => {
         navigate(path);
@@ -30,6 +40,7 @@ export const Quiz = () => {
     const [score1, setScore1] = useState(0);
     const [score2, setScore2] = useState(0);
 
+    // On Click Event for Answers ***********************************
     const submitAnswer = (bool) => {
 
         // Updates Score if answer was correct
@@ -40,25 +51,27 @@ export const Quiz = () => {
             ? dispatch({ type: "NEXT_QUESTION" })
             : routeChange("/final");
 
-        // Updates Turn, alternating between player 1 & 2 with boolean
+        // Update Turn, alternating between player 1 & 2 with boolean
         updateTurn();
     };
 
+    const playerDispatch = useDispatch()
+
     const updateScore = () => {
         if (turn) {
-            setScore1((score1 + 1));
-            dispatch({
+            setScore1(score1 + 1);
+            playerDispatch({
                 type: "SET_PLAYER1",
                 payload: {
-                    score: score1,
+                     score: score1,
                 },
             });
         } else {
-            setScore2((score2 + 1));
-            dispatch({
+            setScore2(score2 + 1);
+            playerDispatch({
                 type: "SET_PLAYER2",
                 payload: {
-                    score: score2,
+                   score: score2,
                 },
             });
         }
