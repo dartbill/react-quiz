@@ -27,8 +27,8 @@ export const Quiz = () => {
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
     const playerCount = useSelector((state) => state.playerCount);
-    console.log("player1 :", player1)
-    console.log("player2 :", player2)
+    // console.log("player1 :", player1)
+    // console.log("player2 :", player2)
 
     // **************************************************************
 
@@ -52,7 +52,7 @@ export const Quiz = () => {
         // Updates Question to Next Question OR ends game
         if (playerCount === 2) {
             if (turn) {
-                console.log(state.currentQuestionIndex)
+                // console.log(state.currentQuestionIndex)
                 state.currentQuestionIndex < 9
                     ? dispatch({ type: "NEXT_QUESTION" })
                     : routeChange("/final");
