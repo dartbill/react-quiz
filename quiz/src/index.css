@@ -143,9 +143,8 @@ div {
 }
 
 .btn-container {
-      width: 50vw; 
-      height: 70vh;
-       margin: 0 auto;  
+      width: 100%;
+      margin: 0 auto;  
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -153,6 +152,7 @@ div {
       border: 5px solid rgb(42, 42, 83);
       /* padding: 5% ; */
       text-align: center;
+      
 
 }
 
@@ -165,8 +165,6 @@ div {
       background-color: #0084da;
       font-size: large;
       border-radius: 5px;
-      
-      
 
 }
 

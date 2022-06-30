@@ -6,9 +6,9 @@ export const StartPage = () => {
 
 
   return (
-    <>  
+    <div className='btn-container'>  
         <PlayerCount/>
         <HighScoresButton/>
-    </>
+    </div>
   )
 }
