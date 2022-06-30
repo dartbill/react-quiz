@@ -30,28 +30,28 @@ export const GameProperties = () => {
   return (
     <div id="gameProperties">
       <div className="dropdown">
-        <button className="dropbtn-diff">{diffBtnText}</button>
+        <button className="dropbtn-diff drop">{diffBtnText}</button>
         <div className="dropdown-content-diff">
           <a
             href="/#"
             onClick={setDifficulty}
-            className="drop-items-diff drop-items"
+            className="drop-items-diff drop-items drop"
             id="easy"
           >
-            Piss easy
+            Piss Easy
           </a>
           <a
             href="/#"
             onClick={setDifficulty}
-            className="drop-items-diff drop-items"
+            className="drop-items-diff drop-items drop"
             id="medium"
           >
-            medium
+            Medium
           </a>
           <a
             href="/#"
             onClick={setDifficulty}
-            className="drop-items-diff drop-items"
+            className="drop-items-diff drop-items drop"
             id="hard"
           >
             Hard af
@@ -60,12 +60,12 @@ export const GameProperties = () => {
       </div>
 
       <div className="dropdown">
-        <button className="dropbtn-cat">{catBtnText}</button>
+        <button className="dropbtn-cat drop">{catBtnText}</button>
         <div className="dropdown-content-cat">
           <a
             href="/#"
             onClick={handleBtnClick}
-            className="drop-items-cat drop-items"
+            className="drop-items-cat drop-items drop"
             id="9"
           >
             General knowledge
@@ -73,7 +73,7 @@ export const GameProperties = () => {
           <a
             href="/#"
             onClick={handleBtnClick}
-            className="drop-items-cat drop-items"
+            className="drop-items-cat drop-items drop"
             id="11"
           >
             Films
@@ -81,7 +81,7 @@ export const GameProperties = () => {
           <a
             href="/#"
             onClick={handleBtnClick}
-            className="drop-items-cat drop-items"
+            className="drop-items-cat drop-items drop"
             id="15"
           >
             Games
@@ -89,7 +89,7 @@ export const GameProperties = () => {
           <a
             href="/#"
             onClick={handleBtnClick}
-            className="drop-items-cat drop-items"
+            className="drop-items-cat drop-items drop"
             id="27"
           >
             Animals
@@ -97,7 +97,7 @@ export const GameProperties = () => {
           <a
             href="/#"
             onClick={handleBtnClick}
-            className="drop-items-cat drop-items"
+            className="drop-items-cat drop-items  drop"
             id="18"
           >
             Computer Shit
@@ -106,11 +106,11 @@ export const GameProperties = () => {
       </div>
 
       <div className="dropdown">
-        <button className="dropbtn-type">{typeBtnText}</button>
+        <button className="dropbtn-type drop">{typeBtnText}</button>
         <div className="dropdown-content-cat">
           <a
             href="/#"
-            className="drop-items-type drop-items"
+            className="drop-items-type drop-items drop"
             id="boolean"
             onClick={handleClickType}
           >
@@ -118,7 +118,7 @@ export const GameProperties = () => {
           </a>
           <a
             href="/#"
-            className="drop-items-type drop-items"
+            className="drop-items-type drop-items drop"
             id="multiple"
             onClick={handleClickType}
           >

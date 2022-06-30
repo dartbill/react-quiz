@@ -32,7 +32,11 @@
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content-diff :hover {background-color:#1a3139;;}
+  .dropdown-content-diff :hover {
+    background-color:#1a3139;;
+   
+  
+  }
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content-diff {display: block;}
@@ -42,8 +46,11 @@
 
 
 
-
-
+  /* universal animation class for all drop downs*/
+.drop:hover {
+  font-size:larger;
+  transition: font-size 0.3s;
+}
 
 
 
