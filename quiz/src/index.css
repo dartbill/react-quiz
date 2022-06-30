@@ -1,11 +1,15 @@
  body { 
-   background-color: #0084da;
+   background-color: #d5e3ec;
    background-size: cover;
-      background-image: url("/BG-QuizNado.png"); 
-      /* background-image: url("/quiz/public/BG-QuizNado.png");  */
-      /* background-image: url("/react-quiz/quiz/public/BG-QuizNado.png");  */
-      /* background-image: url("../public/BG-QuizNado.png");  */
+      background-image: url("./Images/BGslighttransparent.png");
+      
     }   
+
+.screenBGOverlay{
+  width: 100vh;
+  height: 100vh;
+  background-color: #0b0e21;
+}
     
 div {
       box-sizing: border-box;
@@ -81,16 +85,16 @@ div {
             margin-left: 20px;
           }
           
-.ourBtns{
+/* .ourBtns{
     padding: 3%;
     background-color: blue;
     color: white;
     border-radius: 5%;
-}
+} */
 
-.ourBtns:hover {
+/* .ourBtns:hover {
     background-color: red;
-}
+} */
 
 /* for the quiz answers....................................... */
 
@@ -183,24 +187,36 @@ div {
   height: 350px;
   padding: 0%;
   margin: 0px;
-}
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  justify-content: center;}
+
+  .logo-Image{
+    width: 100%;
+    padding: 0%;
+    margin: 0px;
+  }
+
+
+
 #logo-Name{
   font-family:  "Copperplate",'Arial Narrow', Arial, sans-serif;
   font-size: xx-large;
-  padding: 0%;
+  /* padding: 0%; */
   margin: 0px;
-
+  color: white;
+  text-align: center;
 }
 
-.logo-Image{
-  width: 100%;
-  padding: 0%;
-  margin: 0px;
-}
+
 
 #logo-Slogan{
-  padding: 0%;
-  margin: 0px;
+  /* padding: 0%; */
+  /* padding-right: 100px; */
+  /* margin: 0px; */
+  color: white;
+  text-align: center;
 }
 
 
