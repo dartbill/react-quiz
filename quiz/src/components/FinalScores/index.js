@@ -47,6 +47,16 @@ export const FinalScores = () => {
 		postScores2();
 	}, [player1, player2]);
 
+	const whoWon = () => {
+		if (player1.score > player2.score) {
+			return `Congratulations ${player1.username}`
+		} else if (player2.score > player1.score) {
+			return `Congratulations ${player1.username}`
+		} else {
+			return "It was a tie!"
+		}
+	}
+
 	return (
 		<>
 			<p>Here are your scores: </p>
@@ -61,9 +71,9 @@ export const FinalScores = () => {
 						<li>{`${player1.username} : ${player1.score}`}</li>
 						<li>{`${player2.username} : ${player2.score}`}</li>
 					</ul>
-					<p>{`Congratualtions ${
-						player1.score > player2.score ? player1.username : player2.username
-					}!`}</p>
+					{/* <p>{`Congratulations ${player1.score > player2.score ? player1.username : player2.username
+						}!`}</p> */}
+					<p>{whoWon()}</p>
 				</>
 			)}
 		</>
