@@ -24,6 +24,7 @@ export const Quiz = () => {
 
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
+    const playerCount = useSelector((state) => state.playerCount);
     console.log("player1 :", player1)
     console.log("player2 :", player2)
 
@@ -47,9 +48,16 @@ export const Quiz = () => {
         if (bool) { updateScore() }
 
         // Updates Question to Next Question OR ends game
-        state.currentQuestionIndex < 19
-            ? dispatch({ type: "NEXT_QUESTION" })
-            : routeChange("/final");
+        if (playerCount === 2) {
+            state.currentQuestionIndex < 19
+                ? dispatch({ type: "NEXT_QUESTION" })
+                : routeChange("/final");
+        }
+        else {
+            state.currentQuestionIndex < 9
+                ? dispatch({ type: "NEXT_QUESTION" })
+                : routeChange("/final");
+        }
 
         // Update Turn, alternating between player 1 & 2 with boolean
         updateTurn();
@@ -75,8 +83,7 @@ export const Quiz = () => {
                 },
             });
         }
-        console.log("score1:", score1)
-        console.log("score2:", score2)
+
     };
 
     const updateTurn = () => turn ? setTurn(false) : setTurn(true);
