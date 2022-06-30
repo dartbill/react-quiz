@@ -3,10 +3,13 @@ import React from "react";
 
 export const NewGamePage = () => {
     return (
-        <>
+        <div id="center-menu">
             <UsernameEntry />
-            <GameProperties />
-            <StartGameButton />
-        </>
+             <div id="menu-startGame">
+                <div id="gameMenu"><GameProperties /></div>
+                <div id="playBtn"><StartGameButton /></div>
+             </div>
+            
+        </div>
     );
 };
