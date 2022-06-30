@@ -1,8 +1,12 @@
- /* body { 
-      /* background: linear-gradient(to right, #26D0CE, #1A2980); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      /* background-image: url("../public/BG-QuizNado.png"); }*/   
-
-
+ body { 
+   background-color: #0084da;
+   background-size: cover;
+      background-image: url("/BG-QuizNado.png"); 
+      /* background-image: url("/quiz/public/BG-QuizNado.png");  */
+      /* background-image: url("/react-quiz/quiz/public/BG-QuizNado.png");  */
+      /* background-image: url("../public/BG-QuizNado.png");  */
+    }   
+    
 div {
       box-sizing: border-box;
     }
@@ -11,7 +15,6 @@ div {
       width: 975px;
       margin: 0 auto;
       margin-top: 100px;
-      
     }
 
     .question {
@@ -36,7 +39,6 @@ div {
       text-transform: uppercase;
       cursor: pointer;
       text-align: center;
-      
     }
 
 
@@ -160,18 +162,17 @@ div {
 .btn {
       padding: 3%;
       margin: 2% 0;
-      width: 50%;
+      width: 200px;
+      height: 70px;
       font-weight: bold;
       background-color: #0084da;
       font-size: large;
       border-radius: 5px;
-      
-      
-
 }
 
 .btn:hover {
-  box-shadow: 0 0 11px rgba(240, 16, 16, 0.802); 
+  background-color: #369ade;
+  box-shadow: 0 0 11px rgba(88, 88, 88, 0.312); 
 }
 
 /* logo */
@@ -201,3 +202,5 @@ div {
   padding: 0%;
   margin: 0px;
 }
+
+
