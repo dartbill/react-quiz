@@ -9,6 +9,7 @@ import userEvent from '@testing-library/user-event';
 
 describe("Answers Component", () => {
     beforeEach(() => {
+        logFunc();
         render(
             <Answer bool={true} answer={"answer"} />
         );

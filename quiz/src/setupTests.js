@@ -11,6 +11,10 @@ import thunk from 'redux-thunk';
 
 // futureproof provider wrapper attempt 2 =================================
 
+const logFunc = () => {
+    console.log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!!!!!!!")
+}
+
 const initialState = {
     category: 20,
     level: "easy",
@@ -39,11 +43,12 @@ jest.mock('axios')
 axios.get.mockResolvedValue({ data: "" })
 
 // Globals
+global.logFunc = logFunc;
 global.React = React;
 global.screen = screen;
 global.render = render;
 global.userEvent = userEvent;
-global.renderWithReduxProvider = renderWithReduxProvider
+global.renderWithReduxProvider = renderWithReduxProvider;
 
 
 // provider wrapper attempt 1 =================================
