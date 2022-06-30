@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Quiz } from "../../components";
-// SearchForm?
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { GetQuestions } from "../../actions";

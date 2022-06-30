@@ -1,4 +1,4 @@
-import { GameProperties, UsernameEntry,StartGameButton } from "../../components";
+import { GameProperties, UsernameEntry, StartGameButton } from "../../components";
 import React from "react";
 
 export const NewGamePage = () => {
@@ -6,7 +6,7 @@ export const NewGamePage = () => {
         <>
             <UsernameEntry />
             <GameProperties />
-            <StartGameButton/>
+            <StartGameButton />
         </>
     );
 };

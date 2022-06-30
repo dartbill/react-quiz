@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Answer } from "../";
 
 export const Question = ({ index, onSubmitQuestion }) => {
-    
+
     // TOMS STUFF FOR BETTING///////////////////////////////////////////
     const [orderA, setOrderA] = useState("0");
     const [orderB, setOrderB] = useState("0");
@@ -68,16 +68,16 @@ export const Question = ({ index, onSubmitQuestion }) => {
     }
     let answerArray
 
-    questionType === "boolean" 
-    ? ( answerArray = shuffle([
-        {answer: correctAnswer, bool: true},
-        {answer: incorrectAnswers[0], bool: false},
-    ])) : (answerArray = shuffle([
-        {answer: correctAnswer, bool: true},
-        {answer: incorrectAnswers[0], bool: false},
-        {answer: incorrectAnswers[1], bool: false},
-        {answer: incorrectAnswers[2], bool: false},
-    ]))
+    questionType === "boolean"
+        ? (answerArray = shuffle([
+            { answer: correctAnswer, bool: true },
+            { answer: incorrectAnswers[0], bool: false },
+        ])) : (answerArray = shuffle([
+            { answer: correctAnswer, bool: true },
+            { answer: incorrectAnswers[0], bool: false },
+            { answer: incorrectAnswers[1], bool: false },
+            { answer: incorrectAnswers[2], bool: false },
+        ]))
 
     return (
         <>
@@ -138,7 +138,7 @@ export const Question = ({ index, onSubmitQuestion }) => {
                         </div>
                     </div>
                 )}
-                <button onClick={createRandOrder}>Randomise!</button>
+
             </div>
         </>
     );
