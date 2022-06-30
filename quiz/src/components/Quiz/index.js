@@ -24,13 +24,13 @@ export const Quiz = () => {
 
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
-    console.log("player1 :",player1)
-    console.log("player2 :",player2)
+    console.log("player1 :", player1)
+    console.log("player2 :", player2)
 
     // **************************************************************
 
 
-    // eslint-disable-next-line ??
+    // eslint-disable-next-line 
     let navigate = useNavigate();
     const routeChange = (path) => {
         navigate(path);
@@ -44,7 +44,7 @@ export const Quiz = () => {
     const submitAnswer = (bool) => {
 
         // Updates Score if answer was correct
-        if (bool){updateScore()}
+        if (bool) { updateScore() }
 
         // Updates Question to Next Question OR ends game
         state.currentQuestionIndex < 19
@@ -63,7 +63,7 @@ export const Quiz = () => {
             playerDispatch({
                 type: "SET_PLAYER1",
                 payload: {
-                     score: score1,
+                    score: score1,
                 },
             });
         } else {
@@ -71,28 +71,25 @@ export const Quiz = () => {
             playerDispatch({
                 type: "SET_PLAYER2",
                 payload: {
-                   score: score2,
+                    score: score2,
                 },
             });
         }
-        console.log("score1:",score1)
-        console.log("score2:",score2)
+        console.log("score1:", score1)
+        console.log("score2:", score2)
     };
 
     const updateTurn = () => turn ? setTurn(false) : setTurn(true);
 
     return (
         <div className="quiz">
-            <div>
-                <div className="score">
-                    {`Question ${state.currentQuestionIndex + 1}/10`}
-                </div>
-                <Question
-                    index={state.currentQuestionIndex}
-                    onSubmitQuestion={submitAnswer}
-                />
-                <br />
+            <div className="score">
+                {`Question ${state.currentQuestionIndex + 1}/10`}
             </div>
+            <Question
+                index={state.currentQuestionIndex}
+                onSubmitQuestion={submitAnswer}
+            />
         </div>
     );
 };
