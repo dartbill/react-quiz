@@ -7,6 +7,7 @@ export const FinalScores = () => {
     const player1 = useSelector((state) => state.player1);
     const player2 = useSelector((state) => state.player2);
     const playerCount = useSelector((state) => state.playerCount);
+
     useEffect(() => {
         const postScores = async () => {
             try {
@@ -53,24 +54,23 @@ export const FinalScores = () => {
             {playerCount === 1 ? (
                 <ul>
                     <li>
-                        {player1.username} : {player1.score}
+                        {`${player1.username} : ${player1.score}`}
                     </li>
                 </ul>
             ) : (
                 <>
                     <ul>
                         <li>
-                            {player1.username} : {player1.score}
+                            {`${player1.username} : ${player1.score}`}
                         </li>
                         <li>
-                            {player2.username} : {player2.score}
+                            {`${player2.username} : ${player2.score}`}
                         </li>
                     </ul>
-                    <p>{`Congratualtions ${
-                        player1.score > player2.score 
+                    <p>{`Congratualtions ${player1.score > player2.score
                             ? player1.username
                             : player2.username
-                    }!`}</p>
+                        }!`}</p>
                 </>
             )}
         </div>
