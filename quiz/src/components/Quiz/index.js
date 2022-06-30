@@ -1,22 +1,24 @@
-import React, { useReducer, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { Question } from "../Question";
-import "../.././index.css";
+import React, { useReducer, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Question } from '../Question';
+import '../.././index.css';
 
+// ******** Move to Question???!?
 const initialState = {
-    currentQuestionIndex: 0,
+	currentQuestionIndex: 0,
 };
 
 const reducer = (state, action) => {
-    if (action.type === "NEXT_QUESTION") {
-        return {
-            ...state,
-            currentQuestionIndex: state.currentQuestionIndex + 1,
-        };
-    }
-    return state;
+	if (action.type === 'NEXT_QUESTION') {
+		return {
+			...state,
+			currentQuestionIndex: state.currentQuestionIndex + 1,
+		};
+	}
+	return state;
 };
+
 
 export const Quiz = () => {
 
@@ -90,6 +92,11 @@ export const Quiz = () => {
 
     return (
         <div className="quiz">
+        			{turn ? (
+				<p>{player1.username}, it's your turn!</p>
+			) : (
+				<p>{player2.username}, it's your turn!</p>
+			)}
             <div className="score">
                 {`Question ${state.currentQuestionIndex + 1}/10`}
             </div>
