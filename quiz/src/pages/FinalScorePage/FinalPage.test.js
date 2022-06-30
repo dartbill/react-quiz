@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import "@testing-library/jest-dom";
-import { FinalScorePage } from ".";
+import { FinalScorePage } from "./index";
 import { useSelector } from "react-redux";
 import store from "../../store";
 import { BrowserRouter } from "react-router-dom";
