@@ -36,16 +36,17 @@ export const UsernameEntry = () => {
     return (
         <>
             <form className="add-form" onSubmit={updateUsername}>
-                {playerCount === 1 
-                    ? (<div className="form-control">
-                            <label>Username 1</label>
-                            <input
-                                type="text"
-                                id="player1"
-                                placeholder="Add Username"
-                            />
-                        </div>) 
-                    : (<>
+                {playerCount === 1 ? (
+                    <div className="form-control">
+                        <label>Username 1</label>
+                        <input
+                            type="text"
+                            id="player1"
+                            placeholder="Add Username"
+                        />
+                    </div>
+                ) : (
+                    <>
                         <div className="form-control">
                             <label>Username 1</label>
                             <input

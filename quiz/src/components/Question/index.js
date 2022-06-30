@@ -6,7 +6,7 @@ export const Question = ({ index, onSubmitQuestion }) => {
     
     // TOMS STUFF FOR BETTING///////////////////////////////////////////
     const [orderA, setOrderA] = useState("0");
-    const [orderB, setOrderB] = useState("");
+    const [orderB, setOrderB] = useState("0");
     const [orderC, setOrderC] = useState("0");
     const [orderD, setOrderD] = useState("0");
 
