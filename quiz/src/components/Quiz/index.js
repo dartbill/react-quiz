@@ -112,10 +112,6 @@ export const Quiz = () => {
             ) : (
                 <p>{player2.username}, it's your turn!</p>
             )}
-            {/* <div className="score">{playerCount===2? }
-                {turn ? (`Question ${state.currentQuestionIndex + 1}/10`) : (`Question ${state.currentQuestionIndex}/10`)}
-            </div> */}
-
             <div className="score">
                 <p>{updateQuestionIndex()}</p>
             </div>
