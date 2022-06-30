@@ -61,7 +61,8 @@ const initialState = {
         };
       case "NEXT_QUESTION":
         return { ...state, currentQuestionIndex: state.currentQuestionIndex + 1 };
-  
+      case "RESET":
+        return initialState; //Always return the initial state
       default:
         return { ...initialState };
     }
