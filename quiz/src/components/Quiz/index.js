@@ -83,16 +83,13 @@ export const Quiz = () => {
 
     return (
         <div className="quiz">
-            <div>
-                <div className="score">
-                    {`Question ${state.currentQuestionIndex + 1}/10`}
-                </div>
-                <Question
-                    index={state.currentQuestionIndex}
-                    onSubmitQuestion={submitAnswer}
-                />
-                <br />
+            <div className="score">
+                {`Question ${state.currentQuestionIndex + 1}/10`}
             </div>
+            <Question
+                index={state.currentQuestionIndex}
+                onSubmitQuestion={submitAnswer}
+            />
         </div>
     );
 };
