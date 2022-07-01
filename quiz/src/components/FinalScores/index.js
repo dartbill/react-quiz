@@ -61,21 +61,26 @@ export const FinalScores = () => {
 
   return (
     <>
-      <p>Here are your scores: </p>
+      <div className="hereAreYourScores-container"><p className="your-scores">Here are your scores: </p>
+         <div className="center-user-scores">
 
+          
       {playerCount === 1 ? (
         <ul>
-          <li>{`${player1.username} : ${player1.score}`}</li>
+          <li className="scores-styling">{`${player1.username} : ${player1.score}`}</li>
         </ul>
       ) : (
         <>
           <ul>
-            <li>{`${player1.username} : ${player1.score}`}</li>
-            <li>{`${player2.username} : ${player2.score}`}</li>
+            <li className="p margin scores-styling">{`${player1.username} : ${player1.score}`}</li>
+            <li className="p margin scores-styling">{`${player2.username} : ${player2.score}`}</li>
           </ul>
-          <p>{whoWon()}</p>
+          <p className="who-won">{whoWon()}</p>
+          
         </>
       )}
+         </div>
+    </div>
     </>
   );
 };
