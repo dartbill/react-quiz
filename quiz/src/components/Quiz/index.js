@@ -87,6 +87,7 @@ export const Quiz = () => {
         if (playerCount === 1) {
             return `Q:  ${currentQuestionIndex + 1}/10`
         }
+      }
 /////////////////////////////////
 
     return (
@@ -106,4 +107,4 @@ export const Quiz = () => {
       />
     </div>
   );
-};
+}
