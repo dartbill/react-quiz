@@ -5,7 +5,7 @@
 1. [Project Goal](#project-goal)
 2. [Installation & Usage](#installation-and-usage)
 3. [Process](#process)
-4. [Licence](#licence)
+4. [License](#license)
 5. [Wins & Challenges](#wins-and-challenges)
 6. [Contributors](#contributors)
 7. [Technologies](#technologies)
@@ -52,15 +52,19 @@ Server is now found on `localhost:3001/`
 
 #### Endpoints
 
-> TBC
+| URL    | HTTP Verb |                 Action |
+| :----- | :-------: | ---------------------: |
+| /      |    GET    | Show all scores: index |
+| /:name |    GET    |   Show specific player |
+| /new   |   POST    |       Create new score |
 
 ## Process
 
 > TBC
 
-## Licence
+## License
 
-> TBC
+[MIT](./LICENSE.md)
 
 ## Wins and Challenges
 
