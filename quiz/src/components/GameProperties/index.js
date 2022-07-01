@@ -40,7 +40,7 @@ export const GameProperties = () => {
                         className="drop-items-diff drop-items"
                         id="easy"
                     >
-                        Piss easy
+                        Easy
                     </a>
                     <a
                         href="/#"
@@ -48,7 +48,7 @@ export const GameProperties = () => {
                         className="drop-items-diff drop-items"
                         id="medium"
                     >
-                        medium
+                        Medium
                     </a>
                     <a
                         href="/#"
@@ -56,7 +56,7 @@ export const GameProperties = () => {
                         className="drop-items-diff drop-items"
                         id="hard"
                     >
-                        Hard af
+                        Hard
                     </a>
                 </div>
             </div>
