@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { Quiz } from "../../components";
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { GetQuestions } from "../../actions";
 
 export const QuizPage = () => {
@@ -11,7 +9,6 @@ export const QuizPage = () => {
     let level = useSelector((state) => state.level);
     let typeOfQ = useSelector((state) => state.typeOfQ);
     let playerCount = useSelector((state) => state.playerCount);
-
 
     useEffect(() => {
         dispatch(
