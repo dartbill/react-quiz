@@ -7,15 +7,19 @@ import { NewGameButton } from '../../components';
 export const FinalScorePage = () => {
 	return (
 		<>
-			<h2>Final Scores</h2>
+			
 			<Confetti
 				width={window.innerWidth || 300}
 				height={window.innerHeight || 200}
 			/>
-			<FinalScores />
-			<h3>All time Highscores</h3>
-			<Highscores />
-			<NewGameButton />
+			<div className='final-container'>
+			<h1>Final Scores</h1>
+				<FinalScores />
+				<h3>All time Highscores</h3>
+				<Highscores />
+				<NewGameButton />
+
+			</div>
 		</>
 	);
 };

@@ -7,10 +7,10 @@ export const StartPage = () => {
 
 
   return (
-    <>  
+    <div>  
         <Logo />
         <PlayerCount/>
         <HighScoresButton/>
-    </>
+    </div>
   )
 }

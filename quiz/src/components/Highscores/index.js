@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 export const Highscores = () => {
 	//fetching and sorting out highscores to be done here
 	const [scores, setScores] = useState([]);

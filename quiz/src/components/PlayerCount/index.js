@@ -19,7 +19,8 @@ export const PlayerCount = () => {
 
   return (
     <>
-      <div className="container">
+
+    <div>
         <h2>Select Player Count</h2>
         <button className='coolbutton' onClick={()=> updatePlayers(1)}>One</button>
         <button className='coolbutton' onClick={()=> updatePlayers(2)}>Two</button>

@@ -1,7 +1,7 @@
 /* Dropdown Button */
 .dropbtn-diff {
-    background-color: #04AA6D;
-    color: white;
+    background-color: #61A4BC;    /* #04AA6D */
+    color: white ;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -17,7 +17,7 @@
   .dropdown-content-diff {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #61A4BC;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -25,33 +25,40 @@
   
   /* Links inside the dropdown */
   .dropdown-content-diff a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content-diff :hover {background-color: #ddd;}
+  .dropdown-content-diff :hover {
+    background-color:#1a3139;;
+   
+  
+  }
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content-diff {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn-diff {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn-diff {background-color: #1a3139;} /*CHANGES DIFFICULTY MENU HEADING COLORS*/
 
 
 
-
-
+  /* universal animation class for all drop downs*/
+.drop:hover {
+  font-size:larger;
+  transition: font-size 0.3s ease-in-out;
+}
 
 
 
 
 
   /* Dropdown Button */
-.dropbtn-cat {
-    background-color: #04AA6D;
+.dropbtn-cat { /*CATEGORY*/
+    background-color: #61A4BC;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -59,12 +66,10 @@
   }
   
 
-  
-  /* Dropdown Content (Hidden by Default) */
   .dropdown-content-cat {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #61A4BC;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -72,20 +77,20 @@
   
   /* Links inside the dropdown */
   .dropdown-content-cat a {
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content-cat :hover {background-color: #ddd;}
+  .dropdown-content-cat :hover {background-color: #1a3139;}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content-cat {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn-cat {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn-cat {background-color:#1a3139;} /*CHANGES CATEGORY MENU TITLE*/
 
 
   
@@ -95,7 +100,7 @@
 
   /* Dropdown Button */
   .dropbtn-type {
-    background-color: #04AA6D;
+    background-color: #61A4BC;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -108,7 +113,7 @@
   .dropdown-content-type {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color:#1a3139; 
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -123,11 +128,38 @@
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content-type :hover {background-color: #ddd;}
+  .dropdown-content-type :hover {background-color: #1a3139;}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content-type {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn-type {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn-type {background-color: #1a3139;} /*CHANGES TYPE MENU*/
 
+
+
+
+  /*centres everything */ 
+  #center-menu {  
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+
+  }
+
+/*places game menu and play btn next to each other */
+  
+  #menu-startGame{
+    display: flex;
+    
+  
+  }
+
+    /*places user name input and save btn next to each other  */
+    
+  .add-form{
+    display: flex;
+  }
+ 

@@ -1,7 +1,7 @@
-import '@testing-library/jest-dom';
-import { UsernameEntry } from './index';
-import { screen, render } from '@testing-library/react';
 import React from 'react';
+import { screen, render } from '@testing-library/react';
+
+import { default as Logo } from './Logo';
 
 // Main Imports
 import axios from 'axios';
@@ -11,6 +11,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import React from 'react';
 // futureproof provider wrapper attempt 2 =================================
 
 const initialState = {
@@ -37,17 +38,18 @@ const renderWithReduxProvider = (ui, options = {}) => {
 	render(ui, { wrapper: TestWrapper, ...options });
 };
 
-describe('Login Component', () => {
+describe('logo', () => {
 	beforeAll(() => {
-		renderWithReduxProvider(<UsernameEntry />);
+		renderWithReduxProvider(<Logo />);
 	});
-
-	it('textbox', () => {
-		const e = screen.getByRole('textbox');
-		expect(e).toBeInTheDocument();
+	test('it renders a heading', () => {
+		render(<Logo />);
+		const nav = screen.getByRole('heading');
+		expect(nav).toBeInTheDocument();
 	});
-	it('button', () => {
-		const e = screen.getByRole('button');
-		expect(e).toBeInTheDocument();
+	test('img', () => {
+		render(<Logo />);
+		const nav = screen.getByRole('img');
+		expect(nav).toBeInTheDocument();
 	});
 });

@@ -1,12 +1,21 @@
- body { 
-    background-color: #a4cbe4;
-    background-size: cover;
-
-    background-image: url("./Images/BGslighttransparent.png");
-    /* background-repeat: ; */
-    
+  *{
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  }
+  
+  body { 
+      /* background: linear-gradient(to right, #26D0CE, #1A2980); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      /* background-image: url("../public/BG-QuizNado.png"); */
       
-    }   
+      font-family: 'Roboto', sans-serif;
+      background-color: #a4cbe4;
+      background-size: cover;
+  
+      background-image: url("./Images/BGslighttransparent.png");
+      /* background-repeat: ; */
+      
+      
+    }
+   
 
 .screenBGOverlay{
   width: 100vh;
@@ -110,7 +119,8 @@ div {
 
 
 
-/* mobile first page design */
+/* select player count page design */
+
 
 
 
@@ -144,6 +154,52 @@ div {
   background-color: #369ade;
   box-shadow: 0 0 11px rgba(88, 88, 88, 0.312);
 }
+
+/*.highscores-btn{
+   display: flex;
+   justify-content: center;
+  
+}*/
+
+///////////////////////////////////////////////////////////////
+
+/*game properties styling*/
+
+
+#gameProperties {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 5px solid #5B7DB1;
+  border-radius: 2%;
+  padding: 10% ; 
+  text-align: center;
+  background-color:#1A132F ;
+  color:#FDF6EC;
+}
+
+
+.form-control{
+   width:80%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 0 auto;
+   text-align: center;
+   align-items: center;
+  
+}
+
+#save-btn{
+  display: inline-style-block;
+   
+  
+}
+
+
 
 /* logo */
 
@@ -185,6 +241,7 @@ div {
   text-align: center;
 }
 
+/*final scores page allignment and css*/
 
 #TitleTag{
   background-color: #002426;
@@ -227,5 +284,20 @@ div {
  z-index: 500;
  /* font-weight: bolder; */
  font-size: xx-large
+}
 
+.final-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1px solid rgb(63, 115, 158);
+       
+
+}
+
+.finalScores-title{
+  letter-spacing: 3px;
+  font-weight: bold;
+  
 }
