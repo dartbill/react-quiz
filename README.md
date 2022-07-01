@@ -1,11 +1,12 @@
 LAP 3 Project: react-quiz
 =====================
 ## Contents
-1. [Installation & Usage](#installation-and-usage)
-2. [Technologies](#technologies)
+1. [Project Goal](#project-goal)
+2. [Installation & Usage](#installation-and-usage)
 3. [Process](#process)
 4. [Licence](#licence)
 5. [Wins & Challenges](#wins-and-challenges)
+6. [Technologies](#technologies)
 
 ## Project Goal
 
@@ -15,7 +16,14 @@ Create a multiplayer quiz app using React and Redux
 ## Installation and Usage
 
 ### Live Deployment
-The app is currently **not** fully deployed
+
+#### Client
+
+The client is hosted on [netlify.com](www.netlify.com), available at [this](https://quiznado.netlify.app/) address.
+
+#### Server
+
+The server is hosted on [heroku.com](https://www.heroku.com/), available at... 
 
 ### Local Client Setup
 
@@ -32,9 +40,25 @@ Browser should automatically open to the default `localhost:3000/`
 
 ## Process
 
+> TBC
+
 ## Licence
 
+> TBC
+
 ## Wins and Challenges
+
+### Wins
+- Acheived MVP using React and Redux
+- Intense debugging
+
+### Challenges
+- Descrepency between local state and global store due to async nature of useState led to issues updating the score.
+- Unknown issues rendered 'react-scripts test' unable to access setupTests.js for some team members, making testing an uphill battle.
+- Ran into issues resulting in abandoning using Socket.IO
+- Ran into issues auto-seeding db
+- Manpower shortages during the project.
+- Merge conflicts early in the project that proved difficult to diagnose.
 
 ## Technologies
 
