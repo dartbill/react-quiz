@@ -1,7 +1,6 @@
-import '@testing-library/jest-dom';
-import { UsernameEntry } from './index';
-import { screen, render } from '@testing-library/react';
 import React from 'react';
+import { GameProperties } from '.';
+import { screen, render } from '@testing-library/react';
 
 // Main Imports
 import axios from 'axios';
@@ -37,17 +36,33 @@ const renderWithReduxProvider = (ui, options = {}) => {
 	render(ui, { wrapper: TestWrapper, ...options });
 };
 
-describe('Login Component', () => {
+describe('GameProperties Component', () => {
 	beforeAll(() => {
-		renderWithReduxProvider(<UsernameEntry />);
+		renderWithReduxProvider(<GameProperties />);
 	});
 
-	it('textbox', () => {
-		const e = screen.getByRole('textbox');
-		expect(e).toBeInTheDocument();
+	test('it renders a p tag', () => {
+		renderWithReduxProvider(<GameProperties />);
+		const nav = screen.getByTestId('button');
+		expect(nav).toBeInTheDocument();
 	});
-	it('button', () => {
-		const e = screen.getByRole('button');
-		expect(e).toBeInTheDocument();
+	test('listitem', () => {
+		renderWithReduxProvider(<GameProperties />);
+		const nav = screen.getByTestId('link');
+		expect(nav).toBeInTheDocument();
 	});
+	// describe('Renders button',()=>{
+	//     test('difficult', () => {
+	//         const button = screen.getByRole('button',/difficulty/i)
+	//         expect(button).toBeInTheDocument();
+	//     });
+	// test('category', () => {
+	//     const button = screen.getByRole('button',/category/i)
+	//     expect(button).toBeInTheDocument();
+	// });
+	// test('type', () => {
+	//     const button = screen.getByRole('button',/type/i)
+	//     expect(button).toBeInTheDocument();
+	// });
+	// })
 });
