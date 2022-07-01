@@ -17,6 +17,8 @@ describe("Highscores Component", () => {
             expect(e).toBeInTheDocument();
         });
     });
+
+
 });
 
 
