@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Answer } from "../";
+import './Questions.css'
 
 export const Question = ({ index, onSubmitQuestion }) => {
 
