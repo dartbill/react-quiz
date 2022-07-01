@@ -7,11 +7,12 @@
       /* background-image: url("../public/BG-QuizNado.png"); */
       
       font-family: 'Roboto', sans-serif;
-      background-color: #a4cbe4;
+      background-color: #5c93b6;
       background-size: cover;
   
       background-image: url("./Images/BGslighttransparent.png");
-      /* background-repeat: ; */
+      background-image: url("./Images/BG30per.png");
+
       
       
     }
@@ -161,7 +162,7 @@ div {
   
 }*/
 
-///////////////////////////////////////////////////////////////
+/* /////////////////////////////////////////////////////////////// */
 
 /*game properties styling*/
 
