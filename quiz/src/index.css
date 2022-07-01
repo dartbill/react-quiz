@@ -303,6 +303,7 @@ div {
   
 }
 
+
 .your-scores{
   font-size: 1.5em;
   font-weight: 500;
@@ -376,4 +377,11 @@ div {
 
 #coolbutton {
   margin-left: 15px;
+  }
+  
+.highScorePageFormat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #369ade; */
 }
