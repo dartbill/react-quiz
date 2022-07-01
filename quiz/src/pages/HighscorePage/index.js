@@ -6,12 +6,17 @@ export const HighscorePage = () => {
 
     return (
         <>
-            <BackButton />
+            <div className="highScorePageFormat">
+                <br></br>
+                <br></br>
             <h2>High Scores</h2>
             <Highscores />
+            <BackButton />
+            </div>
         </>
     )
 }
+
 
 
 

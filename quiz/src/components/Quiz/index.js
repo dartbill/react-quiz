@@ -82,23 +82,24 @@ export const Quiz = () => {
   // Update Question Number Text
   const updateQuestionIndex = () => {
         if (playerCount === 2) {
-            return `Question ${Math.round((currentQuestionIndex + 1)/2)}/10`
+            return `Q:  ${Math.round((currentQuestionIndex + 1)/2)}/10`
         }
         if (playerCount === 1) {
-            return `Question ${currentQuestionIndex + 1}/10`
+            return `Q:  ${currentQuestionIndex + 1}/10`
         }
-    }
+      }
+/////////////////////////////////
 
-  return (
-    <div className="quiz">
-      {turn ? (
-        <p>{player1.username}, it's your turn!</p>
-      ) : (
-        <p>{player2.username}, it's your turn!</p>
-      )}
-      <div className="score">
-        <p>{updateQuestionIndex()}</p>
-      </div>
+    return (
+        <div className="quiz">
+            {turn ? (
+                <p className='playerTurnTest'>{player1.username}, it's your turn!</p>
+            ) : (
+                <p className='playerTurnTest'>{player2.username}, it's your turn!</p>
+            )}
+            <div className="score" id='TitleTag'>
+                <p id='TitleTagText'>{updateQuestionIndex()}</p>
+            </div>
 
       <Question
         index={currentQuestionIndex}
@@ -106,4 +107,4 @@ export const Quiz = () => {
       />
     </div>
   );
-};
+}
