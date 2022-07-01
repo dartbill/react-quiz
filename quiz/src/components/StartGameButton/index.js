@@ -25,7 +25,6 @@ export const StartGameButton = () => {
 
             default:
                 if (player1.username) {
-                    // console.log(player1.username)
                     routeChange(path);
                 } else {
                     window.alert("Please save a username");
