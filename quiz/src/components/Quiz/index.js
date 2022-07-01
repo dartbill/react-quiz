@@ -1,41 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Question } from "../Question";
 import "../.././index.css";
 
 export const Quiz = () => {
-  // For debugging poiposes ***************************************
+  // get Data from Store ********************************************
+
+  // get Player Data
   const player1 = useSelector((state) => state.player1);
   const player2 = useSelector((state) => state.player2);
+
+  // get Player Count
   const playerCount = useSelector((state) => state.playerCount);
-  //   console.log("player1 :", player1)
-  // console.log("player2 :", player2)
-  // **************************************************************
+
+  // get current question index
   const currentQuestionIndex = useSelector(state => {
-    console.log("state",state)
     return state.currentQuestionIndex
   })
-
+    
   // eslint-disable-next-line
   let navigate = useNavigate();
   const routeChange = (path) => {
     navigate(path);
   };
 
+  // setup local states *********************************************
   const [turn, setTurn] = useState(true);
   const [score1, setScore1] = useState(0);
   const [score2, setScore2] = useState(0);
 
-  useEffect(() => {console.log("score1 updated", score1)}, [score1])
-  useEffect(() => { console.log("score2 updated", score2) }, [score2])
   const dispatch = useDispatch();
 
-  // On Click Event for Answers ***********************************
-  const submitAnswer = async (bool) => {
-    console.log("in submit answer")
+  // onClick Function for Answers ===================================
+  const submitAnswer = (bool) => {
     // Updates Score if answer was correct
-    if (bool) { await updateScore(); }
+    if (bool) { updateScore()}
     
     // Set Max Number of Questions
     let maxQuestionIndex;
@@ -79,17 +79,15 @@ export const Quiz = () => {
   // Toggles turn from true/false
   const updateTurn = () => (turn ? setTurn(false) : setTurn(true));
 
-  // Update question text
+  // Update Question Number Text
   const updateQuestionIndex = () => {
-    console.log("in update questions index")
-    if (playerCount === 1) {
-        return `Question ${currentQuestionIndex + 1}/10`
+        if (playerCount === 2) {
+            return `Question ${Math.round((currentQuestionIndex + 1)/2)}/10`
+        }
+        if (playerCount === 1) {
+            return `Question ${currentQuestionIndex + 1}/10`
+        }
     }
-    if (playerCount === 2) {
-      if (turn) { return `Question ${currentQuestionIndex + 1}/10`}
-      else { return `Question ${currentQuestionIndex}/10`}
-    }
-  }
 
   return (
     <div className="quiz">
