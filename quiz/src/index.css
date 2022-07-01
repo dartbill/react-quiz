@@ -292,7 +292,7 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1px solid rgb(63, 115, 158);
+  border-radius: 10px solid rgb(63, 115, 158);
        
 
 }
@@ -303,6 +303,82 @@ div {
   
 }
 
+
+.your-scores{
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.hereAreYourScores-container{
+   border: 3px solid rgb(63, 115, 158);
+   border-radius: 20px ;
+   background-color: rgb(176, 206, 230);;
+   padding: 10px;
+   opacity: 75%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column; 
+  
+  
+}
+
+
+.center-user-scores{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+
+.p-margin{
+    margin: 20px;
+}
+
+.who-won{
+   font-size: 1.5em;
+}
+
+
+
+
+.scores-styling{
+     font-weight: 300;
+     font-size: 20px;
+     list-style-type: none;
+     text-align: center;
+  
+}
+
+.hereAreYourScores-container:hover {
+   opacity: 100%
+}
+
+
+/*startPage-alignment*/
+
+.startPage-alignment{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/*player Count styling */
+
+.player-count-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#coolbutton {
+  margin-left: 15px;
+  }
+  
 .highScorePageFormat{
   display: flex;
   flex-direction: column;

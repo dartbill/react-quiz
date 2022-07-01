@@ -20,10 +20,12 @@ export const PlayerCount = () => {
   return (
     <>
 
-    <div>
+    <div className="player-count-container">
         <h2>Select Player Count</h2>
-        <button className='coolbutton' onClick={()=> updatePlayers(1)}>One</button>
-        <button className='coolbutton' onClick={()=> updatePlayers(2)}>Two</button>
+        <div className="player-count-btns">
+          <button className='coolbutton'id="coolbutton" onClick={()=> updatePlayers(1)}>One</button>
+          <button className='coolbutton'id="coolbutton" onClick={()=> updatePlayers(2)}>Two</button>
+        </div>
         {/* <button>High Scores</button> */}
     </div>
     </>
