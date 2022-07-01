@@ -49,7 +49,7 @@
   /* universal animation class for all drop downs*/
 .drop:hover {
   font-size:larger;
-  transition: font-size 0.3s;
+  transition: font-size 0.3s ease-in-out;
 }
 
 

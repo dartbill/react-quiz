@@ -307,13 +307,20 @@ div {
   text-align: center;
 }
 
-/*final scores page allignment*/
+/*final scores page allignment and css*/
 
 .final-container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 1px solid rgb(63, 115, 158);
        
 
+}
+
+.finalScores-title{
+  letter-spacing: 3px;
+  font-weight: bold;
+  
 }
