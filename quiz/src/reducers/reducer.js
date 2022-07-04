@@ -1,7 +1,7 @@
 const initialState = {
   category: 9,
-  level: "",
-  typeOfQ: "",
+  level: "easy",
+  typeOfQ: "multiple",
   playerCount: 1,
   questions: [],
   player1: {
