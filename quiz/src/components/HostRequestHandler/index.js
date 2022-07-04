@@ -25,7 +25,7 @@ const HostRequestHandler = (props) => {
 
             console.log("Now the results are in")
             console.log(results)
-
+            // eslint-disable-next-line
             resultsAreIn = true
 
             let playerName = 'playerName'
