@@ -156,6 +156,8 @@
 
 .coolbutton:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  background-color: #dfdfdf;
+  color: #3a3a3a;
 }
 
 

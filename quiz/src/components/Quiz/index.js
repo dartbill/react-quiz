@@ -73,6 +73,7 @@ export const Quiz = () => {
   const updateTurn = () => (turn ? setTurn(false) : setTurn(true));
   // Update Question Number Text
   const updateQuestionIndex = () => {
+<<<<<<< HEAD
     if (playerCount === 2) {
       return `Question ${Math.round((currentQuestionIndex + 1) / 2)}/10`
     }
@@ -93,10 +94,32 @@ export const Quiz = () => {
         <p>{updateQuestionIndex()}</p>
       </div>
       {/* send currentquestionindex and scoring to question component */}
+=======
+        if (playerCount === 2) {
+            return `Q:  ${Math.round((currentQuestionIndex + 1)/2)}/10`
+        }
+        if (playerCount === 1) {
+            return `Q:  ${currentQuestionIndex + 1}/10`
+        }
+      }
+/////////////////////////////////
+
+    return (
+        <div className="quiz">
+            {turn ? (
+                <p className='playerTurnTest'>{player1.username}, it's your turn!</p>
+            ) : (
+                <p className='playerTurnTest'>{player2.username}, it's your turn!</p>
+            )}
+            <div className="score" id='TitleTag'>
+                <p id='TitleTagText'>{updateQuestionIndex()}</p>
+            </div>
+
+>>>>>>> ff71d7f6d607ed5b8f7872bf921202d055d38b7f
       <Question
         index={currentQuestionIndex}
         onSubmitQuestion={submitAnswer}
       />
     </div>
   );
-};
+}

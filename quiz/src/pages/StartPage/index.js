@@ -132,5 +132,5 @@ export const StartPage = () => {
       <PlayerCount />
       <HighScoresButton />
     </div>
-  )
-}
+  );
+};
