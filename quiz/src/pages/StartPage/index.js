@@ -73,11 +73,6 @@ export const StartPage = () => {
       return
     }
 
-    //Socket situation to let all users know to go ahead
-
-    //IF NOT STARTED ROOM
-    // get ranking questions from server and set it in state
-
   }
 
 
@@ -85,9 +80,7 @@ export const StartPage = () => {
   //////////////////////////////////////////////////////////////////////////////////Model to follow to answer just once 
   socket.off('serverAuthToStartGame').on('serverAuthToStartGame', (msg) => {
     console.log(msg)
-    // });
-
-    setTimeout(routeChange('/newgame'), 3000)
+    routeChange('/newgame')
   })
 
   return (
