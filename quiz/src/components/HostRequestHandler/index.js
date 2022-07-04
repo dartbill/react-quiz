@@ -15,7 +15,7 @@ const HostRequestHandler = (props) => {
     let results
 
     console.log("now it's true")
-    results = useSelector((state) => state.results)
+    results = useSelector((state) => state.questions)
     console.log(results)
 
 
@@ -33,13 +33,6 @@ const HostRequestHandler = (props) => {
             results.forEach(element => {
                 element.player = playerName
             });
-
-
-            console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-
-            console.log(results)
-
-            console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
             // SEND REQUEST TO SERVER TO GET DATA THERE; SERVER WILL RESPOND TO ALL GUESTS !!!!
 
