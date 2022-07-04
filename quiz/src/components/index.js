@@ -10,3 +10,4 @@ export { StartGameButton } from './StartGameButton'
 export { HighScoresButton } from './HighScoresButton'
 export { PlayerCount } from './PlayerCount'
 export { BackButton } from './BackButton'
+export { default as HostRequestHandler } from './HostRequestHandler';

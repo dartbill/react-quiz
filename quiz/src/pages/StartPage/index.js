@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
-import { PlayerCount } from '../../components/'
-import { HighScoresButton } from '../../components/'
+import { useNavigate } from "react-router-dom";
+// import { PlayerCount } from '../../components/'
+// import { HighScoresButton } from '../../components/'
 import Logo from '../../components/Logo/Logo'
 import { default as socket } from '../../actions/socket'
+import HostRequestHandler from '../../components/HostRequestHandler';
 
 export const StartPage = () => {
+
+  let navigate = useNavigate();
+  const routeChange = (path) => {
+    navigate(path);
+  }
 
   socket.off('connect').on('connect', () => { console.log('Connected with id' + socket.id) })
 
@@ -13,7 +20,7 @@ export const StartPage = () => {
   const [roomCode, setRoomCode] = useState('')
   const [hostOrGuest, setHostOrGuest] = useState('')
   const [playersConnected, setPlayersConnected] = useState(0)
-  // const [startGame, setStartGame] = useState(false)
+  const [startGame, setStartGame] = useState(false)
 
 
   //Listen to how many users are in the room
@@ -55,7 +62,7 @@ export const StartPage = () => {
     if (hostOrGuest === 'host') {
       // const getRankingQuestions = () => dispatch(fetchRankingQuestions());
       // getRankingQuestions()
-      // setStartGame(true)
+      setStartGame(true)
       // Get questions from reducer
       // const question = returnQuestions()
 
@@ -78,25 +85,18 @@ export const StartPage = () => {
   //////////////////////////////////////////////////////////////////////////////////Model to follow to answer just once 
   socket.off('serverAuthToStartGame').on('serverAuthToStartGame', (msg) => {
     console.log(msg)
-    //       DISPATCH data to reducer then redirect to quiz
-    // dispatch({
-    //   type: 'LOAD RANKING QUESTIONS',
-    //   payload: msg
     // });
-    // const goToQuiz = () => { navigate('/quiz') }
-    // setTimeout(goToQuiz, 3000)
+
+    setTimeout(routeChange('/newgame'), 3000)
   })
 
   return (
     <div>
       <Logo />
-      <div className="socketGame">
-        <h2 className="socketHeader">Socket Game</h2>
-        <div className="createRoom">
-          <div className="createButton" onClick={onCreateRoom}>
+      <div >
+        <div >
+          <div onClick={onCreateRoom}>
             Create Room
-            {/* Click + p tag where to append  */}
-
           </div>
           <p>
             Room Code: {roomCode}
@@ -106,31 +106,26 @@ export const StartPage = () => {
         <br />
 
         <div >
-
           <div>
             Join Room
-            {/* Form + submit */}
             <form className="roomForm" onSubmit={onFormSumbit}>
               <input type='text'></input>
               <button type='submit'>Enter</button>
             </form>
           </div>
         </div>
-
         <div >
           <button onClick={onStartGame}>Start Game</button>
         </div>
-
-
         <div >
           People in the room {playersConnected}
         </div>
 
-        {/* {startGame ? <HostRequestHandler room={roomCode} /> : ''} */}
+        {startGame ? <HostRequestHandler room={roomCode} /> : ''}
 
       </div>
-      <PlayerCount />
-      <HighScoresButton />
+      {/* <PlayerCount /> */}
+      {/* <HighScoresButton /> */}
     </div>
   );
 };
