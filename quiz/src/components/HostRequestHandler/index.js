@@ -34,6 +34,7 @@ const HostRequestHandler = (props) => {
                 element.player = playerName
             });
 
+
             // SEND REQUEST TO SERVER TO GET DATA THERE; SERVER WILL RESPOND TO ALL GUESTS !!!!
 
             socket.emit('startGame', results, roomNumber, (t) => { console.log(t) })

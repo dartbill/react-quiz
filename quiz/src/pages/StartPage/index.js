@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 // import { PlayerCount } from '../../components/'
 // import { HighScoresButton } from '../../components/'
+import { useDispatch, useSelector } from "react-redux";
+import { GetQuestions } from "../../actions";
 import Logo from '../../components/Logo/Logo'
 import { default as socket } from '../../actions/socket'
 import HostRequestHandler from '../../components/HostRequestHandler';
@@ -12,6 +14,22 @@ export const StartPage = () => {
   // const routeChange = (path) => {
   //   navigate(path);
   // }
+
+  const dispatch = useDispatch();
+
+  //get vars from store
+  const category = useSelector((state) => state.category);
+  let level = useSelector((state) => state.level);
+  let typeOfQ = useSelector((state) => state.typeOfQ);
+  let playerCount = useSelector((state) => state.playerCount);
+
+  //render dispatch once on start and then if the store changes
+  useEffect(() => {
+    //dispatch function with user inputs
+    dispatch(
+      GetQuestions({ cat: category, level: level, typeOfQ: typeOfQ, playerCount: playerCount })
+    );
+  }, [category, level, typeOfQ, playerCount, dispatch]);
 
   socket.off('connect').on('connect', () => { console.log('Connected with id' + socket.id) })
 
