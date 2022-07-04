@@ -9,9 +9,9 @@ import HostRequestHandler from '../../components/HostRequestHandler';
 export const StartPage = () => {
 
   let navigate = useNavigate();
-  const routeChange = (path) => {
-    navigate(path);
-  }
+  // const routeChange = (path) => {
+  //   navigate(path);
+  // }
 
   socket.off('connect').on('connect', () => { console.log('Connected with id' + socket.id) })
 
@@ -80,7 +80,7 @@ export const StartPage = () => {
   //////////////////////////////////////////////////////////////////////////////////Model to follow to answer just once 
   socket.off('serverAuthToStartGame').on('serverAuthToStartGame', (msg) => {
     console.log(msg)
-    routeChange('/newgame')
+    navigate('/newgame')
   })
 
   return (
