@@ -98,7 +98,7 @@ export const StartPage = () => {
   //////////////////////////////////////////////////////////////////////////////////Model to follow to answer just once 
   socket.off('serverAuthToStartGame').on('serverAuthToStartGame', (msg) => {
     console.log(msg)
-    navigate('/newgame')
+    navigate('/quiz')
   })
 
   return (
